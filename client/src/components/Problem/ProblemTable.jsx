@@ -1,206 +1,169 @@
+// src/components/ProblemTable/ProblemTable.jsx (Main Component)
+
 "use client";
 
-import React, {
-    useState,
-} from "react";
-import {
-    useReactTable,
-    getCoreRowModel,
-    getPaginationRowModel,
-    getSortedRowModel,
-    getFilteredRowModel,
-    flexRender,
-} from "@tanstack/react-table";
+import React, { useState, useMemo, useEffect, useCallback } from "react";
+import { useReactTable, getCoreRowModel, getPaginationRowModel, getSortedRowModel } from "@tanstack/react-table";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table";
-import { CheckCircle2 } from "lucide-react";
+import ProblemFilters from "./ProblemFilter.jsx";
+import ProblemDataTable from "./ProblemDataTable.jsx";
+// 💡 Updated imports for status icons
+import { CheckCircle2, XCircle } from "lucide-react"; 
+import { Badge } from "../ui/badge.jsx";
+ 
+import problemService from "../../api/ProblemServices.jsx";
+
 
 function ProblemTable() {
-    const [filter, setFilter] = useState("");
+    // --- Data and State Management ---
+    const [problems, setProblems] = useState([]); // Stores ALL fetched problems
+    const [isLoading, setIsLoading] = useState(true);
+    const [filter, setFilter] = useState(""); // Text search input
     const [selectedTopic, setSelectedTopic] = useState("All");
     const [acceptedFilter, setAcceptedFilter] = useState("All");
     const [repliedFilter, setRepliedFilter] = useState("All");
-    const [problems, setProblems] = useState([]);
 
     const navigate = useNavigate();
+  
+    const fetchProblems = useCallback(async () => {
+        setIsLoading(true);
+        try {
+            // Your problemService.fetchAllProblmes() returns the array of problems
+            const data = await problemService.fetchAllProblmes();
+            setProblems(data);
+            // ❌ Removed console.log(problems) as it uses stale state
+        } catch (error) {
+            console.error("Error fetching problems:", error);
+            // Handle error, maybe show a toast
+        } finally {
+            setIsLoading(false);
+        }
+    }, []);
 
-    //   const fetchProblems = useCallback(async () => {
-    //     try {
-    //       const res = await axios.get(`${BASE_URL}/api/problems`, {
-    //         withCredentials: true,
-    //       });
-    //       setProblems(res.data);
-    //     } catch (error) {
-    //       console.error("❌ Error fetching problems:", error);
-    //     }
-    //   }, []);
+    useEffect(() => {
+        fetchProblems();
+    }, [fetchProblems]);
 
-    //   useEffect(() => {
-    //     fetchProblems();
-    //   }, [fetchProblems]);
-
-    function topicOptions() {
-        const allTopics = new Set();
-        problems.forEach((p) => p.topics.forEach((t) => allTopics.add(t)));
-        return ["All", ...Array.from(allTopics)];
-    }
-
-    function filteredProblems() {
+    // --- 💡 Centralized Filtering Logic (Client-Side) ---
+    const filteredData = useMemo(() => {
         return problems.filter((p) => {
+            // A. Text Search (on Title)
             const matchesSearch = p.title.toLowerCase().includes(filter.toLowerCase());
+
+            // B. Topic Dropdown
             const matchesTopic = selectedTopic === "All" || p.topics.includes(selectedTopic);
+
+            // C. Accepted Dropdown
             const matchesAccepted =
                 acceptedFilter === "All" ||
                 (acceptedFilter === "Accepted" && p.accepted) ||
                 (acceptedFilter === "Not Accepted" && !p.accepted);
+
+            // D. Replied Dropdown
             const matchesReplied =
                 repliedFilter === "All" ||
                 (repliedFilter === "Replied" && p.replied) ||
                 (repliedFilter === "Not Replied" && !p.replied);
-            return matchesSearch && matchesTopic && matchesAccepted && matchesReplied;
-        })
-    }
 
-    const columns = [
+            return matchesSearch && matchesTopic && matchesAccepted && matchesReplied;
+        });
+    }, [problems, filter, selectedTopic, acceptedFilter, repliedFilter]);
+
+    // Calculate the unique topics for the dropdown
+    const topicOptions = useMemo(() => {
+        const allTopics = new Set();
+        problems.forEach((p) => p.topics.forEach((t) => allTopics.add(t)));
+        return ["All", ...Array.from(allTopics)];
+    }, [problems]);
+
+    // --- React Table Initialization ---
+    const columns = useMemo(() => [
         {
             id: "index",
             header: "Sr.No.",
-            cell: ({ row }) => <div className="font-medium">{row.index + 1}</div>,
+            cell: ({ row }) => <div className="font-medium">{row.index + 1}</div>
         },
         {
             accessorKey: "title",
             header: "Title",
-            cell: ({ row }) => <div className="text-sm">{row.getValue("title")}</div>,
+            cell: ({ row }) => <div className="text-sm">{row.getValue("title")}</div>
         },
         {
             accessorKey: "topics",
             header: "Topics",
             cell: ({ row }) => {
                 const topics = row.getValue("topics") || [];
-                return (
-                    <div className="flex flex-wrap gap-1">
-                        {topics.map((topic, index) => (
-                            <Badge key={index} variant="secondary">
-                                {topic}
-                            </Badge>
-                        ))}
-                    </div>
-                );
-            },
+                return topics.map((topic, index) => (<Badge className="mx-0.5" variant="secondary" key={index}>{topic}</Badge>))
+            }
         },
-        {
-            accessorKey: "replied",
-            header: "You Replied",
-            cell: ({ row }) => {
-                const replied = row.getValue("replied");
-                return replied ? (
-                    <div className="flex items-center gap-1 text-green-600 font-medium">
-                        <CheckCircle2 className="size-4" /> Replied
-                    </div>
-                ) : (
-                    <span className="text-muted-foreground">Not Replied</span>
-                );
-            },
+        // ✅ FIX: Changed 'accessForKey' to 'accessorKey' AND improved the 'Not Replied' status display
+        { 
+            accessorKey: "replied", 
+            header: "You Replied", 
+            cell: ({ row }) => row.getValue("replied") ? (
+                <div className="flex items-center gap-1 text-green-600 font-medium">
+                    <CheckCircle2 className="size-4" /> Replied
+                </div>
+            ) : (
+                <div className="flex items-center gap-1 text-red-500 font-medium">
+                    <XCircle className="size-4" /> Not Replied
+                </div>
+            ) 
         },
-        {
-            accessorKey: "accepted",
-            header: "Accepted",
-            cell: ({ row }) =>
-                row.getValue("accepted") ? (
-                    <div className="flex items-center gap-1 text-green-600 font-medium">
-                        <CheckCircle2 className="size-4" /> Accepted
-                    </div>
-                ) : (
-                    <span className="text-muted-foreground">Not Accepted</span>
-                ),
+        // ✅ Improvement: Improved the 'Not Accepted' status display for consistency
+        { 
+            accessorKey: "accepted", 
+            header: "Accepted", 
+            cell: ({ row }) => row.getValue("accepted") ? (
+                <div className="flex items-center gap-1 text-green-600 font-medium">
+                    <CheckCircle2 className="size-4" /> Accepted
+                </div>
+            ) : (
+                <div className="flex items-center gap-1 text-red-500 font-medium">
+                    <XCircle className="size-4" /> Not Accepted
+                </div>
+            ) 
         },
-    ]
+    ], []);
 
     const table = useReactTable({
-        data: filteredProblems,
+        data: filteredData,
         columns,
         getCoreRowModel: getCoreRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
         getSortedRowModel: getSortedRowModel(),
-        getFilteredRowModel: getFilteredRowModel(),
-        state: {
-            globalFilter: filter,
-        },
-        onGlobalFilterChange: setFilter,
+        // No getFilteredRowModel needed as filtering is done manually via filteredData
     });
 
-    function visitProblem() {
+    const visitProblem = useCallback((id) => {
         navigate(`/solve-problem/${id}`);
-    }
+    }, [navigate]);
 
     return (
         <div className="w-full space-y-4">
-            {/* Filters */}
-            <div className="flex flex-wrap items-center gap-2">
-                <Input
-                    placeholder="Search problems..."
-                    value={filter}
-                    onChange={(e) => setFilter(e.target.value)}
-                    className="w-full max-w-sm"
+            <h2>All Problems</h2>
+
+            <ProblemFilters
+                filter={filter}
+                setFilter={setFilter}
+                selectedTopic={selectedTopic}
+                setSelectedTopic={setSelectedTopic}
+                acceptedFilter={acceptedFilter}
+                setAcceptedFilter={setAcceptedFilter}
+                repliedFilter={repliedFilter}
+                setRepliedFilter={setRepliedFilter}
+                topicOptions={topicOptions}
+            />
+
+            {isLoading ? (
+                <p className="text-center py-8">Loading problems...</p>
+            ) : (
+                <ProblemDataTable
+                    table={table}
+                    columns={columns}
+                    visitProblem={visitProblem}
                 />
-                <select value={selectedTopic} onChange={(e) => setSelectedTopic(e.target.value)} className="dark:bg-zinc-800 dark:text-white px-3 py-2 border rounded-md text-sm">
-                    {topicOptions.map((t) => <option key={t} value={t}>{t}</option>)}
-                </select>
-                <select value={acceptedFilter} onChange={(e) => setAcceptedFilter(e.target.value)} className="dark:bg-zinc-800 dark:text-white px-3 py-2 border rounded-md text-sm">
-                    <option>All</option>
-                    <option>Accepted</option>
-                    <option>Not Accepted</option>
-                </select>
-                <select value={repliedFilter} onChange={(e) => setRepliedFilter(e.target.value)} className="dark:bg-zinc-800 dark:text-white px-3 py-2 border rounded-md text-sm">
-                    <option>All</option>
-                    <option>Replied</option>
-                    <option>Not Replied</option>
-                </select>
-            </div>
-            <div className="rounded-md border">
-                <Table>
-                    <TableHeader>
-                        {table.getHeaderGroups().map((group) => (
-                            <TableRow key={group.id}>
-                                {group.headers.map((header) => (
-                                    <TableHead key={header.id}>{flexRender(header.column.columnDef.header, header.getContext())}</TableHead>
-                                ))}
-                            </TableRow>
-                        ))}
-                    </TableHeader>
-                    <TableBody>
-                        {table.getRowModel().rows.length ? (
-                            table.getRowModel().rows.map((row) => (
-                                <TableRow key={row.id} className="cursor-pointer hover:bg-muted" onClick={() => visitProblem(row.original.id)}>
-                                    {row.getVisibleCells().map((cell) => (
-                                        <TableCell key={cell.id}>
-                                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                        </TableCell>
-                                    ))}
-                                </TableRow>
-                            ))
-                        ) : (
-                            <TableRow>
-                                <TableCell colSpan={columns.length} className="text-center py-8">No problems found.</TableCell>
-                            </TableRow>
-                        )}
-                    </TableBody>
-                </Table>
-            </div>
-            <div className="flex justify-end gap-2">
-                <Button variant="outline" size="sm" onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>Previous</Button>
-                <Button variant="outline" size="sm" onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>Next</Button>
-            </div>
+            )}
         </div>
     );
 }

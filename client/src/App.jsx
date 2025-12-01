@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Hero from './Pages/Hero.jsx'
@@ -13,10 +11,16 @@ import Layout from './Pages/Layout.jsx'
 import ProblemManager from './Pages/ProblemManager.jsx'
 import Dashboard from './Pages/Dashboard.jsx'
 import CodePlayGround from './Pages/CodePlayGround.jsx'
+import ProblemList from './Pages/ProblemsList.jsx'
+import History from './Pages/History.jsx'
+import AIFeature from './Pages/AiInteraction.jsx'
+import ProblemSolving from './Pages/ProblemSolving.jsx'
+
 import { Toaster } from 'sonner'
 
+
 function App() {
- 
+
   return (
     <>
       <Routes>
@@ -28,6 +32,10 @@ function App() {
         <Route path='/problem-manager' element={<Layout><ProblemManager /></Layout>} />
         <Route path='/dashboard' element={<Layout><Dashboard /></Layout>} />
         <Route path='/code-playground' element={<Layout><CodePlayGround /></Layout>} />
+        <Route path='/problems' element={<Layout><ProblemList /></Layout>} />
+        <Route path='/history' element={<Layout><History /></Layout>} />
+        <Route path='/ai/:feature' element={<Layout><AIFeature /></Layout>} />
+        <Route path='/problems/:id' element={<ProblemSolving />} />
       </Routes>
       <Toaster richColors position='top-right' />
       <ThemeToggleButton />

@@ -1,25 +1,29 @@
 import { config } from "../config/config.js";
 import axios from 'axios'
-export class StatsService {
-    baseUrl = config.backendUrl + '/api/v1/stats';
+import { toast } from "sonner";
+
+export class CompilerServices {
+    baseUrl = config.backendUrl + '/api/v1/compile';
 
     constructor() {
         this.api = axios.create({
             baseURL: this.baseUrl,
             withCredentials: true,
             headers: {
-                'Content-Type': "application/json"
+                'Content-Type': 'application/json'
             }
         });
     }
-
-    async getStats() {
+    
+    async compileCode({ sourceCode, language, input = '' }) {
         try {
-            const response = await this.api.get('/')
-
-            return response.data;
-        } catch (error) {
-            this.handleError(error)
+            const response = await this.api.post('/', {
+                sourceCode, language, input
+            }) 
+            return response;
+        }
+        catch (error) {
+         this.handleError(error)
         }
     }
 
@@ -40,6 +44,5 @@ export class StatsService {
     }
 }
 
-const statsService = new StatsService()
-
-export default statsService;
+const compilerService = new CompilerServices()
+export default compilerService;

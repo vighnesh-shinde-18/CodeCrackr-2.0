@@ -45,12 +45,12 @@ function AppSidebar() {
     ]
 
     const aiToolsNav = [
-        { title: "Debug Code", url: "/debug", icon: IconBug },
-        { title: "Generate Code", url: "/generate", icon: IconFileCode },
-        { title: "Review & Refactor Code", url: "/review", icon: IconSettingsAutomation },
-        { title: "Explain Code", url: "/explain", icon: IconBulb },
-        { title: "Convert Code", url: "/convert", icon: IconRepeat },
-        { title: "Test Cases", url: "/testcases", icon: IconFileText },
+        { title: "Debug Code", url: "/ai/debug", icon: IconBug },
+        { title: "Generate Code", url: "/ai/generate", icon: IconFileCode },
+        { title: "Review & Refactor Code", url: "/ai/review", icon: IconSettingsAutomation },
+        { title: "Explain Code", url: "/ai/explain", icon: IconBulb },
+        { title: "Convert Code", url: "/ai/convert", icon: IconRepeat },
+        { title: "Test Cases", url: "/ai/testcases", icon: IconFileText },
     ]
 
     return (

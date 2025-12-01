@@ -1,7 +1,7 @@
 
-import { ProblemTable } from "@/components/problem/ProblemTable.jsx";
+import ProblemTable  from "@/components/problem/ProblemTable.jsx";
 
-function ProblemsPage () {
+function ProblemList () {
 
 
   return (
@@ -12,4 +12,4 @@ function ProblemsPage () {
   );
 };
 
-export default ProblemsPage;
+export default ProblemList;

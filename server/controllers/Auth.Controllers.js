@@ -65,7 +65,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
     const accessToken = await user.generateAccessToken();
 
-    const loggedInUser = await User.findById(user._id).select("-password -resetPasswordOTP -_id -createdAt -updatedAt")
+    const loggedInUser = await User.findById(user._id).select("-password -resetPasswordOTP -_id -createdAt -updatedAt -__v -isAdmin")
 
     const options = {
         httpOnly: true,

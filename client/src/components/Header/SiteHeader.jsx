@@ -8,21 +8,22 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 // 🚀 Static page title map (outside component for stability)
 const PAGE_TITLES = {
   "/dashboard": "Dashboard",
+  "/problem-manager": "Problem Manager",
   "/problems": "Problems",
-  "/history": "History",
-  "/debug": "AI Feature",
-  "/generate": "AI Feature",
-  "/review": "AI Feature",
-  "/explain": "AI Feature",
-  "/convert": "AI Feature",
-  "/testcases": "AI Feature",
+  "/ai/debug":"AI Feature",
+  "/ai/generate":"AI Feature",
+  "/ai/review":"AI Feature",
+  "/ai/explain":"AI Feature",
+  "/ai/convert":"AI Feature",
+  "/ai/testcases":"AI Feature",
+  "/code-playground":"Code PlayGround"
 };
 
 function SiteHeader() {
   const location = useLocation();
 
   const pageTitle = () => {
-    return PAGE_TITLES[location.pathname] || "CodeKracker";
+    return PAGE_TITLES[location.pathname] || "CodeCracker";
   } 
 
   return (

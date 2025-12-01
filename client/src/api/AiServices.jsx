@@ -1,25 +1,31 @@
-import { config } from "../config/config.js";
+import { config } from "../config/config";
 import axios from 'axios'
-export class StatsService {
-    baseUrl = config.backendUrl + '/api/v1/stats';
+export class AiService {
+
+    baseUrl = config.backendUrl + '/api/v1/ai';
 
     constructor() {
         this.api = axios.create({
             baseURL: this.baseUrl,
             withCredentials: true,
             headers: {
-                'Content-Type': "application/json"
-            }
+                'Content-Type': 'application/json',
+            },
         });
     }
 
-    async getStats() {
+    async runAi({ feature, code, language = '' }) {
         try {
-            const response = await this.api.get('/')
-
+            const response = await this.api.post('/', {
+                FeatureType: feature,
+                UserInput: code,
+                TargetLanguage: language
+            });
+ 
             return response.data;
+
         } catch (error) {
-            this.handleError(error)
+         this.handleError(error)
         }
     }
 
@@ -40,6 +46,5 @@ export class StatsService {
     }
 }
 
-const statsService = new StatsService()
-
-export default statsService;
+const aiService = new AiService();
+export default aiService;

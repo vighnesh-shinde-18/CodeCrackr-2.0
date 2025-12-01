@@ -1,5 +1,5 @@
 
-import {config} from '../config/config.js';
+import { config } from '../config/config.js';
 import axios from 'axios';
 import { toast } from 'sonner';
 export class AuthService {
@@ -25,49 +25,25 @@ export class AuthService {
                 password,
                 username
             });
-
-            console.log("Success Response:", response.data);
+ 
             return response.data;
 
         } catch (error) {
-            if (error.response && error.response.data) {
-                console.error("API Error Response Data:", error.response.data);
-
-                const serverMessage = error.response.data.message || "Registration failed due to server issue.";
-                throw new Error(serverMessage);
-
-            } else if (error.message) {
-                console.error("Network or Unknown Error:", error.message);
-                throw new Error(error.message);
-            } else {
-                throw new Error("An unexpected error occurred during registration.");
-            }
+            this.handleError(error);
         }
     }
-   
+
     async login({ email, password }) {
         try {
             const response = await this.api.post('/login', {
                 email,
                 password
             });
-            
-            console.log("Success Response:", response);
+ 
             return response.data.data.user;
 
         } catch (error) {
-            if (error.response && error.response.data) {
-                console.error("API Error Response Data:", error.response.data);
-
-                const serverMessage = error.response.data.message || "Login failed due to server issue.";
-                throw new Error(serverMessage);
-
-            } else if (error.message) {
-                console.error("Network or Unknown Error:", error.message);
-                throw new Error(error.message);
-            } else {
-                throw new Error("An unexpected error occurred during registration.");
-            }
+            this.handleError(error);
         }
     }
 
@@ -76,48 +52,23 @@ export class AuthService {
             const response = await this.api.post('/send-otp', {
                 email
             });
-
-            console.log("Success Response:", response.message);
+ 
             return response.message;
 
         } catch (error) {
-            if (error.response && error.response.data) {
-                console.error("API Error Response Data:", error.response.data);
-
-                const serverMessage = error.response.data.message || "OTP send failed due to server issue.";
-                throw new Error(serverMessage);
-
-            } else if (error.message) {
-                console.error("Network or Unknown Error:", error.message);
-                throw new Error(error.message);
-            } else {
-                throw new Error("An unexpected error occurred during registration.");
-            }
+            this.handleError(error);
         }
     }
-
     async resetPassword({ email, newPassword, otp }) {
         try {
 
             const response = await this.api.post("/reset-password",
                 { email, otp, newPassword }
             );
-
-            console.log("Success Response:", response.message);
+ 
             return response.message;
         } catch (error) {
-            if (error.response && error.response.data) {
-                console.error("API Error Response Data:", error.response.data);
-
-                const serverMessage = error.response.data.message || "Paaword reset failed due to server issue.";
-                throw new Error(serverMessage);
-
-            } else if (error.message) {
-                console.error("Network or Unknown Error:", error.message);
-                throw new Error(error.message);
-            } else {
-                throw new Error("An unexpected error occurred during registration.");
-            }
+            this.handleError(error);
         }
     }
 
@@ -126,18 +77,32 @@ export class AuthService {
      * Invalidates the user's session via POST request to the logout endpoint.
      */
     async logout() {
-        try { 
+        try {
             await this.api.post('/logout');
-        
-           
-            return true;  
+
+
+            return true;
         } catch (error) {
-            console.log("Custom backend service :: logout :: error", error);
-            toast.warning("Logged out problem");
+            this.handleError(error);
         }
     }
- 
-}
 
+    handleError(error) {
+        if (axios.isCancel(error)) {
+            throw error; // Let the component handle aborts silently
+        }
+        if (error.response && error.response.data) {
+            console.error("API Error:", error.response.data);
+            const serverMessage = error.response.data.message || "Request failed.";
+            throw new Error(serverMessage);
+        } else if (error.message) {
+            console.error("Network Error:", error.message);
+            throw new Error(error.message);
+        } else {
+            throw new Error("An unexpected error occurred.");
+        }
+    }
+
+}
 const authService = new AuthService();
 export default authService;

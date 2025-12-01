@@ -1,7 +1,9 @@
 import { config } from "../config/config.js";
-import axios from 'axios'
-export class StatsService {
-    baseUrl = config.backendUrl + '/api/v1/stats';
+import axios from "axios";
+
+export class HistoryService {
+
+    baseUrl = config.backendUrl + '/api/v1/history';
 
     constructor() {
         this.api = axios.create({
@@ -9,21 +11,39 @@ export class StatsService {
             withCredentials: true,
             headers: {
                 'Content-Type': "application/json"
-            }
+            },
         });
     }
 
-    async getStats() {
+    // Fixed: Added the body payload { topic, accepted } to the post request
+    async UserSolvedProblems({ topic, accepted }) {
         try {
-            const response = await this.api.get('/')
-
+            const response = await this.api.post('/solved-problems', {
+                topic,
+                accepted
+            });
+ 
             return response.data;
+
         } catch (error) {
             this.handleError(error)
         }
     }
 
-    handleError(error) {
+    async UserAiInteraction(feature) {
+        try {
+            const response = await this.api.post('/ai-interactions', {
+                feature
+            });
+            console.log("User ai interactions ", response)
+            return response.data;
+
+        } catch (error) {
+            this.handleError(error)
+        }
+    }
+
+     handleError(error) {
         if (axios.isCancel(error)) {
             throw error; // Let the component handle aborts silently
         }
@@ -40,6 +60,5 @@ export class StatsService {
     }
 }
 
-const statsService = new StatsService()
-
-export default statsService;
+const historyService = new HistoryService();
+export default historyService;
