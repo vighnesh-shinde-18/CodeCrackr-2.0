@@ -1,7 +1,7 @@
 import AppSidebar from "../components/AppSidebar/AppSidebar.jsx"
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import SiteHeader from "../components/Header/SiteHeader.jsx";
-function Layout({ children }) {
+function Layout({ children , sidebarVisible = true}) {
 
   const sidebarStyle = {
     "--sidebar-width": "calc(var(--spacing) * 72)",
@@ -11,7 +11,7 @@ function Layout({ children }) {
   return (
     <>
       <SidebarProvider style={sidebarStyle}>
-        <AppSidebar variant="inset" />
+        { sidebarVisible && <AppSidebar variant="inset" />}
         <SidebarInset>
           <SiteHeader />
           {children}

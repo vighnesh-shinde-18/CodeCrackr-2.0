@@ -1,116 +1,115 @@
 import React from 'react';
-import ViewerWrapper from './ViewerWrapper.jsx'; // Ensure path is correct
-import CodeOutputBlock from './CodeOutput.jsx'; // Ensure path is correct
+import ViewerWrapper from './ViewerWrapper';
+import CodeOutputBlock from './CodeOutputBlock';
 
-// Reusable micro-components for cleaner rendering logic
+// Reusable UI Helpers
 const SectionTitle = ({ children }) => (
-  <h3 className="font-semibold text-gray-800 dark:text-gray-200">{children}</h3>
+  <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mt-4 mb-2 flex items-center gap-2">
+    {children}
+  </h3>
 );
 
-const ContentList = ({ items }) => (
-  <ul className="list-disc ml-5 text-gray-700 dark:text-gray-300">
-    {/* Ensure items is an array before mapping */}
-    {Array.isArray(items) && items.map((item, i) => <li key={i}>{item}</li>)}
-  </ul>
-);
+const ContentList = ({ items }) => {
+  if (!items || !Array.isArray(items) || items.length === 0) return null;
+  return (
+    <ul className="list-disc ml-5 space-y-1 text-gray-700 dark:text-gray-300 text-sm">
+      {items.map((item, i) => <li key={i}>{item}</li>)}
+    </ul>
+  );
+};
 
-const ContentParagraph = ({ label, text, boldLabel = true }) => (
-  <p className="text-gray-700 dark:text-gray-300">
-    {boldLabel ? <strong>{label}:</strong> : <>{label}:</>} {text}
-  </p>
-);
+const ContentParagraph = ({ label, text }) => {
+  if (!text) return null;
+  return (
+    <div className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+      {label && <span className="font-semibold text-gray-900 dark:text-gray-100 block mb-1">{label}</span>}
+      {text}
+    </div>
+  );
+};
 
 export default function CodeAndTextViewer({ response }) {
-  // Destructure the title and the required 'type' field from the response
+  // We use the 'type' we injected in the parent component
   const { title, type, ...data } = response;
 
-  const renderContent = () => {
+  const renderBody = () => {
     switch (type) {
-      // --- Code Debug ---
-      case 'codeDebug':
+      // 🟢 DEBUG
+      case 'debug':
         return (
           <>
-            <div>
-              <SectionTitle>Corrected Code</SectionTitle>
-              <CodeOutputBlock code={data.correctedCode} language="javascript" />
-            </div>
-            <div>
-              <SectionTitle>Explanation</SectionTitle>
-              <p className="text-gray-700 dark:text-gray-300">{data.explanation}</p>
-            </div>
-            <div>
-              <SectionTitle>Issues Found</SectionTitle>
-              <ContentList items={data.issuesFound} />
-            </div>
+            <SectionTitle>Explanation & Fixes</SectionTitle>
+            <ContentParagraph text={data.explanation} />
+            
+            <SectionTitle>Issues Found</SectionTitle>
+            <ContentList items={data.issuesFound} />
+
+            <SectionTitle>Corrected Code</SectionTitle>
+            <CodeOutputBlock code={data.correctedCode || data.code} />
           </>
         );
 
-      // --- Code Generation ---
-      case 'codeGeneration':
+      // 🟢 GENERATE
+      case 'generate':
         return (
           <>
-            <div>
-              <SectionTitle>Generated Code</SectionTitle>
-              <CodeOutputBlock code={data.generatedCode} language="javascript" />
-            </div>
-            <ContentParagraph label="Explanation" text={data.codeExplanation} />
-            <div>
-              <SectionTitle>Important Steps</SectionTitle>
-              <ContentList items={data.importantSteps} />
-            </div>
+            <ContentParagraph label="Overview" text={data.codeExplanation} />
+            
+            <SectionTitle>Generated Code</SectionTitle>
+            <CodeOutputBlock code={data.generatedCode || data.code} />
+
+            <SectionTitle>Key Steps</SectionTitle>
+            <ContentList items={data.importantSteps} />
           </>
         );
 
-      // --- Convert Code ---
-      case 'convertCode':
+      // 🟢 CONVERT
+      case 'convert':
         return (
           <>
-            <div>
-              <SectionTitle>Converted Code</SectionTitle>
-              <CodeOutputBlock code={data.convertedCode} language="javascript" />
-            </div>
             <ContentParagraph label="Conversion Notes" text={data.conversionNotes} />
-            <div>
-              <SectionTitle>Language Tips</SectionTitle>
-              <ContentList items={data.languageTips} />
-            </div>
+            
+            <SectionTitle>Converted Code</SectionTitle>
+            <CodeOutputBlock code={data.convertedCode || data.code} />
+
+            <SectionTitle>Language Specific Tips</SectionTitle>
+            <ContentList items={data.languageTips} />
           </>
         );
 
-      // --- Explain Code ---
-      case 'explainCode':
+      // 🟢 EXPLAIN
+      case 'explain':
         return (
           <>
             <ContentParagraph label="Summary" text={data.summary} />
-            <ContentParagraph label="Control Flow" text={data.controlFlow} />
-            <div>
-              <SectionTitle>Line-by-Line Explanation</SectionTitle>
-              <ContentList items={data.lineByLineExplanation} />
+            
+            <div className="grid md:grid-cols-2 gap-4">
+               <div>
+                 <SectionTitle>Logic Flow</SectionTitle>
+                 <ContentParagraph text={data.controlFlow} />
+               </div>
+               <div>
+                 <SectionTitle>Important Functions</SectionTitle>
+                 <ContentList items={data.importantFunctions} />
+               </div>
             </div>
-            <div>
-              <SectionTitle>Important Functions</SectionTitle>
-              <ContentList items={data.importantFunctions} />
-            </div>
-            <div>
-              <SectionTitle>Edge Cases</SectionTitle>
-              <ContentList items={data.edgeCases} />
-            </div>
+
+            <SectionTitle>Line-by-Line Breakdown</SectionTitle>
+            <ContentList items={data.lineByLineExplanation} />
+
+            <SectionTitle>Edge Cases</SectionTitle>
+            <ContentList items={data.edgeCases} />
           </>
         );
 
       default:
-        // Handle cases where the type is unexpected or missing
-        return <p className="text-red-500">Error: Unknown or unsupported viewer type: **{type}**</p>;
+        return <p className="text-gray-500 italic">No layout definition for type: {type}</p>;
     }
   };
 
-  if (!type) {
-    return <p className="text-red-500">Error: Response is missing a 'type' field.</p>;
-  }
-
   return (
-    <ViewerWrapper title={title}>
-      {renderContent()}
+    <ViewerWrapper title={title || "AI Response"}>
+      {renderBody()}
     </ViewerWrapper>
   );
 }

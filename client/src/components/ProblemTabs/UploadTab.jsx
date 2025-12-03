@@ -49,7 +49,7 @@ function UploadTab() {
                 testCases: [{ input: "", output: "" }],
             });
             console.log("3")
-            fetchMyProblems();
+            // fetchMyProblems();
         } catch (err) {
             toast.error(err?.response?.data?.error || "Submission failed");
             console.error("Submit Error:", err);

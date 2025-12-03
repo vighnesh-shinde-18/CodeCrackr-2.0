@@ -135,8 +135,10 @@ function ProblemTable() {
         // No getFilteredRowModel needed as filtering is done manually via filteredData
     });
 
-    const visitProblem = useCallback((id) => {
-        navigate(`/solve-problem/${id}`);
+    const visitProblem = useCallback((id, original) => {
+        const titleUrl = original.title.replaceAll(" ","-")
+  
+        navigate(`/solve-problem/${titleUrl}/${id}`);
     }, [navigate]);
 
     return (

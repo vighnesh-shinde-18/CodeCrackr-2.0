@@ -1,7 +1,10 @@
 import asyncHandler from "../utils/asyncHandler.js";
 import ApiError from "../utils/ApiError.js";
 import Problem from "../models/Problem.Model.js";
+import Solution from "../models/Solution.Model.js";
+import Reply from "../models/Reply.Model.js";
 import mongoose from "mongoose";
+
 
 const fetchAllProblems = asyncHandler(async (req, res) => {
     try {
@@ -189,35 +192,150 @@ const fetchUserProblem = asyncHandler(async (req, res) => {
 const fecthProblemById = asyncHandler(async (req, res) => {
     try {
         const problemId = req.params.id;
+        // Ensure we handle both .id and ._id depending on how your middleware attaches user
+        const currentUserId = req.user?.id?.toString();
 
         const problem = await Problem.findById(problemId)
             .populate("uploader", "username")
-            .lean()
+            .lean();
 
         if (!problem) {
-            throw new ApiError(404, "Problem Not Found")
+            throw new ApiError(404, "Problem Not Found");
         }
 
+        // 🟢 FIX: Ensure 'reports' is always an array. 
+        // If it's undefined (missing in DB), default to empty array [].
+        const reportsList = problem.reports || [];
+
+        // 🔹 Calculate Report Data using the safe 'reportsList'
+        const reportCount = reportsList.length;
+
+        // Check if current user exists in the reports array
+        const isReported = currentUserId
+            ? reportsList.some((r) => r.reporter.toString() === currentUserId)
+            : false;
+
+        // 🔹 Construct Response
         const responseObj = {
-            id: problemId,
+            id: problem._id,
             title: problem.title,
             description: problem.description,
             topics: problem.topics,
             testCases: problem.testCases,
-            username: problem.uploader.username,
-            uploader: problem.uploader._id
+            username: problem.uploader?.username || "Unknown", // Safe check for uploader
+            userId: problem.uploader?._id,
+            createdAt: problem.createdAt,
+            reportCount,
+            isReported
+        };
+
+        return res.status(200).json({
+            success: true,
+            data: responseObj,
+            message: "Successfully fetched problem details"
+        });
+
+    } catch (error) {
+        console.error("Error fetching problem: ", error);
+        // If error is already an ApiError, rethrow it, otherwise wrap it
+        if (error instanceof ApiError) throw error;
+
+        const statusCode = error.statusCode || 500;
+        const message = error.message || "Server Error";
+        throw new ApiError(statusCode, message);
+    }
+});
+
+const toggleReportProblem = asyncHandler(async (req, res) => {
+    try {
+
+        const userId = req.user.id;
+        const problemId = req.params.id;
+
+        const problem = await Problem.findById(problemId);
+
+        if (!problem) {
+            throw new ApiError(404, "Problem not found");
         }
 
-        return res.status(200).json({ success: true, data: responseObj, message: "successfully fecth problem details" });
+        // Check if user has already reported (Using 'reporter' from schema)
+        const reportIndex = problem.reports.findIndex(
+            (r) => r.reporter.toString() === userId.toString()
+        );
 
+        if (reportIndex !== -1) {
+            // Already reported -> Remove report (Unreport)
+            problem.reports.splice(reportIndex, 1);
+            await problem.save();
+
+            return res.status(200).json({
+                success: true,
+                message: "Problem report removed.",
+                isReported: false,
+                reportCount: problem.reports.length
+            });
+        }
+
+        // Not reported yet -> Add report
+        problem.reports.push({ reporter: userId });
+        await problem.save();
+
+        return res.status(200).json({
+            success: true,
+            message: "Problem reported successfully.",
+            data: {
+                isReported: true,
+                reportCount: problem.reports.length
+            }
+        });
     } catch (error) {
         console.error("Error fetching fetching problem: ", error);
         const statusCode = error.statusCode || 500;
         const message = error.message || "Server Error";
         throw new ApiError(statusCode, message)
     }
-})
+
+});
+
+// 🔹 Delete Question (and its Solutions)
+const deleteProblem = asyncHandler(async (req, res) => {
+    try {
+
+        const problemId = req.params.id;
+
+        const problem = await Problem.findById(problemId);
+
+        if (!problem) {
+            throw new ApiError(404, "Problem not found");
+        }
+
+        // Check if the user is the owner or admin (Optional security step)
+        // if (problem.uploader.toString() !== req.user._id.toString() && !req.user.isAdmin) {
+        //     throw new ApiError(403, "You are not authorized to delete this problem");
+        // }
+
+        // 🔹 CASCADE DELETE: Clean up everything related to this problem ID
+        // 1. Delete all Replies linked to this problem
+        await Reply.deleteMany({ problem: problem._id });
+
+        // 2. Delete all Solutions linked to this problem
+        await Solution.deleteMany({ problem: problem._id });
+
+        // 3. Delete the Problem itself
+        await problem.deleteOne();
+        return res.status(200).json({
+            success: true,
+            message: "Problem and associated solutions deleted successfully."
+        });
+    } catch (error) {
+        console.error("Error fetching fetching problem: ", error);
+        const statusCode = error.statusCode || 500;
+        const message = error.message || "Server Error";
+        throw new ApiError(statusCode, message)
+    }
+});
 
 
 
-export { fetchAllProblems, fetchUserProblem, uploadProblem, fecthProblemById }
+
+export { fetchAllProblems, fetchUserProblem, uploadProblem, fecthProblemById, deleteProblem, toggleReportProblem }

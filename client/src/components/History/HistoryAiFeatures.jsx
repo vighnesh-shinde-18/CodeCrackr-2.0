@@ -22,7 +22,7 @@ import {
 
 // Import the service
 import historyService from "../../api/HistoryServices.jsx"; 
-// import AiResponseViewer from "../aiResponse/AiResponseViewer"; 
+import AiResponseViewer from "../AiResponse/AiResponseViewer.jsx";
 
 export function HistoryAiFeatures() {
   const [history, setHistory] = useState([]);

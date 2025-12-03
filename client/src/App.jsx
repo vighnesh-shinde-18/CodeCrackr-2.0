@@ -35,8 +35,9 @@ function App() {
         <Route path='/problems' element={<Layout><ProblemList /></Layout>} />
         <Route path='/history' element={<Layout><History /></Layout>} />
         <Route path='/ai/:feature' element={<Layout><AIFeature /></Layout>} />
-        <Route path='/problems/:id' element={<ProblemSolving />} />
+        <Route path="/solve-problem/:slug/:id" element={<Layout sidebarVisible={false}><ProblemSolving /></Layout>} />
       </Routes>
+
       <Toaster richColors position='top-right' />
       <ThemeToggleButton />
     </>

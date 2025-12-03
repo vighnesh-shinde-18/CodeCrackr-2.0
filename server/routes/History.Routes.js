@@ -1,6 +1,6 @@
 import express from 'express'
 import { getUserSolvedProblems, getAiInteractions } from '../controllers/History.Controllers.js'
-import verifyJwt from '../middlewares/Auth.Middleware.js'
+import {verifyJwt} from '../middlewares/Auth.Middleware.js'
 
 const router = express.Router()
 

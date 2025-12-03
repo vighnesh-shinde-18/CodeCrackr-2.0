@@ -32,7 +32,7 @@ function ProblemDataTable({ table, columns, visitProblem }) {
                                 <TableRow 
                                     key={row.id} 
                                     className="cursor-pointer hover:bg-muted" 
-                                    onClick={() => visitProblem(row.original.id)}
+                                    onClick={() =>  visitProblem(row.original.id, row.original)}
                                 >
                                     {row.getVisibleCells().map((cell) => (
                                         <TableCell key={cell.id}>

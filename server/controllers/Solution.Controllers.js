@@ -9,18 +9,13 @@ import { compareTwoStrings } from "string-similarity";
 const fetchAllSolutions = asyncHandler(async (req, res) => {
     try {
         const problemId = req.params.id;
-
-        // SAFE USER ID EXTRACTION
         const rawUserId = req.user.id;
-
         const { accepted, submittedByMe, language } = req.query;
 
-        // 1. VALIDATION CHECKS
         if (!problemId || !mongoose.Types.ObjectId.isValid(problemId)) {
             throw new ApiError(400, "Invalid Problem ID format");
         }
 
-        // Validate User ID if present
         let userObjectId = null;
         if (rawUserId && mongoose.Types.ObjectId.isValid(rawUserId)) {
             userObjectId = new mongoose.Types.ObjectId(rawUserId);
@@ -28,7 +23,6 @@ const fetchAllSolutions = asyncHandler(async (req, res) => {
 
         const problemObjectId = new mongoose.Types.ObjectId(problemId);
 
-        // 2. BUILD MATCH STAGE (Filters)
         const matchStage = { problem: problemObjectId };
 
         if (accepted === "true") matchStage.accepted = true;
@@ -46,10 +40,8 @@ const fetchAllSolutions = asyncHandler(async (req, res) => {
         }
 
         const pipeline = [
-            // Stage 1: Filter Solutions
             { $match: matchStage },
-
-            // Stage 2: Join with Users (Get Uploader Info)
+            // Stage 2: Join with Users to get Uploader Username
             {
                 $lookup: {
                     from: "users",
@@ -64,42 +56,38 @@ const fetchAllSolutions = asyncHandler(async (req, res) => {
                     preserveNullAndEmptyArrays: true,
                 },
             },
-
-            // --- NEW STAGE: Join with Replies Collection ---
-            // This pulls all documents from the "replies" collection 
-            // where reply.solution === solution._id
+            // Stage 3: Join with Replies to count them
             {
                 $lookup: {
-                    from: "replies", // Make sure this matches your MongoDB collection name (usually lowercase plural)
-                    localField: "_id", // The Solution ID
-                    foreignField: "solution", // The field in Reply schema pointing to Solution
-                    as: "linkedReplies" // Temporary array to hold the replies
+                    from: "replies",
+                    localField: "_id",
+                    foreignField: "solution",
+                    as: "linkedReplies"
                 }
             },
 
             // Stage 4: Sort (Accepted first, then Newest)
             { $sort: { accepted: -1, createdAt: -1 } },
 
-            //  code: 1,
             // Stage 5: Project/Format Data
-            //   uploaderId: { $ifNull: ["$userDetails._id", ""] },
             {
                 $project: {
                     _id: 0,
                     id: "$_id",
-                    uploaderName: { $ifNull: ["$userDetails.username", "Unknown User"] },
+                    // 🔹 STANDARDIZED: Using 'username' instead of 'uploaderName'
+                    uploader: { $ifNull: ["$userDetails.username", "Unknown User"] },
+                    uploaderId: { $ifNull: ["$userDetails._id", null] }, // Useful for frontend checks
 
                     explanation: 1,
-
                     language: 1,
+                    code: 1,
                     accepted: { $ifNull: ["$accepted", false] },
                     createdAt: 1,
 
-                    // --- UPDATED COUNT LOGIC ---
-                    // Count the size of the array we just created via $lookup
+                    // Reply Count
                     replyCount: { $size: "$linkedReplies" },
 
-                    // Likes Logic (Unchanged)
+                    // Likes Logic
                     likesCount: { $size: { $ifNull: ["$likes", []] } },
                     liked: {
                         $cond: {
@@ -109,7 +97,7 @@ const fetchAllSolutions = asyncHandler(async (req, res) => {
                         }
                     },
 
-                    // Reports Logic (Unchanged)
+                    // Reports Logic
                     reportCount: { $size: { $ifNull: ["$reports", []] } },
                     reported: {
                         $cond: {
@@ -140,27 +128,22 @@ const fetchAllSolutions = asyncHandler(async (req, res) => {
 
 const fetchSolutionById = asyncHandler(async (req, res) => {
     try {
-
         const solutionId = req.params.id;
 
-        // 1. Validate ID format
         if (!mongoose.Types.ObjectId.isValid(solutionId)) {
             throw new ApiError(400, "Invalid Solution ID");
         }
 
         const solutionAgg = await Solution.aggregate([
-            // 🔹 Stage 1: Match the specific solution
             {
                 $match: {
                     _id: new mongoose.Types.ObjectId(solutionId)
                 }
             },
-
-            // 🔹 Stage 2: Join with 'users' to get Uploader Username
             {
                 $lookup: {
                     from: "users",
-                    localField: "uploader", // Change this to "uploader" if your schema uses that field name
+                    localField: "uploader",
                     foreignField: "_id",
                     as: "uploaderDetails",
                 },
@@ -168,46 +151,45 @@ const fetchSolutionById = asyncHandler(async (req, res) => {
             {
                 $unwind: {
                     path: "$uploaderDetails",
-                    preserveNullAndEmptyArrays: true, // Returns null if user is deleted
+                    preserveNullAndEmptyArrays: true,
                 },
             },
-
-            // 🔹 Stage 3: Project ONLY the required fields
             {
                 $project: {
-                    _id: 0, // Exclude default internal _id
+                    _id: 0,
                     id: "$_id",
                     code: 1,
-                    // Map 'explanation' from DB to 'description' as requested
-                    description: "$explanation",
+                    description: "$explanation", // Mapped to description as requested
+                    explanation: 1, // Keeping original key just in case
                     accepted: 1,
-                    username: { $ifNull: ["$uploaderDetails.username", "Unknown"] },
+                    // 🔹 STANDARDIZED: Using 'username' here as well
+                    uploader: { $ifNull: ["$uploaderDetails.username", "Unknown"] },
+                    uploaderId: { $ifNull: ["$uploaderDetails._id", null] },
                     language: 1,
                     createdAt: 1
                 },
             },
         ]);
 
-        // 🔹 Check if solution exists
         if (!solutionAgg.length) {
             throw new ApiError(404, "Solution not found");
         }
 
-        // 🔹 Return success response
         return res.status(200).json({
-            success: true, data: solutionAgg[0], message: "Fetch Solution Details Successfully"
+            success: true,
+            data: solutionAgg[0],
+            message: "Fetch Solution Details Successfully"
         })
     } catch (error) {
         console.error("Error fetching solution by ID:", error);
         throw new ApiError(500, "Server Error")
     }
 })
-
 const submitSolution = asyncHandler(async (req, res) => {
     try {
         const userId = req.user.id;
-
-        const { problemId, code, explanation, language } = req.body;
+        const problemId = req.params.id;
+        const { code, explanation, language } = req.body;
 
         if (!problemId || !code || !explanation || !language) {
             throw new ApiError(400, "All fields are required")
@@ -255,7 +237,7 @@ const submitSolution = asyncHandler(async (req, res) => {
         });
 
         return res.status(201).json(
-            { success: true, data: { solutionId: newSolution._id }, message: "Solution submitted successfully" })
+            { success: true, data: newSolution._id, message: "Solution submitted successfully" })
     } catch (error) {
         console.error("Error submiting solution by ID:", error);
         throw new ApiError(500, "Server Error")
@@ -411,4 +393,4 @@ const deleteSolution = asyncHandler(async (req, res) => {
     }
 })
 
-export { fetchAllSolutions, fetchSolutionById, submitSolution, markSolutionAsAccepted, toggleSolutionInteraction }
+export { fetchAllSolutions, fetchSolutionById, submitSolution, markSolutionAsAccepted, toggleSolutionInteraction, deleteSolution }

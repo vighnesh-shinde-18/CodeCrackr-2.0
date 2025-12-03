@@ -1,10 +1,10 @@
 import { config } from "../config/config.js";
+ 
 import axios from 'axios'
-import { toast } from "sonner";
 
-export class ProblemService {
+export class SolutionService {
 
-    baseUrl = config.backendUrl + '/api/v1/problem';
+    baseUrl = config.backendUrl + '/api/v1/solution';
 
     constructor() {
 
@@ -17,44 +17,58 @@ export class ProblemService {
         });
     }
 
-    async uploadProblem({ title, description, topics, testCases }) {
+    async fetchAllSolutions(id, { accepted, submittedByMe }) {
+        try {
+            // CHANGED: .post() to .get()
+            // Also added logic to handle undefined values to avoid "undefined" strings in URL
+            const queryParams = new URLSearchParams();
+            if (accepted !== undefined) queryParams.append("accepted", accepted);
+            if (submittedByMe !== undefined) queryParams.append("submittedByMe", submittedByMe);
+
+            const response = await this.api.get(`/problem/${id}?${queryParams.toString()}`);
+            return response.data.data;
+        } catch (error) {
+            this.handleError(error);
+        }
+    }
+
+    async fetchSolutionDetails(id) {
+        try {
+            const response = await this.api.post(`/${id}`)
+
+            return response.data.data;
+        } catch (error) {
+            this.handleError(error)
+        }
+
+    }
+
+    async SubmitSolution(id, { code, explanation, language }) {
         try {
             const payload = {
-                title: title.trim(),
-                description: description.trim(),
-                topics: topics
-                    .split(",")
-                    .map((t) => t.trim())
-                    .filter(Boolean),
-                testCases: testCases,
-            };
-            const response = await this.api.post("/upload",
-                payload
-            )
+                code, explanation, language
+            }
+            const response = await this.api.post(`/problem/${id}`, payload)
+            console.log(response.data)
+            return response.data.data
+        } catch (error) {
+            this.handleError(error)
+        }
+    }
+
+    async toggleSolutionAccept(id) {
+        try {
+            const response = await this.api.patch(`accept/${id}`)
+            console.log(response.data)
             return response.data;
         } catch (error) {
             this.handleError(error)
         }
     }
 
-    async fetchUserUploadProblem({ topic }) {
-        topic = (topic === "all" ? null : topic)
-
+    async toggleSolutionInteraction(id, action) {
         try {
-            const response = await this.api.post("/user-uploads",
-                { topic }
-            )
-
-            return response.data.data;
-        } catch (error) {
-            this.handleError(error)
-        }
-
-    }
-
-    async fetchAllProblmes() {
-        try {
-            const response = await this.api.get("/")
+            const response = await this.api.patch(`/toggle/${id}?action=${action}`)
             console.log(response.data)
             return response.data.data
         } catch (error) {
@@ -62,32 +76,12 @@ export class ProblemService {
         }
     }
 
-    async fecthProblemDetails(id) {
+    async deleteSolution(id) {
         try {
-            const response = await this.api.get(`/${id}`)
-            console.log(response.data)
-            return response.data.data;
-        } catch (error) {
-            this.handleError(error)
-        }
-    }
-
-    async toggleReportProblem(id){
-        try{
-            const response = await this.api.patch(`/${id}`)
-            console.log(response.data)
-            return response.data.data
-        }catch(error){
-            this.handleError(error)
-        }
-    }
-
-    async deleteProblem(id){
-        try{
             const response = await this.api.delete(`/${id}`)
             console.log(response.data)
-            return response.data; 
-        }catch(error){
+            return response.data;
+        } catch (error) {
             this.handleError(error)
         }
     }
@@ -109,5 +103,5 @@ export class ProblemService {
     }
 }
 
-const problemService = new ProblemService()
-export default problemService;
+const solutionService = new SolutionService()
+export default solutionService;

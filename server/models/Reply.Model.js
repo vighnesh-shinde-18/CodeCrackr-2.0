@@ -1,6 +1,11 @@
 import mongoose, { model } from "mongoose";
 
 const replySchema = new mongoose.Schema({
+    question:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Problem",
+        required:true
+    },
     solution:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Solution",

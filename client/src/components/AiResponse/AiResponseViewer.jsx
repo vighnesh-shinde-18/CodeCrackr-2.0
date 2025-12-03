@@ -1,74 +1,69 @@
-import React from "react";
-
-// Import the new clustered viewer components
-// NOTE: You only import the 3 main content clusters now, plus the Wrapper (if needed elsewhere)
-import CodeAndTextViewer from "./CodeAndTextViewer.jsx"; // Merged: Debug, Generate, Convert, Explain
-import CodeReviewViewer from "./CodeReviewViewer"; // Dedicated: Review
-import TestCasesViewer from "./TestCasesViewer";   // Dedicated: Test Cases
+import React, { useMemo } from "react";
+import CodeAndTextViewer from "./CodeAndTextViewer";
+import CodeReviewViewer from "./CodeReviewViewer";
+import TestCasesViewer from "./TestCasesViewer";
 
 export default function AiResponseViewer({ response, featureType, isHistory = false }) {
-  if (!response || Object.keys(response).length === 0) return null;
+  // 1. Safety Checks
+  if (!response) return null;
+  if (!featureType) return <ErrorBadge message="Feature type is missing." />;
 
-  if (!featureType) {
-    return (
-      <div className="p-4 rounded bg-red-100 text-red-700">
-        Feature type is missing.
-      </div>
-    );
-  }
+  // 2. Parse Response Safe Memomization
+  const parsedResponse = useMemo(() => {
+    try {
+      // If it's already an object, return it; otherwise parse string
+      const data = typeof response === "string" ? JSON.parse(response) : response;
+      // Inject the featureType into the object for the children to use
+      return { ...data, type: featureType };
+    } catch (err) {
+      console.error("JSON Parse Error:", err);
+      return null;
+    }
+  }, [response, featureType]);
 
-  // Ensure 'response' is a JavaScript object before proceeding
-  let parsedResponse;
-  try {
-    parsedResponse = typeof response === "string" ? JSON.parse(response) : response;
-  } catch (err) {
-    return (
-      <div className="mt-4 p-3 rounded bg-red-100 text-red-600 text-sm">
-        Invalid AI response format
-      </div>
-    );
-  }
+  if (!parsedResponse) return <ErrorBadge message="Invalid AI response format." />;
 
-  // Add the feature type to the response object. This is CRUCIAL for
-  // CodeAndTextViewer to know what content to render internally.
-  const responseWithFeature = { ...parsedResponse, type: featureType };
-
-  const renderViewer = () => {
+  // 3. Render Strategy
+  const renderContent = () => {
     switch (featureType) {
-      // Cluster 1: CodeAndTextViewer handles these four feature types
+      // Cluster 1: Text + Code Mixed
       case "debug":
       case "generate":
       case "convert":
       case "explain":
-        // Pass the response including the 'type' field
-        return <CodeAndTextViewer response={responseWithFeature} />;
+        return <CodeAndTextViewer response={parsedResponse} />;
 
-      // Cluster 2: CodeReviewViewer is specialized
+      // Cluster 2: Structured Review Data
       case "review":
-        return <CodeReviewViewer response={responseWithFeature} />;
+        return <CodeReviewViewer response={parsedResponse} />;
 
-      // Cluster 3: TestCasesViewer is specialized (table)
+      // Cluster 3: Tabular Data
       case "testcases":
-        return <TestCasesViewer response={responseWithFeature} />;
+        return <TestCasesViewer response={parsedResponse} />;
 
       default:
-        return (
-          <div className="mt-4 p-3 rounded bg-yellow-100 text-yellow-700 text-sm">
-            Unknown feature type: **{featureType}**
-          </div>
-        );
+        return <ErrorBadge message={`Unknown feature type: ${featureType}`} />;
     }
   };
 
-  // History Wrapper logic remains the same
-  return isHistory ? (
-    <div className="m-6 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-900 shadow-sm p-6 space-y-4">
-      <h2 className="text-xl font-bold text-gray-900 dark:text-white">AI Response</h2>
-      {renderViewer()}
-    </div>
-  ) : (
-    <>
-      {renderViewer()}
-    </> 
-  );
+  // return isHistory ?
+  return (
+    <div className="m-6 border border-gray-200 dark:border-gray-800 rounded-xl bg-white dark:bg-zinc-950 shadow-sm p-6 space-y-4">
+      <h2 className="text-xl font-bold text-gray-900 dark:text-white border-b pb-2 dark:border-gray-800">
+        AI Analysis
+      </h2>
+      {renderContent()}
+    </div>)
+  // ) : (
+  //   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+  //     {renderContent()}
+  //   </div>
+  // );
 }
+
+// Micro-component for errors
+const ErrorBadge = ({ message }) => (
+  <div className="p-3 rounded-md bg-red-50 text-red-600 text-sm border border-red-200">
+    {message}
+  </div>
+);
