@@ -10,8 +10,8 @@ import {
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 
+// Sub-component: PodiumCard (No React.memo needed here as props change frequently)
 function PodiumCard({ place, user, metricLabel, isUserCard = false }) {
-
     if (!user && !isUserCard) {
         return (
             <div className={`flex flex-col items-center justify-end p-2 transition-all duration-300 ${place === 1 ? 'h-64' : place === 2 ? 'h-56' : 'h-48'} w-full`}>
@@ -23,19 +23,14 @@ function PodiumCard({ place, user, metricLabel, isUserCard = false }) {
     }
 
     const placeDisplay = { 1: '🥇 1st Place', 2: '🥈 2nd Place', 3: '🥉 3rd Place' };
-
     let rankDisplay = placeDisplay[place];
-
     if (isUserCard) {
         rankDisplay = `Rank: #${user.currentRank || 'N/A'}`;
     }
 
     return (
-        // Outer div handles the dynamic total height and alignment (justify-end)
-        <div className={`flex flex-col items-center justify-end p-2 transition-all duration-300  w-full`}>
-            <Card
-                className={`w-full text-center transition-all duration-300 shadow-xl ${isUserCard ? 'border-2 border-primary' : ''}`} // Border for user card
-            >
+        <div className={`flex flex-col items-center justify-end p-2 transition-all duration-300 w-full`}>
+            <Card className={`w-full text-center transition-all duration-300 shadow-xl ${isUserCard ? 'border-2 border-primary' : ''}`}>
                 <CardHeader className="p-3 pb-1">
                     <CardTitle className="text-lg text-primary">
                         {isUserCard ? 'You' : rankDisplay}
@@ -45,87 +40,74 @@ function PodiumCard({ place, user, metricLabel, isUserCard = false }) {
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="p-3 pt-0 flex flex-col items-center">
-                       {isUserCard? (<Avatar className={`h-12 w-12 border-2 ${isUserCard ? 'border-primary' : 'border-gray-300'} shadow-md`}>
-                        <AvatarFallback className="text-sm font-bold">
-                            {user.username ? user.username.slice(0, 2).toUpperCase() : 'U'}
-                        </AvatarFallback>
-                    </Avatar>) : <div className="h-10 w-10 font-bold text-xl flex items-center justify-center rounded-full ">
-                            {user.score}
-                        </div>  }
-                        <p className="mt-3 font-bold text-lg text-black dark:text-white truncate max-w-full">
-                            {user.username || 'Current User'}
-                        </p>
-
                     {isUserCard ? (
-                        <div className="mt-3 grid grid-cols-3 gap-2 w-full text-xs">
-                            <Badge className="bg-green-100 text-green-700 justify-center h-auto py-1">{user.totalAcceptedSolutions} Accepted Solutions</Badge>
-                            <Badge className="bg-blue-100 text-blue-700 justify-center h-auto py-1">{user.totalProblemsPosted} Problems Uploaded</Badge>
-                            <Badge className="bg-yellow-100 text-yellow-700 justify-center h-auto py-1">{user.totalSolutionsGiven} Solutions Uploaded</Badge>
+                        <Avatar className={`h-12 w-12 border-2 ${isUserCard ? 'border-primary' : 'border-gray-300'} shadow-md`}>
+                            <AvatarFallback className="text-sm font-bold">
+                                {user.username ? user.username.slice(0, 2).toUpperCase() : 'U'}
+                            </AvatarFallback>
+                        </Avatar>
+                    ) : (
+                        <div className="h-10 w-10 font-bold text-xl flex items-center justify-center rounded-full">
+                            {user.score}
                         </div>
-                    ) : (<></>)}
+                    )}
+                    <p className="mt-3 font-bold text-lg text-black dark:text-white truncate max-w-full">
+                        {user.username || 'Current User'}
+                    </p>
+
+                    {isUserCard && (
+                        <div className="mt-3 grid grid-cols-3 gap-2 w-full text-xs">
+                            <Badge className="bg-green-100 text-green-700 justify-center h-auto py-1">{user.totalAcceptedSolutions} Accepted</Badge>
+                            <Badge className="bg-blue-100 text-blue-700 justify-center h-auto py-1">{user.totalProblemsPosted} Uploaded</Badge>
+                            <Badge className="bg-yellow-100 text-yellow-700 justify-center h-auto py-1">{user.totalSolutionsGiven} Solutions</Badge>
+                        </div>
+                    )}
                 </CardContent>
             </Card>
         </div>
     );
 }
 
-
-// --- Main Leaderboard Component ---
-
+// Main Component
 export default function LeaderboardComponent({ allMetricsData, currentUserStats }) {
-    // Default to 'Accepted Answers' metric for the initial view
     const [selectedMetric, setSelectedMetric] = useState('Accepted Answers');
-
     const METRIC_USER_STATS = 'Your Stats';
+
+    // Optimized: Memoize filter options to prevent recalculation on every render
     const allFilterOptions = useMemo(() => {
         return [...allMetricsData.map(m => m.metric), METRIC_USER_STATS];
     }, [allMetricsData]);
 
-    // 1. Find the data for the currently selected metric
+    // Optimized: Memoize the specific data lookup
     const currentMetricData = useMemo(() => {
         if (selectedMetric === METRIC_USER_STATS) {
-            // When "Your Stats" is selected, we don't need podium data
             return {};
         }
         return allMetricsData.find(m => m.metric === selectedMetric)?.data || {};
     }, [allMetricsData, selectedMetric]);
 
-
-    // Data for the podium slots
     const { first, second, third } = currentMetricData;
     const metricLabel = selectedMetric === METRIC_USER_STATS ? '' : selectedMetric;
-
-
-    // --- Render Logic ---
 
     let podiumContent;
 
     if (selectedMetric === METRIC_USER_STATS) {
-        // Option 1: Render the user's stats across the full width
         podiumContent = (
             <div className="flex justify-center w-full">
-                <div className=" flex justify-center">
-                    <PodiumCard
-                        place={1}
-                        user={currentUserStats}
-                        isUserCard={true}
-                        metricLabel="Your Stats"
-                    />
+                <div className="flex justify-center">
+                    <PodiumCard place={1} user={currentUserStats} isUserCard={true} metricLabel="Your Stats" />
                 </div>
             </div>
         );
     } else {
-        // Option 2: Render the standard Top 3 podium
         podiumContent = (
             <>
                 <div className="w-1/3 flex justify-center">
                     <PodiumCard place={2} user={second} metricLabel={metricLabel} />
                 </div>
-                {/* 1st Place */}
                 <div className="w-1/3 flex justify-center">
                     <PodiumCard place={1} user={first} metricLabel={metricLabel} />
                 </div>
-                {/* 3rd Place */}
                 <div className="w-1/3 flex justify-center">
                     <PodiumCard place={3} user={third} metricLabel={metricLabel} />
                 </div>

@@ -35,7 +35,7 @@ export function HistoryAiFeatures() {
   const featureMap = useMemo(() => ({
     DebugCode: "Debug",
     ReviewCode: "Review",
-    GeneratCode: "Generate", 
+    GenerateCode: "Generate", 
     ExplainCode: "Explain",
     ConvertCode: "Convert",
     GenerateTestCases: "Testcases",
@@ -43,16 +43,14 @@ export function HistoryAiFeatures() {
 
   const getDisplayName = useCallback((backendKey) => featureMap[backendKey] || backendKey, [featureMap]);
 
-  // Simplified Fetch: No debounce, no abort controller
+  // Simplified Fetch
   const fetchInteractions = useCallback(async () => {
     setLoading(true);
     try {
-      // Calls API to fetch interactions
       const result = await historyService.UserAiInteraction(filter);
 
       if (!result || !result.data) return;
 
-      // Map API Response to Component State
       const formatted = result.data.map((item, idx) => ({
         _id: item._id,
         id: idx + 1,
@@ -65,9 +63,6 @@ export function HistoryAiFeatures() {
         fullDate: item.createdAt 
       }));
 
-      // Optional: Client-side filtering if you want the dropdown to work visually
-      // or pass 'filter' to the API if your backend supports it.
-      // For this example, we set the data directly.
       if (filter !== "all" && filter !== "All") {
          setHistory(formatted.filter(item => item.featureType === filter));
       } else {
@@ -93,21 +88,14 @@ export function HistoryAiFeatures() {
     setViewDialog(true);
   };
 
-  // SIMPLIFIED: Only Toast + Local Update (No API Call)
   const handleDelete = (id) => {
-    // 1. Update UI locally to make it feel real
     setHistory((prev) => prev.filter((item) => item._id !== id));
-    // 2. Show Notification
     toast.success("Interaction deleted successfully");
   };
 
-  // SIMPLIFIED: Only Toast + Local Update (No API Call)
   const handleDeleteAll = () => {
     if(!confirm("Are you sure you want to delete all history?")) return;
-    
-    // 1. Update UI locally
     setHistory([]);
-    // 2. Show Notification
     toast.success("All history cleared");
   };
 
@@ -226,10 +214,16 @@ export function HistoryAiFeatures() {
             
             <div className="space-y-2">
                 <strong className="block text-base">AI Response:</strong>
+                {/* Correction here:
+                   1. response: passed selectedInteraction.response (the actual data), not selectedInteraction (the wrapper)
+                   2. featureType: mapped the Display name (e.g. "Debug") to lowercase ("debug") to match AiResponseViewer
+                */}
                 <div className="border rounded-md p-4 bg-slate-50 dark:bg-slate-900">
-                    <pre className="whitespace-pre-wrap overflow-auto max-h-[400px]">
-                        {JSON.stringify(selectedInteraction?.response, null, 2)}
-                    </pre>
+                    <AiResponseViewer 
+                        isHistory={true} 
+                        response={selectedInteraction?.response} 
+                        featureType={selectedInteraction?.featureDisplay?.toLowerCase()}
+                    />
                 </div>
             </div>
           </div>

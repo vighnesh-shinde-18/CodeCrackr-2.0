@@ -1,7 +1,7 @@
 import { CheckCircle2, ThumbsUp, Flag, MessageSquare } from "lucide-react";
-import { useState, useCallback, memo, useEffect } from "react";
+import { useState, useCallback, memo, useEffect, useRef } from "react";
 import { toast } from "sonner";
-import solutionService from "../../api/SolutionServices.jsx"; 
+import solutionService from "../../api/SolutionServices.jsx";
 
 export default function SolutionReplies({
   allSolutions,
@@ -30,86 +30,122 @@ export default function SolutionReplies({
 }
 
 const SolutionCard = ({ solution, isSelected, onSelect }) => {
-  // 🔹 STATE INITIALIZATION
-  const [likesCount, setLikesCount] = useState(solution.likesCount || 0);
-  const [liked, setLiked] = useState(solution.liked || false);
-  
-  const [reportCount, setReportCount] = useState(solution.reportCount || 0);
-  const [reported, setReported] = useState(solution.reported || false);
-  
+  const [interactionData, setInteractionData] = useState({
+    likesCount: 0,
+    liked: false,
+    reportCount: 0,
+    reported: false,
+  });
+
+  const [loading, setLoading] = useState({
+    like: false,
+    report: false,
+  });
+
+  // synchronous in–flight flags (fix double-click issue)
+ 
   const replyCount = solution.replyCount || 0;
 
-  // 🔹 SYNC STATE WITH PROPS
+  // Sync local state when solution changes
   useEffect(() => {
-    setLikesCount(solution.likesCount || 0);
-    setLiked(solution.liked || false);
-    setReportCount(solution.reportCount || 0);
-    setReported(solution.reported || false);
+    setInteractionData({
+      likesCount: solution.likesCount || 0,
+      liked: solution.liked,
+      reportCount: solution.reportCount || 0,
+      reported: solution.reported,
+    });
   }, [solution]);
 
-  // 🔹 HANDLE LIKE
-  const handleToggleLike = useCallback(async (e) => {
-    e.stopPropagation();
+  // LIKE handler
+  const handleToggleLike = useCallback(
+    async (e) => {
+      e.stopPropagation();
 
-    // Prevent action if reported (Button is disabled, but double check here)
-    if (reported) return;
+      // hard block double-tap while request in-flight
+       
 
-    // Optimistic Update
-    const prevLiked = liked;
-    const prevCount = likesCount;
+      setLoading((curr) => ({ ...curr, like: true }));
 
-    setLiked(!liked);
-    setLikesCount((prev) => (!liked ? prev + 1 : prev - 1));
+    
+      try {
+        const data = await solutionService.toggleLike(solution.id);
 
-    try {
-      const data = await solutionService.toggleSolutionInteraction(solution.id, "like");
-      
-      if (data) {
-        setLiked(data.active);
-        setLikesCount(data.count);
-      }
-    } catch (error) {
-      // Revert on Error
-      setLiked(prevLiked);
-      setLikesCount(prevCount);
-      toast.error("Failed to like solution");
-    }
-  }, [liked, likesCount, reported, solution.id]);
-
-  // 🔹 HANDLE REPORT
-  const handleToggleReport = useCallback(async (e) => {
-    e.stopPropagation();
-
-    // Prevent action if liked
-    if (liked) return;
-
-    // Optimistic Update
-    const prevReported = reported;
-    const prevCount = reportCount;
-
-    setReported(!reported);
-    setReportCount((prev) => (!reported ? prev + 1 : prev - 1));
-
-    try {
-      const data = await solutionService.toggleSolutionInteraction(solution.id, "report");
-
-      if (data) {
-        setReported(data.active);
-        setReportCount(data.count);
+        // if backend returns canonical state, prefer that
         
-        if (data.active) {
-            toast.success("Solution reported.");
-        } else {
-            toast.info("Report removed.");
+      } catch (error) {
+        // rollback on failure
+        if (prevSnapshot) {
+          setInteractionData(prevSnapshot);
         }
+        console.error("Like failed:", error);
+        toast.error("Failed to like solution");
+      } finally {
+          }
+    },
+    [solution.id]
+  );
+
+  // REPORT handler
+  const handleToggleReport = useCallback(
+    async (e) => {
+      e.stopPropagation();
+
+      if (reportInFlightRef.current) return;
+      reportInFlightRef.current = true;
+
+      setLoading((curr) => ({ ...curr, report: true }));
+
+      let prevSnapshot;
+      setInteractionData((prev) => {
+        prevSnapshot = prev;
+        const willReport = !prev.reported;
+        return {
+          ...prev,
+          reported: willReport,
+          reportCount: Math.max(
+            0,
+            prev.reportCount + (willReport ? 1 : -1)
+          ),
+        };
+      });
+
+      try {
+        const data = await solutionService.toggleReport(solution.id);
+
+        if (data) {
+          setInteractionData((curr) => ({
+            ...curr,
+            reported:
+              typeof data.reported === "boolean"
+                ? data.reported
+                : curr.reported,
+            reportCount:
+              typeof data.reportCount === "number"
+                ? data.reportCount
+                : curr.reportCount,
+          }));
+
+          if (data.reported) {
+            toast.success("Solution reported.");
+          } else {
+            toast.info("Report removed.");
+          }
+        }
+      } catch (error) {
+        if (prevSnapshot) {
+          setInteractionData(prevSnapshot);
+        }
+        console.error("Report failed:", error);
+        toast.error("Failed to report solution");
+      } finally {
+        reportInFlightRef.current = false;
+        setLoading((curr) => ({ ...curr, report: false }));
       }
-    } catch (error) {
-      // Revert on Error
-      setReported(prevReported);
-      setReportCount(prevCount);
-      toast.error("Failed to report solution");
-    }
-  }, [reported, reportCount, liked, solution.id]);
+    },
+    [solution.id]
+  );
+
+  const { liked, likesCount, reported, reportCount } = interactionData;
 
   return (
     <div
@@ -121,8 +157,10 @@ const SolutionCard = ({ solution, isSelected, onSelect }) => {
       }`}
     >
       <div className="flex justify-between items-start">
-        <p className="font-semibold">{solution.username || solution.uploader || "Unknown User"}</p>
-        
+        <p className="font-semibold">
+          {solution.username || solution.uploader || "Unknown User"}
+        </p>
+
         {solution.accepted && (
           <div className="flex items-center text-green-600 text-sm gap-1">
             <CheckCircle2 className="size-4" />
@@ -136,21 +174,15 @@ const SolutionCard = ({ solution, isSelected, onSelect }) => {
       </p>
 
       <div className="flex items-center mt-3 gap-4 text-sm text-gray-500 dark:text-gray-300">
-        
         {/* LIKE BUTTON */}
         <button
           onClick={handleToggleLike}
-          disabled={reported} // 🔹 DISABLE if reported
+          disabled={loading.like}
           className={`flex items-center gap-1 transition-colors ${
-            reported 
-              ? "opacity-50 cursor-not-allowed text-gray-400" 
-              : liked 
-                ? "text-blue-600 font-bold" 
-                : "hover:text-blue-500"
-          }`}
-          title={reported ? "Cannot like a reported solution" : "Like this solution"}
+            liked ? "text-blue-600 font-semibold" : "hover:text-blue-500"
+          } ${loading.like ? "opacity-60 cursor-wait" : ""}`}
+          title="Like this solution"
         >
-          {/* Explicit fill color ensures it stays colored */}
           <ThumbsUp className={`w-4 h-4 ${liked ? "fill-blue-600" : ""}`} />
           <span>{likesCount}</span>
         </button>
@@ -158,21 +190,17 @@ const SolutionCard = ({ solution, isSelected, onSelect }) => {
         {/* REPORT BUTTON */}
         <button
           onClick={handleToggleReport}
-          disabled={liked} // 🔹 DISABLE if liked
+          disabled={loading.report}
           className={`flex items-center gap-1 transition-colors ${
-            liked 
-              ? "opacity-50 cursor-not-allowed text-gray-400" 
-              : reported 
-                ? "text-red-600 font-bold" 
-                : "hover:text-red-500"
-          }`}
-          title={liked ? "Cannot report a liked solution" : "Report this solution"}
+            reported ? "text-red-600 font-semibold" : "hover:text-red-500"
+          } ${loading.report ? "opacity-60 cursor-wait" : ""}`}
+          title="Report this solution"
         >
           <Flag className={`w-4 h-4 ${reported ? "fill-red-600" : ""}`} />
           <span>{reportCount}</span>
         </button>
 
-        {/* REPLY COUNT */}
+        {/* REPLY COUNT (read-only) */}
         <div className="flex items-center gap-1 cursor-default">
           <MessageSquare className="w-4 h-4" />
           <span>{replyCount}</span>

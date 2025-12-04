@@ -1,13 +1,14 @@
+import React from 'react'; // Needed for React.memo
 import {
   IconUsers,
   IconMessageQuestion,
   IconMessageCircleCode,
-  IconCpu,
-} from "@tabler/icons-react"
+} from "@tabler/icons-react";
 
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
-export function SectionCards({ usersCount, questionCount, solutionCount }) {
+// Optimized: Wrapped in React.memo to prevent unnecessary re-renders
+export const SectionCards = React.memo(function SectionCards({ usersCount, questionCount, solutionCount }) {
   return (
     <div className="grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4">
       {/* Total Users */}
@@ -52,5 +53,5 @@ export function SectionCards({ usersCount, questionCount, solutionCount }) {
         </CardFooter>
       </Card>
     </div>
-  )
-}
+  );
+});

@@ -50,8 +50,9 @@ function ProblemTab() {
     // We only display the problems returned by the API for the current `topicFilter`.
 
     const visitProblem =
-        (problemId) => {
-            navigate(`/solve-problem/${problemId}`);
+        (original, problemId) => {
+            const titleUrl = original.title.replaceAll(" ","-")
+            navigate(`/solve-problem/${titleUrl}/${problemId}`);
         };
 
     const submittedPlural =
@@ -95,7 +96,7 @@ function ProblemTab() {
                     {myProblems.map((problem, index) => (
                         <div
                             key={index}
-                            onClick={() => visitProblem(problem.id)}
+                            onClick={() => visitProblem(problem,problem.id)}
                             className="cursor-pointer border rounded-md p-4 shadow-sm hover:bg-muted transition-all hover:scale-[1.01]"
                         >
                             <div className="flex justify-between items-center">

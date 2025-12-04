@@ -8,19 +8,22 @@ const testCasesSchema = new mongoose.Schema({
 const reportSchema = new mongoose.Schema({
     reporter: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     reportAt: { type: Date, default: Date.now }
-},{_id:false})
+}, { _id: false })
 
 const problemSchema = new mongoose.Schema({
     title: {
-        type: String, required: true, unique: true, trim: true
+        type: String, required: true, unique: true, trim: true, index: true
     },
     description: {
         type: String, required: true, trim: true
     },
-    topics: [String],
+    topics: {
+        type: [String],
+        index: true
+    },
     testCases: [testCasesSchema],
-    uploader: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    reports: [reportSchema]
+    uploader: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true, index: true },
+    reports: { type: [reportSchema], index: true }
 
 }, { timestamps: true })
 

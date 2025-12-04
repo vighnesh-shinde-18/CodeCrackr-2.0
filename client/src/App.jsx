@@ -29,8 +29,8 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
         <Route path='/reset-password' element={<ResetPassword />} />
-        <Route path='/problem-manager' element={<Layout><ProblemManager /></Layout>} />
         <Route path='/dashboard' element={<Layout><Dashboard /></Layout>} />
+        <Route path='/problem-manager' element={<Layout><ProblemManager /></Layout>} />
         <Route path='/code-playground' element={<Layout><CodePlayGround /></Layout>} />
         <Route path='/problems' element={<Layout><ProblemList /></Layout>} />
         <Route path='/history' element={<Layout><History /></Layout>} />

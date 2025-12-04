@@ -20,11 +20,11 @@ import historyService from "../../api/HistoryServices.jsx"; // Adjust path as ne
 export function HistoryProblems() {
   const [problems, setProblems] = useState([]);
   const [loading, setLoading] = useState(false);
-  
+
   // Filter States
   const [topicFilter, setTopicFilter] = useState("All");
   const [acceptedFilter, setAcceptedFilter] = useState("All");
-  
+
   // Store all unique topics found (to populate dropdown even when filtering)
   const [availableTopics, setAvailableTopics] = useState([]);
 
@@ -36,7 +36,7 @@ export function HistoryProblems() {
     try {
       // Prepare payload matches Backend expectation
       // Backend expects: topic (string), accepted (boolean or undefined/"All")
-      
+
       let acceptedPayload;
       if (acceptedFilter === "Accepted") acceptedPayload = true;
       else if (acceptedFilter === "Not Accepted") acceptedPayload = false;
@@ -70,8 +70,10 @@ export function HistoryProblems() {
   }, [fetchProblems]);
 
   // 3. Navigation Handler
-  const handleNavigate = (id) => {
-    navigate(`/solve-problem/${id}`);
+  const handleNavigate = (original, problemId) => {
+    const titleUrl = original.title.replaceAll(" ", "-")
+    navigate(`/solve-problem/${titleUrl}/${problemId}`);
+
   };
 
   return (
@@ -80,7 +82,7 @@ export function HistoryProblems() {
         <h3 className="text-lg font-medium">Replied Problems</h3>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          
+
           {/* Topic Filter */}
           <Select value={topicFilter} onValueChange={setTopicFilter}>
             <SelectTrigger className="w-full sm:w-48">
@@ -135,7 +137,7 @@ export function HistoryProblems() {
               problems.map((p, index) => (
                 <TableRow
                   key={p.id}
-                  onClick={() => handleNavigate(p.id)}
+                  onClick={() => handleNavigate(p,p.id)}
                   className="cursor-pointer hover:bg-muted/50 transition-colors"
                 >
                   <TableCell className="font-medium">{index + 1}</TableCell>

@@ -1,0 +1,21 @@
+ 
+services:
+  codecrackr-app:
+    build: .
+    ports:
+      - "5000:5000" # Map localhost:5000 to container:5000
+    environment:
+      - PORT=3000
+      - ADMIN_EMAIL=vighneshshinde80@gmail.com
+      - MONGODB_URL=mongodb://127.0.0.1:27017
+      - ACCESS_TOKEN_SECRET=VIGHnesh@181103
+      - ACCESS_TOKEN_EXPIRY='5d'  
+      - SAL=5  
+      - GEMINI_API_KEY=AIzaSyA1Tibs6g-bPBla2iJXFSEjAZbrwZI-Yv0
+      - FRONTEND_URL=http://localhost:5173
+      - EMAIL_USER=vighnesh181103@gmail.com
+      - EMAIL_PASS=wbih urzo ffei ztpg
+      - JUDGE0_KEY=9db300b0a8mshc279794aaec0042p1384ecjsn7ed238228577
+
+      # IMPORTANT: In Docker, Frontend and Backend are on the same origin.
+      # You usually don't need CORS for localhost, but good to keep envs here.

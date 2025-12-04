@@ -25,7 +25,7 @@ function AIFeature() {
     const slugToFeature = useMemo(() => ({
         debug: ["Debug Code", 'DebugCode'],
         review: ["Review & Refactor Code", "ReviewCode"],
-        generate: ["Generate Code", "GeneratCode"],
+        generate: ["Generate Code", "GenerateCode"],
         convert: ["Convert Code", "ConvertCode"], // Note: Ensure API endpoint matches your backend
         explain: ["Explain Code", "ExplainCode"],
         testcases: ["Generate Test Cases", "GenerateTestCases"]

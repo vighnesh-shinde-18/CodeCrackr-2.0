@@ -4,12 +4,14 @@ const interactionSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'User'
+        ref: 'User',
+        index:true
     },
     FeatureType: {
         type: String,
         enum: ['GeneratCode', 'DebugCode', 'ExplainCode','ConvertCode','ReviewCode',"GenerateTestCases"],  
-        required: true
+        required: true,
+        index:true
     },
     UserInput:{
         type:String,

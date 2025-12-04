@@ -81,7 +81,6 @@ export default function Dashboard() {
                         isLoading={isLoading}
                     />
                     
-                    {/* Section for Leaderboard (Podium) */}
                     <div className="px-4 lg:px-6">
                         {isLoading ? (
                             <p className="text-center text-blue-500">Loading leaderboard...</p>

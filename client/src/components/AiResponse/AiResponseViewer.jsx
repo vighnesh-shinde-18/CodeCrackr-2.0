@@ -47,13 +47,9 @@ export default function AiResponseViewer({ response, featureType, isHistory = fa
   };
 
   // return isHistory ?
-  return (
-    <div className="m-6 border border-gray-200 dark:border-gray-800 rounded-xl bg-white dark:bg-zinc-950 shadow-sm p-6 space-y-4">
-      <h2 className="text-xl font-bold text-gray-900 dark:text-white border-b pb-2 dark:border-gray-800">
-        AI Analysis
-      </h2>
-      {renderContent()}
-    </div>)
+  return (<>
+    {renderContent()}
+  </>)
   // ) : (
   //   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
   //     {renderContent()}

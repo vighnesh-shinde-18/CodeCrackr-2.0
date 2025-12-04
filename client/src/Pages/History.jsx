@@ -15,7 +15,6 @@ function History(){
                     <TabsTrigger value="problems" className="cursor-pointer">Problems</TabsTrigger>
                     <TabsTrigger value="ai" className="cursor-pointer">AI Features</TabsTrigger>
                 </TabsList>
-
                 <TabsContent  value="problems">
                     <HistoryProblems />
                 </TabsContent>

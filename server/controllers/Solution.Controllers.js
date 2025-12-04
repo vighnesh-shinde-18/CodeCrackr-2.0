@@ -10,7 +10,7 @@ const fetchAllSolutions = asyncHandler(async (req, res) => {
     try {
         const problemId = req.params.id;
         const rawUserId = req.user.id;
-        const { accepted, submittedByMe, language } = req.query;
+        const { accepted, submittedByMe } = req.query;
 
         if (!problemId || !mongoose.Types.ObjectId.isValid(problemId)) {
             throw new ApiError(400, "Invalid Problem ID format");
@@ -33,10 +33,6 @@ const fetchAllSolutions = asyncHandler(async (req, res) => {
                 throw new ApiError(401, "You must be logged in to view your submissions");
             }
             matchStage.uploader = userObjectId;
-        }
-
-        if (language) {
-            matchStage.language = language;
         }
 
         const pipeline = [
@@ -286,81 +282,88 @@ const markSolutionAsAccepted = asyncHandler(async (req, res) => {
     }
 })
 
-const toggleSolutionInteraction = asyncHandler(async (req, res) => {
-    try {
-        const { id } = req.params;
-        const { action } = req.query; // ?action=like OR ?action=report
-        const userId = new mongoose.Types.ObjectId(req.user.id);
+// LIKE
+const toggleLikeSolution = asyncHandler(async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const solutionId = req.params.id;
 
-        // 1. Validate Input
-        if (!["like", "report"].includes(action)) {
-            throw new ApiError(400, "Invalid action. Use 'like' or 'report'.");
-        }
-
-        // 2. Fetch Current State (Lightweight Read)
-        // We only need the arrays to check for conflicts
-        const solution = await Solution.findById(id).select("likes reports");
-
-        if (!solution) {
-            throw new ApiError(404, "Solution not found");
-        }
-
-        // 3. CHECK CONFLICTS (The Logic You Requested)
-        const isLiked = solution.likes.some(uid => uid.equals(userId));
-        const isReported = solution.reports.some(uid => uid.equals(userId));
-
-        if (action === "like" && isReported) {
-            // User wants to like, but it is currently reported
-            throw new ApiError(400, "You cannot like a reported solution. Please un-report it first.");
-        }
-
-        if (action === "report" && isLiked) {
-            // User wants to report, but it is currently liked
-            throw new ApiError(400, "You cannot report a solution you liked. Please unlike it first.");
-        }
-
-        // 4. Perform the Atomic Toggle (Safe)
-        const targetField = action === "like" ? "likes" : "reports";
-
-        const updatedSolution = await Solution.findByIdAndUpdate(
-            id,
-            [
-                {
-                    $set: {
-                        [targetField]: {
-                            $cond: {
-                                // Check if user is already in the array
-                                if: { $in: [userId, `$${targetField}`] },
-                                // TRUE: Remove (Toggle Off)
-                                then: { $setDifference: [`$${targetField}`, [userId]] },
-                                // FALSE: Add (Toggle On)
-                                else: { $setUnion: [`$${targetField}`, [userId]] }
-                            }
-                        }
-                    }
-                }
-            ],
-            { new: true }
-        );
-
-        // 5. Response
-        const isActive = updatedSolution[targetField].some(uid => uid.equals(userId));
-        const count = updatedSolution[targetField].length;
-
-        return res.status(200).json({
-            success: true,
-            data: {
-                action,
-                active: isActive, // true if just added, false if removed
-                count
-            },
-            message: isActive ? `Solution marked as ${action}d.` : `Removed ${action} from solution.`
-        });
-    } catch (error) {
-        console.error("Error for accepting solution by ID:", error);
-        throw new ApiError(500, "Server Error")
+    const solution = await Solution.findById(solutionId);
+    if (!solution) {
+      throw new ApiError(404, "Solution not found.");
     }
+
+    const userObjectId = new mongoose.Types.ObjectId(userId);
+
+    // likes: [ObjectId]
+    const alreadyLiked = solution.likes.some((uid) =>
+      uid.equals(userObjectId)
+    );
+
+    if (alreadyLiked) {
+      // Unlike
+      solution.likes.pull(userObjectId);
+    } else {
+      // Like
+      solution.likes.push(userObjectId);
+    }
+
+    await solution.save();
+
+    return res.status(200).json({
+      message: alreadyLiked ? "Like removed." : "Solution liked!",
+      data: {
+        likesCount: solution.likes.length,
+        liked: !alreadyLiked,
+      },
+      success: true,
+    });
+  } catch (error) {
+    console.error("Error toggling like solution:", error);
+    throw new ApiError(500, "Server Error");
+  }
 });
+
+// REPORT
+const toggleReportSolution = asyncHandler(async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const solutionId = req.params.id;
+
+    const solution = await Solution.findById(solutionId);
+    if (!solution) {
+      throw new ApiError(404, "Solution not found.");
+    }
+
+    const userObjectId = new mongoose.Types.ObjectId(userId);
+
+    // reports: [ObjectId]
+    const alreadyReported = solution.reports.some((uid) =>
+      uid.equals(userObjectId)
+    );
+
+    if (alreadyReported) {
+      solution.reports.pull(userObjectId);
+    } else {
+      solution.reports.push(userObjectId);
+    }
+
+    await solution.save();
+
+    return res.status(200).json({
+      message: alreadyReported ? "Report removed." : "Solution Reported!",
+      data: {
+        reportCount: solution.reports.length,
+        reported: !alreadyReported,
+      },
+      success: true,
+    });
+  } catch (error) {
+    console.error("Error toggling report solution:", error);
+    throw new ApiError(500, "Server Error");
+  }
+});
+
 
 const deleteSolution = asyncHandler(async (req, res) => {
     try {
@@ -393,4 +396,4 @@ const deleteSolution = asyncHandler(async (req, res) => {
     }
 })
 
-export { fetchAllSolutions, fetchSolutionById, submitSolution, markSolutionAsAccepted, toggleSolutionInteraction, deleteSolution }
+export { fetchAllSolutions, fetchSolutionById, submitSolution, markSolutionAsAccepted, toggleLikeSolution, toggleReportSolution, deleteSolution }

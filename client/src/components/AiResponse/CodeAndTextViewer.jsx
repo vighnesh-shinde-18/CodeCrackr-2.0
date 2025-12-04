@@ -1,6 +1,6 @@
 import React from 'react';
 import ViewerWrapper from './ViewerWrapper';
-import CodeOutputBlock from './CodeOutputBlock';
+import CodeOutputBlock from './CodeOutputBlock.jsx';
 
 // Reusable UI Helpers
 const SectionTitle = ({ children }) => (
@@ -38,14 +38,22 @@ export default function CodeAndTextViewer({ response }) {
       case 'debug':
         return (
           <>
-            <SectionTitle>Explanation & Fixes</SectionTitle>
-            <ContentParagraph text={data.explanation} />
-            
-            <SectionTitle>Issues Found</SectionTitle>
-            <ContentList items={data.issuesFound} />
+            <SectionTitle>Error Summary</SectionTitle>
+            <ContentParagraph text={data.errorSummary} />
+
+            <SectionTitle>Error Explanation</SectionTitle>
+            <ContentParagraph text={data.errorExplanation} />
 
             <SectionTitle>Corrected Code</SectionTitle>
             <CodeOutputBlock code={data.correctedCode || data.code} />
+
+            <SectionTitle>Code Explanation</SectionTitle>
+            <ContentParagraph text={data.codeExplanation} />
+
+            <SectionTitle>Best Practices</SectionTitle>
+            <ContentList items={data.bestPractices} />
+
+
           </>
         );
 
@@ -54,7 +62,7 @@ export default function CodeAndTextViewer({ response }) {
         return (
           <>
             <ContentParagraph label="Overview" text={data.codeExplanation} />
-            
+
             <SectionTitle>Generated Code</SectionTitle>
             <CodeOutputBlock code={data.generatedCode || data.code} />
 
@@ -68,7 +76,7 @@ export default function CodeAndTextViewer({ response }) {
         return (
           <>
             <ContentParagraph label="Conversion Notes" text={data.conversionNotes} />
-            
+
             <SectionTitle>Converted Code</SectionTitle>
             <CodeOutputBlock code={data.convertedCode || data.code} />
 
@@ -82,16 +90,16 @@ export default function CodeAndTextViewer({ response }) {
         return (
           <>
             <ContentParagraph label="Summary" text={data.summary} />
-            
+
             <div className="grid md:grid-cols-2 gap-4">
-               <div>
-                 <SectionTitle>Logic Flow</SectionTitle>
-                 <ContentParagraph text={data.controlFlow} />
-               </div>
-               <div>
-                 <SectionTitle>Important Functions</SectionTitle>
-                 <ContentList items={data.importantFunctions} />
-               </div>
+              <div>
+                <SectionTitle>Logic Flow</SectionTitle>
+                <ContentParagraph text={data.controlFlow} />
+              </div>
+              <div>
+                <SectionTitle>Important Functions</SectionTitle>
+                <ContentList items={data.importantFunctions} />
+              </div>
             </div>
 
             <SectionTitle>Line-by-Line Breakdown</SectionTitle>

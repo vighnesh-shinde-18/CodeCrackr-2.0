@@ -1,6 +1,6 @@
 import React from 'react';
 import ViewerWrapper from './ViewerWrapper';
-import CodeOutputBlock from './CodeOutputBlock';
+import CodeOutputBlock from './CodeOutputBlock.jsx';
 
 // Helper to handle Array or String content safely
 const InfoItem = ({ label, content }) => {
