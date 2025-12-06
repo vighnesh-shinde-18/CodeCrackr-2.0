@@ -1,7 +1,7 @@
 import mongoose, { model } from "mongoose";
 
 const replySchema = new mongoose.Schema({
-    question:{
+    problem:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Problem",
         required:true
