@@ -1,9 +1,10 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import Cookies from 'js-cookie';
 
 const ProtectedRoute = () => { 
-  const isAuthenticated = Cookies.get('AccessToken');
+  const isAuthenticated = document.cookie
+    .split(';')
+    .some((cookie) => cookie.trim().startsWith('AccessToken='));
 
   return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
 };
