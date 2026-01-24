@@ -42,7 +42,7 @@ Format:
 Code:
 `,
 
-    "GeneratCode": `
+    "GenerateCode": `
 Act as a DSA problem solver. Given a DSA problem, generate a clean and optimal solution. Include appropriate data structures and algorithms. Use clear comments and explain the logic and key steps.
 
 Strictly respond ONLY with a valid JSON object. Do NOT include code block markers (like \`\`\`), markdown, or any extra text.

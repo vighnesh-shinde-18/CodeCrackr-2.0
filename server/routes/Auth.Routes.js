@@ -1,13 +1,20 @@
 import express from 'express'
-import { registerUser, loginUser, generateAndSendOtp, validateAndResetPassword, logoutUser } from '../controllers/Auth.Controllers.js'
-import {verifyJwt} from '../middlewares/Auth.Middleware.js'
+import { registerUser, loginUser, generateAndSendOtp, validateAndResetPassword, logoutUser } from '../controllers/Auth.Controller.js'
+import { verifyJwt } from '../middlewares/Auth.Middleware.js'
+import { validate } from "../middlewares/validate.middleware.js";
+import {
+    registerSchema,
+    loginSchema,
+    sendOtpSchema,
+    resetPasswordSchema
+} from "../validation/Auth.Validation.js";
 
 const router = express.Router()
 
-router.post('/register', registerUser)
-router.post('/login', loginUser)
-router.post('/send-otp', generateAndSendOtp)
-router.post('/reset-password', validateAndResetPassword)
-router.post('/logout', verifyJwt, logoutUser) 
+router.post('/register', validate(registerSchema, "body"), registerUser)
+router.post('/login', validate(loginSchema, "body"), loginUser)
+router.post('/send-otp', validate(sendOtpSchema, "body"), generateAndSendOtp)
+router.post('/reset-password', validate(resetPasswordSchema, "body"), validateAndResetPassword)
+router.post('/logout', verifyJwt, logoutUser)
 
 export default router;

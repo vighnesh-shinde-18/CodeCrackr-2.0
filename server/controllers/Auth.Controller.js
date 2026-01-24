@@ -6,20 +6,13 @@ import sendOtp from "../utils/sendOtp.js";
 const registerUser = asyncHandler(async (req, res) => {
 
     const { username, password, email } = req.body;
-
-    if ([username, password, email].some(field => !field?.trim())) {
-        throw new ApiError(400, "All Fields Are Required")
-    }
-
-    if (!email.includes('@')) {
-        throw new ApiError(400, "Invalid Email Id")
-    }
+  
 
     const existingUser = await User.findOne({
         $or: [{ email }, { username }]
-    })
+    }).select("id")
 
-    if (!existingUser) {
+    if (existingUser) {
         throw new ApiError(409, "User Already Exist")
     }
 
@@ -45,14 +38,7 @@ const registerUser = asyncHandler(async (req, res) => {
 const loginUser = asyncHandler(async (req, res) => {
 
     const { email, password } = req.body;
-
-    if ([email, password].some((field) => !field?.trim())) {
-        throw new ApiError(400, "Email and Password are required")
-    }
-
-     if (!email.includes('@')) {
-        throw new ApiError(400, "Invalid Email Id")
-    }
+ 
 
     const user = await User.findOne({
         email

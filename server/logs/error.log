@@ -1,0 +1,485 @@
+2026-01-18 14:00:31 [error]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:8:17
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:9:5
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-18 14:05:50 [error]: ReferenceError: value is not defined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:8:32
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-18 14:06:12 [error]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:8:17
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:9:5
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-18 14:09:24 [error]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:8:17
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:9:5
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:37:10 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:16:41
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:38:35 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:16:41
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:39:28 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:16:41
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:39:39 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:41
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:40:44 [error]: TypeError: error.map is not a function
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:34
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:46:20 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:46:41 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:47:14 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:47:47 [error]: TypeError: error.map is not a function
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:16:25
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:48:10 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:49:32 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:49:48 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:49:55 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:50:29 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:53:22 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:54:26 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:56:13 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:20:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:56:53 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:20:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:58:15 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 15:37:05 [error]: Error: Description too short
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 15:47:10 [error]: Error: Invalid Problem ID format
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 15:47:11 [error]: Error: Invalid Problem ID format
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 16:46:46 [error]: Error: Invalid Problem ID format
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 16:46:46 [error]: Error: Invalid ID format
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 16:46:47 [error]: Error: Invalid Problem ID format
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 16:46:47 [error]: Error: Invalid ID format
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:12:14 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:12:32 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:15:47 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:19:36 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:19:53 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:50:23 [error]: Error: Description too short, At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:50:55 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:51:17 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:51:38 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:51:45 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:52:02 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:52:41 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:54:23 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:55:49 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:58:46 [error]: Error: Title must be at least 5 characters, At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:59:05 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:59:27 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:50:09 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:50:11 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:53:45 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:53:47 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:56:49 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:56:53 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:56:57 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:56:59 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:57:29 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:57:30 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:58:32 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:58:35 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:58:39 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:58:40 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-23 11:32:05 [error]: ReferenceError: sourceCode is not defined
+    at CompileCode (file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/controllers/Compiler.Controller.js:18:26)
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:10:5
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-23 11:46:13 [error]: Error: Invalid option: expected one of "c-gcc-14"|"cpp-gcc-14"|"csharp"|"java-17"|"go-1.23"|"javascript-22"|"php-8"|"python-3.13"|"ruby"|"rust-1.85"|"sql"|"swift"|"typescript-5.6"
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-23 12:01:49 [error]: SyntaxError: Unexpected token ''', ..."serInput":'#iclde<io"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\body-parser\lib\types\json.js:77:19)
+    at C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\body-parser\lib\read.js:123:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
+    at invokeCallback (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-23 12:18:48 [error]: Error: Invalid input: expected string, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-23 12:18:59 [error]: Error: Invalid input: expected string, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-23 12:19:39 [error]: Error: Invalid input: expected string, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17

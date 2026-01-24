@@ -3,17 +3,16 @@ import CodeAndTextViewer from "./CodeAndTextViewer";
 import CodeReviewViewer from "./CodeReviewViewer";
 import TestCasesViewer from "./TestCasesViewer";
 
-export default function AiResponseViewer({ response, featureType, isHistory = false }) {
+function AiResponseViewer({ response, featureType, isHistory = false }) {
+  
   // 1. Safety Checks
   if (!response) return null;
   if (!featureType) return <ErrorBadge message="Feature type is missing." />;
-
-  // 2. Parse Response Safe Memomization
+ 
+  // 2. Parse Response
   const parsedResponse = useMemo(() => {
     try {
-      // If it's already an object, return it; otherwise parse string
       const data = typeof response === "string" ? JSON.parse(response) : response;
-      // Inject the featureType into the object for the children to use
       return { ...data, type: featureType };
     } catch (err) {
       console.error("JSON Parse Error:", err);
@@ -24,8 +23,15 @@ export default function AiResponseViewer({ response, featureType, isHistory = fa
   if (!parsedResponse) return <ErrorBadge message="Invalid AI response format." />;
 
   // 3. Render Strategy
+  // 🟢 FIX: Matching keys to the slugs in AIFeature.jsx
   const renderContent = () => {
-    switch (featureType) {
+    // Normalize to ensure matching
+    
+    const type = featureType.toLowerCase().replace("code", "").trim(); 
+    // e.g. "debugcode" -> "debug", "debug" -> "debug"
+    
+    
+    switch (type) {
       // Cluster 1: Text + Code Mixed
       case "debug":
       case "generate":
@@ -46,15 +52,11 @@ export default function AiResponseViewer({ response, featureType, isHistory = fa
     }
   };
 
-  // return isHistory ?
-  return (<>
-    {renderContent()}
-  </>)
-  // ) : (
-  //   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-  //     {renderContent()}
-  //   </div>
-  // );
+  return (
+      <div className="w-full">
+        {renderContent()}
+      </div>
+  );
 }
 
 // Micro-component for errors
@@ -63,3 +65,5 @@ const ErrorBadge = ({ message }) => (
     {message}
   </div>
 );
+
+export default AiResponseViewer;

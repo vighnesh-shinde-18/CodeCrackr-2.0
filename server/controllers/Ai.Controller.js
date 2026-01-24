@@ -5,14 +5,9 @@ import ApiError from '../utils/ApiError.js';
 import asyncHandler from '../utils/asyncHandler.js';
 
 const processAIRequest = asyncHandler(async (req, res, next) => {
-    try {
         let { FeatureType, UserInput, TargetLanguage } = req.body;
  
         
-        if (!FeatureType || !UserInput) { 
-            throw new ApiError(400, "Feature type and user input are required.")
-        }
-         
         const basePrompt = promptsObj[FeatureType];
     
         
@@ -37,9 +32,9 @@ const processAIRequest = asyncHandler(async (req, res, next) => {
             try { 
                 
                 const match = aiRawText.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
-                 
+                
                 const jsonText = match ? match[1] : aiRawText;
-                 
+                jsonText.replaceAll
                 AiOutput = JSON.parse(jsonText);
                  
             } catch (err) {
@@ -64,11 +59,7 @@ const processAIRequest = asyncHandler(async (req, res, next) => {
             message: 'AI response generated successfully',
             data: newInteraction
         });
-
-    } catch (error) {
-        console.error('Error processing AI request:', error);
-        return next(error);
-    }
+ 
 });
 
 export default processAIRequest;

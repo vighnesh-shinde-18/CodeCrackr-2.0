@@ -1,5 +1,3 @@
-// src/components/ProblemTable/ProblemFilters.jsx
-
 import React from 'react';
 import { Input } from "@/components/ui/input";
 
@@ -8,21 +6,21 @@ function ProblemFilters({
     setFilter,
     selectedTopic,
     setSelectedTopic,
-    acceptedFilter,
-    setAcceptedFilter,
-    repliedFilter,
-    setRepliedFilter,
+    statusFilter,      // 🟢 New single prop
+    setStatusFilter,   // 🟢 New single prop
     topicOptions,
 }) {
     return (
         <div className="flex flex-wrap items-center gap-2">
+            {/* Search */}
             <Input
-                placeholder="Search problems by title..."
+                placeholder="Search..."
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
                 className="w-full max-w-sm"
             />
 
+            {/* Topic Dropdown (Correct Data now) */}
             <select 
                 value={selectedTopic} 
                 onChange={(e) => setSelectedTopic(e.target.value)} 
@@ -31,22 +29,14 @@ function ProblemFilters({
                 {topicOptions.map((t) => <option key={t} value={t}>{t}</option>)}
             </select>
 
+            {/* 🟢 Unified Status Dropdown */}
             <select 
-                value={acceptedFilter} 
-                onChange={(e) => setAcceptedFilter(e.target.value)} 
+                value={statusFilter} 
+                onChange={(e) => setStatusFilter(e.target.value)} 
                 className="dark:bg-zinc-800 dark:text-white px-3 py-2 border rounded-md text-sm"
             >
-                <option value="All">All</option>
+                <option value="All">All Status</option>
                 <option value="Accepted">Accepted</option>
-                <option value="Not Accepted">Not Accepted</option>
-            </select>
-
-            <select 
-                value={repliedFilter} 
-                onChange={(e) => setRepliedFilter(e.target.value)} 
-                className="dark:bg-zinc-800 dark:text-white px-3 py-2 border rounded-md text-sm"
-            >
-                <option value="All">All</option>
                 <option value="Replied">Replied</option>
                 <option value="Not Replied">Not Replied</option>
             </select>

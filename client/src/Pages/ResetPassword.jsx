@@ -1,46 +1,48 @@
-import React, { useState, useCallback } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
-import authService from "../api/AuthServices.jsx";
-import asyncHandler from "../../../server/utils/asyncHandler.js";
+import authService from "../api/AuthServices.js";
+import { useMutation } from "@tanstack/react-query"; // 🟢 Import
 
 const ResetPasswordPage = () => {
     const [email, setEmail] = useState("");
     const [otp, setOtp] = useState("");
     const [newPassword, setNewPassword] = useState("");
-
-    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
-    const handleSubmit = asyncHandler(
-        async (e) => {
-            try {
-                e.preventDefault();
-                setLoading(true);
+    // 🟢 MUTATION: Reset Password
+    const resetMutation = useMutation({
+        mutationFn: (payload) => authService.resetPassword(payload),
+        
+        onMutate: () => {
+            toast.loading("Resetting password...");
+        },
 
-                authService.resetPassword({email,newPassword,otp})
+        onSuccess: () => {
+            toast.dismiss();
+            toast.success("Password reset successful. Login now.");
+            navigate("/login");
+        },
 
-                toast.success("Password reset successful. Login now.");
-                navigate("/login");
-            } catch (err) {
-                const message =
-                    err?.response?.data?.message ||
-                    "Invalid OTP or email. Please try again.";
-                toast.error(message);
-            } finally {
-                setLoading(false);
-            }
+        onError: (err) => {
+            toast.dismiss();
+            const message = err?.response?.data?.message || "Invalid OTP or email. Please try again.";
+            toast.error(message);
         }
-    );
+    });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        resetMutation.mutate({ email, newPassword, otp });
+    };
 
     return (
         <section className="w-full flex flex-row justify-center pt-44">
             <form
-                onSubmit={(e) => handleSubmit(e)}
+                onSubmit={handleSubmit}
                 className="w-full max-w-md space-y-6 border p-6 rounded-md shadow"
             >
                 <h2 className="text-xl font-bold text-center">Reset Your Password</h2>
@@ -78,8 +80,12 @@ const ResetPasswordPage = () => {
                     />
                 </div>
 
-                <Button type="submit" className="w-full cursor-pointer" disabled={loading}>
-                    {loading ? "Resetting..." : "Reset Password"}
+                <Button 
+                    type="submit" 
+                    className="w-full cursor-pointer" 
+                    disabled={resetMutation.isPending}
+                >
+                    {resetMutation.isPending ? "Resetting..." : "Reset Password"}
                 </Button>
             </form>
         </section>

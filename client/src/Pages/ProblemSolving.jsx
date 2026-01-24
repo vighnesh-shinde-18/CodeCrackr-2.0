@@ -1,78 +1,75 @@
-import { useEffect, useState, useCallback } from "react";
+"use client";
+
+import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { toast } from "sonner";
 
 // Services
-import problemService from "../api/ProblemServices.jsx";
-import solutionService from "../api/SolutionServices.jsx";
+import problemService from "../api/ProblemServices.js";
+import solutionService from "../api/SolutionServices.js";
+import authService from "../api/AuthServices.js"; // 🟢 Import Auth Service
 
 // Components
 import ProblemDetails from "../components/Problem/ProblemDetails.jsx";
 import SolutionReplies from "../components/Solution/SolutionReplies.jsx";
 import SolutionInput from "../components/Solution/SolutionInput.jsx";
 
+// 🟢 Import React Query
+import { useQuery } from "@tanstack/react-query";
+
 export default function ProblemSolving() {
   const { id } = useParams();
- 
-  const [problem, setProblem] = useState();
-  const [allSolutions, setAllSolutions] = useState([]);
-
-  const [currentUserEmail, setCurrentUserEmail] = useState("");
-
-  const [reported, setReported] = useState(false)
-
-
+  
+  // UI State
   const [selectedSolution, setSelectedSolution] = useState(null);
   const [showEditor, setShowEditor] = useState(true);
-
   const [filterStatus, setFilterStatus] = useState("all");
 
+  // 🟢 QUERY 0: Fetch Current User (Replaces localStorage)
+  const { data: currentUserResponse } = useQuery({
+    queryKey: ["current-user"],
+    queryFn: () => authService.getCurrentUser(),
+    staleTime: 1000 * 60 * 60, // Keep fresh for 1 hour (User data rarely changes)
+    retry: 1,
+  });
 
-  async function loadProblem () {
-    if (!id) return; 
+  const currentUserEmail = currentUserResponse?.email;
 
-    try {
-      const problemData = await problemService.fecthProblemDetails(id);
-      
-      setProblem(problemData); 
-      setReported(problemData.isReported)
-    } catch (err) {
-      console.error("Error loading problem:", err);
-      setError(err.message || "Failed to load problem.");
-    }  
-  };
+  // 🟢 QUERY 1: Fetch Problem Details
+  const { 
+    data: problem, 
+    isLoading: isProblemLoading, 
+    error: problemError,
+    refetch: refetchProblem 
+  } = useQuery({
+    queryKey: ["problem", id],
+    queryFn: () => problemService.fecthProblemDetails(id),
+    enabled: !!id, 
+    staleTime: 60 * 1000 * 5, 
+  });
 
-  useEffect(() => {
-    loadProblem();
-    setCurrentUserEmail(localStorage.getItem("email"))
-  }, []);
+  // 🟢 QUERY 2: Fetch Solutions
+  const { 
+    data: allSolutionsResponse, 
+    isLoading: isSolutionsLoading,
+    refetch: refetchSolutions
+  } = useQuery({
+    queryKey: ["solutions", id, filterStatus], 
+    queryFn: async () => {
+        let params = {};
+        if (filterStatus === "accepted") params.accepted = "true";
+        else if (filterStatus === "not_accepted") params.accepted = "false";
+        else if (filterStatus === "mine") params.submittedByMe = "true";
+        
+        const data = await solutionService.fetchAllSolutions(id, params);
+        return data; 
+    },
+    enabled: !!id,
+    keepPreviousData: true, 
+  });
 
-  // 🔹 2. FETCH SOLUTIONS
-  const fetchSolutions = useCallback(async () => {
-    if (!id) return; 
-    try {
-      let params = {};
-      if (filterStatus === "accepted") params.accepted = "true";
-      else if (filterStatus === "not_accepted") params.accepted = "false";
-      else if (filterStatus === "mine") params.submittedByMe = "true";
-
-      const solutionsData = await solutionService.fetchAllSolutions(id, params);
-      setAllSolutions(solutionsData);
-
-    } catch (err) {
-      console.error("Error fetching solutions:", err);
-      toast.error("Failed to load solutions");
-    }  
-  }, [id, filterStatus]);
-
-  useEffect(() => { 
-    fetchSolutions();
-  }, [fetchSolutions]);
-
-
+  // Handle View Logic
   const handleViewSolution = (solution) => {
     setSelectedSolution(solution);
-    console.log(solution)
     setShowEditor(false);
   };
 
@@ -81,12 +78,20 @@ export default function ProblemSolving() {
     setShowEditor(true);
   };
 
+  if (isProblemLoading) return <div className="p-10 text-center">Loading problem...</div>;
+  if (problemError) return <div className="p-10 text-center text-red-500">Error loading problem.</div>;
 
   return (
     <div className="flex flex-col gap-6 p-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        {/* LEFT COLUMN */}
         <div className="space-y-6">
-          <ProblemDetails loadProblem={loadProblem} problem={problem} />
+          <ProblemDetails 
+            problem={problem?.data} 
+            loadProblem={refetchProblem} 
+          />
+          
           <div>
             <div className="flex justify-between items-center mb-3">
               <h3 className="text-lg font-semibold">Other User Replies</h3>
@@ -94,7 +99,6 @@ export default function ProblemSolving() {
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
                 className="border px-2 py-1 rounded text-sm dark:bg-zinc-800 dark:text-white"
-            
               >
                 <option value="all">All Solutions</option>
                 <option value="accepted">Accepted Only</option>
@@ -102,13 +106,20 @@ export default function ProblemSolving() {
                 <option value="mine">Submitted by Me</option>
               </select>
             </div>
-            <SolutionReplies
-              allSolutions={allSolutions}
-              onViewSolution={handleViewSolution}
-              selectedSolution={selectedSolution}
-              setSelectedSolution={setSelectedSolution}
-              fetchSolutions={fetchSolutions}
-            />
+            
+            {isSolutionsLoading ? (
+              <p className="text-center py-4">Loading solutions...</p>
+            ) : (
+              <SolutionReplies
+                allSolutions={allSolutionsResponse?.data || []}
+                onViewSolution={handleViewSolution}
+                selectedSolution={selectedSolution}
+                setSelectedSolution={setSelectedSolution}
+                fetchSolutions={refetchSolutions} 
+                problemId={id} 
+                filterStatus={filterStatus}
+              />
+            )}
           </div>
         </div>
 
@@ -129,14 +140,15 @@ export default function ProblemSolving() {
               </button>
             )}
           </div>
-
+    {console.log("problem ",problem.data," curr ",currentUserEmail)}
           <SolutionInput
             showEditor={showEditor}
             selectedSolution={selectedSolution}
-            isUploader={
-              problem?.email === currentUserEmail}
-            fetchSolutions={fetchSolutions}
+            // 🟢 FIX: Access inner data object and compare with fetched email
+            isUploader={problem?.data?.email === currentUserEmail}
             problemId={id}
+            fetchSolutions={refetchSolutions} 
+            filterStatus={filterStatus}
           />
         </div>
       </div>

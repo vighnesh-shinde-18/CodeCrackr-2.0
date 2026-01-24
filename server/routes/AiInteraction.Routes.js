@@ -1,16 +1,19 @@
 import express from 'express'
-import { getInteractions,
+import {
     getInteractionById,
     deleteInteractionById,
-    deleteAllInteractions} from '../controllers/AiInteractions.Controllers.js'
+    deleteAllInteractions
+} from '../controllers/AiInteractions.Controller.js'
 
 import { verifyJwt } from '../middlewares/Auth.Middleware.js'
+import { validate } from '../middlewares/Validate.Middleware.js';
+import { aiIdSchema } from "../validation/Ai.Validation.js";
 
 const router = express.Router()
 
-router.get("/",verifyJwt,getInteractions)
-router.get("/:id",verifyJwt,getInteractionById)
-router.delete("/:id",verifyJwt,deleteInteractionById)
-router.delete("/",verifyJwt,deleteAllInteractions)
+
+router.get("/:id", verifyJwt, validate(aiIdSchema, "params"), getInteractionById)
+router.delete("/:id", verifyJwt, validate(aiIdSchema, "params"), deleteInteractionById)
+router.delete("/", verifyJwt, deleteAllInteractions)
 
 export default router;

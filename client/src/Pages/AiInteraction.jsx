@@ -1,75 +1,96 @@
-import { useRef, useState, useEffect, useCallback, useMemo } from "react";
-// import { Button } from '../components/ui/button.jsx' // You can use this if you have a Select component in UI kit
-import aiService from "../api/AiServices.jsx";
+"use client";
+
+import { useRef, useState, useEffect, useMemo } from "react";
+import aiService from "../api/AiServices.js";
 import { useParams } from 'react-router-dom';
 import { toast } from "sonner";
+import { useMutation } from "@tanstack/react-query";
+import { Loader2 } from "lucide-react";
 
-// Define available languages for conversion
+import AiResponseViewer from "../components/AiResponse/AiResponseViewer.jsx";
+
 const TARGET_LANGUAGES = [
     "Python", "JavaScript", "Java", "C++", "C#", 
-    "TypeScript", "Go", "Rust", "Swift", "Kotlin", "PHP",'C'
+    "TypeScript", "Go", "Rust", "Swift", "Kotlin", "PHP", "C"
 ];
 
 function AIFeature() {
-    const { feature } = useParams();
-
-    const [loading, setLoading] = useState(false)
-    const [aiResponse, setAiResponse] = useState(null);
-    const responseRef = useRef(null);
-
-    const [sourceCode, setSourceCode] = useState("")
+    // URL param (e.g., "debug", "generate", "convert")
+    const { feature } = useParams(); 
     
-    // State for the selected language
-    const [language, setLanguage] = useState("")
+    const responseRef = useRef(null);
+    const [sourceCode, setSourceCode] = useState("");
+    const [language, setLanguage] = useState("");
+    const [aiResponse, setAiResponse] = useState(null); 
 
+    // 🟢 FIX 1: Updated keys to match URL slugs (removed 'code' suffix from keys)
     const slugToFeature = useMemo(() => ({
-        debug: ["Debug Code", 'DebugCode'],
-        review: ["Review & Refactor Code", "ReviewCode"],
-        generate: ["Generate Code", "GenerateCode"],
-        convert: ["Convert Code", "ConvertCode"], // Note: Ensure API endpoint matches your backend
-        explain: ["Explain Code", "ExplainCode"],
-        testcases: ["Generate Test Cases", "GenerateTestCases"]
+        "debug": ["Debug Code", 'DebugCode'],
+        "review": ["Review & Refactor Code", "ReviewCode"],
+        "generate": ["Generate Code", "GenerateCode"],
+        "convert": ["Convert Code", "ConvertCode"],
+        "explain": ["Explain Code", "ExplainCode"],
+        "testcases": ["Generate Test Cases", "GenerateTestCases"]
     }), []);
 
+    // Helper to get the Backend Key (e.g. "DebugCode")
+    // Safe access using ?. to prevent crashes if feature is invalid
+    const featureDetails = slugToFeature[feature?.toLowerCase()];
+    const featureKey = featureDetails?.[1];
+    const featureTitle = featureDetails?.[0];
 
-    useEffect(() => {
-        if (aiResponse && responseRef.current) {
-            responseRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    const aiMutation = useMutation({
+        mutationFn: (payload) => aiService.runAi(payload),
+        onSuccess: (result) => { 
+            if (!result.success) {
+                toast.error(result.message || "Failed to generate response");
+                return;
+            }
+
+            setAiResponse(result.data); 
+            toast.success("AI Response Generated Successfully");
+            
+            setTimeout(() => {
+                responseRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 100);
+        },
+        onError: (err) => {
+            console.error("❌ Request Error:", err);
+            toast.error("Failed to run AI request. Please try again.");
         }
-    }, [aiResponse]);
+    });
 
-    // Reset language when switching features
     useEffect(() => {
         setLanguage("");
+        setAiResponse(null);
+        setSourceCode(""); 
     }, [feature]);
 
-    const handleRunAI = useCallback(async (featureKey, code, selectedLang) => {
-        
-        // Basic validation for convert feature
-        if (feature === 'convert' && !selectedLang) {
-            toast.warning("Please select a target language.");
+    const handleRunAI = () => {
+        // 🟢 FIX 2: Validation to prevent 'undefined' error
+        if (!featureKey) {
+            toast.error(`Invalid Feature: ${feature}`);
+            console.error("Feature key not found for slug:", feature);
             return;
         }
 
-        setLoading(true)
-
-        try {
-            // Pass the language to the service
-            const result = await aiService.runAi({ feature: featureKey, code, language: selectedLang })
-
-            if (!result.data.success) {
-                console.error("❌ AI Error:", result.data.message || "Failed to generate AI response");
-                return;
-            }
-            console.log(result)
-            setAiResponse(result.data);
-            toast.success("AI Response Generate Successfully")
-        } catch (err) {
-            console.error("❌ Request Error:", err);
-        } finally {
-            setLoading(false)
+        if (!sourceCode.trim()) {
+            toast.warning("Please enter some code first.");
+            return;
         }
-    }, [feature]);
+
+        // Check if current feature is 'convert' (slug)
+        if (feature === 'convert' && !language) {
+            toast.warning("Please select a target language.");
+            return;
+        }
+ 
+        aiMutation.mutate({ 
+            feature: featureKey, // Must be string like "DebugCode"
+            code: sourceCode, 
+            language: language 
+        });
+    };
 
     return (
         <div className="flex flex-1 flex-col">
@@ -77,10 +98,10 @@ function AIFeature() {
                 <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
                     <div className="px-4 lg:px-6">
                         <h1 className="text-2xl font-bold tracking-tight">
-                            {slugToFeature[feature]?.[0] || "AI Feature"}
+                            {featureTitle || "AI Feature"}
                         </h1>
                         <p className="text-muted-foreground text-sm mt-1">
-                            Use AI to assist to {slugToFeature[feature]?.[0]?.toLowerCase()}.
+                            Use AI to assist to {featureTitle?.toLowerCase()}.
                         </p>
                     </div>
 
@@ -90,53 +111,56 @@ function AIFeature() {
                                 value={sourceCode}
                                 onChange={(e) => setSourceCode(e.target.value)}
                                 className="w-full h-full p-4 font-mono text-sm border-0 resize-none focus:ring-0 dark:bg-gray-900 dark:text-gray-200"
-                                placeholder="// Write code here..."
+                                placeholder="// Write or paste your code here..."
                             />
                         </div>
                         
-                        {/* Control Bar: Language Select + Button */}
                         <div className="flex flex-col sm:flex-row gap-4 items-center my-5">
-                            
-                            {/* Conditional Rendering: Only show for 'convert' feature */}
                             {feature === 'convert' && (
                                 <select 
                                     value={language}
                                     onChange={(e) => setLanguage(e.target.value)}
-                                    className="px-4 py-2 border rounded-lg bg-white dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-black dark:focus:ring-white outline-none cursor-pointer"
+                                    className="px-4 py-2 border rounded-lg bg-white dark:bg-gray-800 dark:text-white cursor-pointer"
                                 >
                                     <option value="" disabled>Select Target Language</option>
                                     {TARGET_LANGUAGES.map((lang) => (
-                                        <option key={lang} value={lang}>
-                                            {lang}
-                                        </option>
+                                        <option key={lang} value={lang}>{lang}</option>
                                     ))}
                                 </select>
                             )}
 
                             <button
-                                onClick={(e) => { 
-                                    e.preventDefault(); 
-                                    handleRunAI(slugToFeature[feature][1], sourceCode, language) 
-                                }}
-                                disabled={loading}
-                                className={`cursor-pointer px-6 py-2 rounded-lg font-semibold shadow-md transition duration-200 ease-in-out dark:bg-white dark:text-black ${
-                                    loading 
+                                onClick={handleRunAI}
+                                disabled={aiMutation.isPending}
+                                className={`cursor-pointer px-6 py-2 rounded-lg font-semibold shadow-md transition duration-200 ease-in-out flex items-center gap-2 ${
+                                    aiMutation.isPending 
                                     ? "bg-gray-400 text-gray-700 cursor-not-allowed" 
-                                    : "bg-black text-white hover:bg-gray-700 active:bg-gray-800"
+                                    : "bg-black dark:bg-white dark:text-black text-white hover:opacity-90"
                                 }`}
                             >
-                                {loading ? "Running..." : "Run AI"}
+                                {aiMutation.isPending && <Loader2 className="animate-spin h-4 w-4" />}
+                                {aiMutation.isPending ? "Generating..." : "Run AI"}
                             </button>
                         </div>
                     </div>
                 </div>
 
-                {/* Response Viewer Area (Uncommented for context) */}
-                {/* <div ref={responseRef}>
+                <div ref={responseRef} className="px-4 lg:px-6 pb-10">
                     {aiResponse && (
-                        <div>Response Loaded</div> // Placeholder
+                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                             <div className="flex items-center justify-between mb-4">
+                                <h2 className="text-xl font-semibold">AI Response</h2>
+                             </div>
+                             
+                             {/* 🟢 Pass the SLUG (e.g. 'debug') to the viewer */}
+                             <AiResponseViewer 
+                                isHistory={false} 
+                                response={aiResponse.AiOutput} 
+                                featureType={feature} 
+                            />
+                        </div>
                     )}
-                </div> */}
+                </div>
             </div>
         </div>
     );

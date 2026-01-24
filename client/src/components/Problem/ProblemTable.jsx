@@ -1,92 +1,81 @@
-// src/components/ProblemTable/ProblemTable.jsx (Main Component)
-
 "use client";
 
-import React, { useState, useMemo, useEffect, useCallback } from "react";
-import { useReactTable, getCoreRowModel, getPaginationRowModel, getSortedRowModel } from "@tanstack/react-table";
+import React, { useState, useMemo, useCallback } from "react";
+import { useReactTable, getCoreRowModel } from "@tanstack/react-table"; // Removed other models, we don't need them for server-side
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { CheckCircle2, XCircle } from "lucide-react";
+import { Badge } from "../ui/badge.jsx";
+
+import { useDebounce } from "../../hooks/useDebounce";
+import problemService from "../../api/ProblemServices.js";
 import ProblemFilters from "./ProblemFilter.jsx";
 import ProblemDataTable from "./ProblemDataTable.jsx";
-// 💡 Updated imports for status icons
-import { CheckCircle2, XCircle } from "lucide-react"; 
-import { Badge } from "../ui/badge.jsx";
- 
-import problemService from "../../api/ProblemServices.jsx";
-
 
 function ProblemTable() {
-    // --- Data and State Management ---
-    const [problems, setProblems] = useState([]); // Stores ALL fetched problems
-    const [isLoading, setIsLoading] = useState(true);
-    const [filter, setFilter] = useState(""); // Text search input
-    const [selectedTopic, setSelectedTopic] = useState("All");
-    const [acceptedFilter, setAcceptedFilter] = useState("All");
-    const [repliedFilter, setRepliedFilter] = useState("All");
-
     const navigate = useNavigate();
-  
-    const fetchProblems = useCallback(async () => {
-        setIsLoading(true);
-        try {
-            // Your problemService.fetchAllProblmes() returns the array of problems
-            const data = await problemService.fetchAllProblmes();
-            setProblems(data);
-            // ❌ Removed console.log(problems) as it uses stale state
-        } catch (error) {
-            console.error("Error fetching problems:", error);
-            // Handle error, maybe show a toast
-        } finally {
-            setIsLoading(false);
-        }
-    }, []);
 
-    useEffect(() => {
-        fetchProblems();
-    }, [fetchProblems]);
+    // --- State Management ---
+    const [filter, setFilter] = useState("");
+    const [selectedTopic, setSelectedTopic] = useState("All");
+    const [statusFilter, setStatusFilter] = useState("All");
 
-    // --- 💡 Centralized Filtering Logic (Client-Side) ---
-    const filteredData = useMemo(() => {
-        return problems.filter((p) => {
-            // A. Text Search (on Title)
-            const matchesSearch = p.title.toLowerCase().includes(filter.toLowerCase());
+    // 🟢 1. Add Page State
+    const [page, setPage] = useState(1);
+    const limit = 10; // Fixed limit per your requirement
 
-            // B. Topic Dropdown
-            const matchesTopic = selectedTopic === "All" || p.topics.includes(selectedTopic);
+    // --- Debounce ---
+    const debouncedSearch = useDebounce(filter, 400);
 
-            // C. Accepted Dropdown
-            const matchesAccepted =
-                acceptedFilter === "All" ||
-                (acceptedFilter === "Accepted" && p.accepted) ||
-                (acceptedFilter === "Not Accepted" && !p.accepted);
+    // --- React Query ---
+    const { data: topics = [] } = useQuery({
+        queryKey: ["problem-topics"],
+        queryFn: () => problemService.fetchAllTopics(),
+        staleTime: Infinity,
+    });
+    const topicOptions = useMemo(() => ["All", ...topics], [topics]);
 
-            // D. Replied Dropdown
-            const matchesReplied =
-                repliedFilter === "All" ||
-                (repliedFilter === "Replied" && p.replied) ||
-                (repliedFilter === "Not Replied" && !p.replied);
+    const { data: apiResponse, isLoading } = useQuery({
+        queryKey: ["problems", debouncedSearch, selectedTopic, statusFilter, page],
+        queryFn: async () => {
+            return await problemService.fetchAllProblmes({
+                search: debouncedSearch,
+                topic: selectedTopic,
+                status: statusFilter,
+                page: page,
+                limit: limit
+            });
+        },
+        // 🔥 TUNING:
+        staleTime: 60 * 1000, // 1 Minute Freshness
+        placeholderData: (previousData) => previousData, // Keeps "Page 1" visible while loading "Page 2"
+    });
 
-            return matchesSearch && matchesTopic && matchesAccepted && matchesReplied;
-        });
-    }, [problems, filter, selectedTopic, acceptedFilter, repliedFilter]);
 
-    // Calculate the unique topics for the dropdown
-    const topicOptions = useMemo(() => {
-        const allTopics = new Set();
-        problems.forEach((p) => p.topics.forEach((t) => allTopics.add(t)));
-        return ["All", ...Array.from(allTopics)];
-    }, [problems]);
+    const problems = useMemo(() => {
+        console.log("API Response:", apiResponse);
+        return apiResponse?.data || []; // 🟢 Added "return"
+    }, [apiResponse]);
+    
+    // 🟢 4. Extract Pagination Metadata from API response
+    const pagination = useMemo(() => apiResponse?.pagination || {
+        totalPages: 1,
+        page: 1,
+        hasNextPage: false
+    }, [apiResponse]);
 
-    // --- React Table Initialization ---
+    // --- Table Columns ---
     const columns = useMemo(() => [
         {
             id: "index",
             header: "Sr.No.",
-            cell: ({ row }) => <div className="font-medium">{row.index + 1}</div>
+            // Calculate correct index across pages: (page - 1) * limit + index + 1
+            cell: ({ row }) => <div className="font-medium">{((page - 1) * limit) + row.index + 1}</div>
         },
         {
             accessorKey: "title",
             header: "Title",
-            cell: ({ row }) => <div className="text-sm">{row.getValue("title")}</div>
+            cell: ({ row }) => <div className="text-sm font-medium">{row.getValue("title")}</div>
         },
         {
             accessorKey: "topics",
@@ -96,10 +85,9 @@ function ProblemTable() {
                 return topics.map((topic, index) => (<Badge className="mx-0.5" variant="secondary" key={index}>{topic}</Badge>))
             }
         },
-        // ✅ FIX: Changed 'accessForKey' to 'accessorKey' AND improved the 'Not Replied' status display
-        { 
-            accessorKey: "replied", 
-            header: "You Replied", 
+        {
+            accessorKey: "replied",
+            header: "You Replied",
             cell: ({ row }) => row.getValue("replied") ? (
                 <div className="flex items-center gap-1 text-green-600 font-medium">
                     <CheckCircle2 className="size-4" /> Replied
@@ -108,12 +96,11 @@ function ProblemTable() {
                 <div className="flex items-center gap-1 text-red-500 font-medium">
                     <XCircle className="size-4" /> Not Replied
                 </div>
-            ) 
+            )
         },
-        // ✅ Improvement: Improved the 'Not Accepted' status display for consistency
-        { 
-            accessorKey: "accepted", 
-            header: "Accepted", 
+        {
+            accessorKey: "accepted",
+            header: "Accepted",
             cell: ({ row }) => row.getValue("accepted") ? (
                 <div className="flex items-center gap-1 text-green-600 font-medium">
                     <CheckCircle2 className="size-4" /> Accepted
@@ -122,48 +109,49 @@ function ProblemTable() {
                 <div className="flex items-center gap-1 text-red-500 font-medium">
                     <XCircle className="size-4" /> Not Accepted
                 </div>
-            ) 
+            )
         },
-    ], []);
+    ], [page]); // Add page dependency for the index calculation
 
     const table = useReactTable({
-        data: filteredData,
+        data: problems,
         columns,
         getCoreRowModel: getCoreRowModel(),
-        getPaginationRowModel: getPaginationRowModel(),
-        getSortedRowModel: getSortedRowModel(),
-        // No getFilteredRowModel needed as filtering is done manually via filteredData
+        manualPagination: true, // Tell React Table we are handling pagination manually
     });
 
-    const visitProblem = useCallback((id, original) => {
-        const titleUrl = original.title.replaceAll(" ","-")
-  
-        navigate(`/solve-problem/${titleUrl}/${id}`);
-    }, [navigate]);
+    const visitProblem = (id, original) => {
+        const problemId = original._id || id;
+        const titleUrl = original.title.replaceAll(" ", "-");
+        navigate(`/solve-problem/${titleUrl}/${problemId}`);
+    };
 
     return (
         <div className="w-full space-y-4">
-            <h2>All Problems</h2>
-
             <ProblemFilters
                 filter={filter}
-                setFilter={setFilter}
+                setFilter={(val) => { setFilter(val); setPage(1); }} // Reset to page 1 on search
                 selectedTopic={selectedTopic}
-                setSelectedTopic={setSelectedTopic}
-                acceptedFilter={acceptedFilter}
-                setAcceptedFilter={setAcceptedFilter}
-                repliedFilter={repliedFilter}
-                setRepliedFilter={setRepliedFilter}
+                setSelectedTopic={(val) => { setSelectedTopic(val); setPage(1); }} // Reset to page 1 on filter
+                statusFilter={statusFilter}
+                setStatusFilter={(val) => { setStatusFilter(val); setPage(1); }} // Reset to page 1 on filter
                 topicOptions={topicOptions}
             />
 
             {isLoading ? (
-                <p className="text-center py-8">Loading problems...</p>
+                <div className="text-center py-10">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+                    <p className="mt-2 text-muted-foreground">Loading problems...</p>
+                </div>
             ) : (
                 <ProblemDataTable
                     table={table}
                     columns={columns}
                     visitProblem={visitProblem}
+                    // 🟢 5. Pass pagination data and handlers to the child
+                    pagination={pagination}
+                    onNextPage={() => setPage(old => old + 1)}
+                    onPrevPage={() => setPage(old => Math.max(old - 1, 1))}
                 />
             )}
         </div>

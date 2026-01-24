@@ -9,8 +9,9 @@ import {
 } from "@/components/ui/sidebar";
 import { useLocation, Link } from "react-router-dom";
 import { Label } from "@/components/ui/label";
+import React from "react";
 
-function NavSecondary({ items }) {
+function NavSecondaryComponent({ items }) {
     const location = useLocation();
 
     const menuItems = () =>{
@@ -44,4 +45,5 @@ function NavSecondary({ items }) {
     );
 };
 
+const NavSecondary = React.memo(NavSecondaryComponent);
 export default NavSecondary;

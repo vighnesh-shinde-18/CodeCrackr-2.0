@@ -4,41 +4,46 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
-import authService from "../api/AuthServices.jsx";
-import asyncHandler from "../../../server/utils/asyncHandler.js";
+import authService from "../api/AuthServices.js";
+import { useMutation } from "@tanstack/react-query"; // 🟢 Import
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // 🟢 MUTATION: Send OTP
+  const forgotPasswordMutation = useMutation({
+    mutationFn: (payload) => authService.sendOtp(payload),
+    
+    onMutate: () => {
+        toast.loading("Sending OTP...");
+    },
 
-  const handleSubmit = asyncHandler(async (e) => {
-    try {
-      e.preventDefault();
-      setLoading(true);
-
-      authService.sendOtp({ email })
-
+    onSuccess: () => {
+      toast.dismiss();
       toast.success("Password reset link sent to your email!");
       setEmail("");
       navigate("/reset-password");
-    } catch (err) {
-
+    },
+    
+    onError: (err) => {
+      toast.dismiss();
       console.error("Forgot password error:", err);
       toast.error(
         err?.response?.data?.error || "Email not registered or failed to send."
       );
-    } finally {
-      setLoading(false);
     }
-  }
-  )
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    forgotPasswordMutation.mutate({ email });
+  };
 
   return (
     <section className="w-full h-2/4 flex flex-row justify-center pt-44">
       <form
-        onSubmit={(e) => handleSubmit(e)}
+        onSubmit={handleSubmit}
         className="w-full max-w-md space-y-6 border p-6 rounded-md shadow-md bg-white dark:bg-zinc-900 dark:border-zinc-800 transition"
       >
         <div className="text-center">
@@ -60,8 +65,12 @@ export default function ForgotPasswordPage() {
           />
         </div>
 
-        <Button type="submit" className="cursor-pointer w-full" disabled={loading}>
-          {loading ? "Sending..." : "Send Reset Link"}
+        <Button 
+            type="submit" 
+            className="cursor-pointer w-full" 
+            disabled={forgotPasswordMutation.isPending}
+        >
+          {forgotPasswordMutation.isPending ? "Sending..." : "Send Reset Link"}
         </Button>
 
         <p

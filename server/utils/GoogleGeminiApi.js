@@ -29,8 +29,7 @@ async function generateContentFromPrompt(prompt) {
                 }
             ],
         });
-
-        console.log(response.text)
+ 
         return response.text;
 
     } catch (error) {

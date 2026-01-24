@@ -32,8 +32,9 @@ export default function CodeAndTextViewer({ response }) {
   // We use the 'type' we injected in the parent component
   const { title, type, ...data } = response;
 
+  const formatedType = type.toLowerCase().replace("code", "").trim();
   const renderBody = () => {
-    switch (type) {
+    switch (formatedType) {
       // 🟢 DEBUG
       case 'debug':
         return (

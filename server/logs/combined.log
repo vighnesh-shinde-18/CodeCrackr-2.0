@@ -1,0 +1,1849 @@
+2026-01-18 13:48:06 [info]: ::1 GET /api/v1/stats/ 200 - - 407.239 ms
+2026-01-18 13:48:51 [info]: ::1 GET /api/v1/stats/ 401 62 - 4.347 ms
+2026-01-18 13:48:58 [info]: ::1 POST /api/v1/auth/login 200 139 - 151.497 ms
+2026-01-18 13:49:01 [info]: ::1 GET /api/v1/stats/ 200 - - 14.933 ms
+2026-01-18 13:50:53 [info]: ::1 GET /api/v1/problem/ 200 964 - 17.133 ms
+2026-01-18 13:51:01 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 729 - 29.665 ms
+2026-01-18 13:52:35 [info]: ::1 PATCH /api/v1/problem/687f91cc32932539f35d72c6 200 87 - 51.860 ms
+2026-01-18 13:52:43 [info]: ::1 PATCH /api/v1/problem/687f91cc32932539f35d72c6 200 102 - 21.618 ms
+2026-01-18 13:52:52 [info]: ::1 POST /api/v1/problem/upload 409 69 - 16.023 ms
+2026-01-18 14:00:31 [error]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:8:17
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:9:5
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-18 14:00:31 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a 500 101 - 14.935 ms
+2026-01-18 14:05:50 [error]: ReferenceError: value is not defined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:8:32
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-18 14:05:50 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a 500 50 - 32.728 ms
+2026-01-18 14:06:12 [error]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:8:17
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:9:5
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-18 14:06:12 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a 500 101 - 42.023 ms
+2026-01-18 14:09:24 [error]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:8:17
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:9:5
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-18 14:09:24 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a 500 101 - 38.097 ms
+2026-01-18 14:10:18 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a 200 448 - 88.593 ms
+2026-01-18 14:10:37 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a 200 449 - 18.987 ms
+2026-01-18 14:11:52 [info]: ::1 GET /api/v1/solution/68792152c74177f0fae6874a 404 60 - 15.209 ms
+2026-01-18 14:12:24 [info]: ::1 GET /api/v1/solution/688abc1234567890abcdef12 200 525 - 8.485 ms
+2026-01-18 14:12:29 [info]: ::1 GET /api/v1/solution/688abc1234567890abcdef12 200 525 - 7.728 ms
+2026-01-19 10:08:39 [info]: ::1 POST /api/v1/auth/login 200 139 - 234.867 ms
+2026-01-19 10:08:47 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a 200 448 - 124.168 ms
+2026-01-19 10:08:56 [info]: ::1 GET /api/v1/solution/688abc1234567890abcdef12 200 525 - 15.593 ms
+2026-01-19 10:11:02 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a 200 449 - 14.048 ms
+2026-01-19 10:11:09 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a 200 449 - 5.293 ms
+2026-01-19 10:11:40 [info]: ::1 GET /api/v1/problem/ 200 964 - 52.544 ms
+2026-01-19 10:15:49 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a 200 449 - 26.245 ms
+2026-01-19 10:16:02 [info]: ::1 POST /api/v1/solution/problem/68792152c74177f0fae6874a 500 313 - 122.503 ms
+2026-01-19 10:19:00 [info]: ::1 POST /api/v1/solution/problem/68792152c74177f0fae6874a 201 94 - 122.696 ms
+2026-01-19 10:24:41 [info]: ::1 PATCH /api/v1/solution/688abc1234567890abcdef12/like 200 80 - 25.763 ms
+2026-01-19 10:25:05 [info]: ::1 PATCH /api/v1/solution/688abc1234567890abcdef12/report 200 88 - 17.382 ms
+2026-01-19 10:32:29 [info]: ::1 POST /api/v1/reply/solution/688abc1234567890abcdef12 201 402 - 117.975 ms
+2026-01-19 10:33:05 [info]: ::1 GET /api/v1/reply/solution/688abc1234567890abcdef12 200 701 - 24.159 ms
+2026-01-19 10:37:01 [info]: ::1 GET /api/v1/history/solved-problems 404 169 - 4.977 ms
+2026-01-19 10:37:10 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:16:41
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:37:10 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 13.698 ms
+2026-01-19 10:38:35 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:16:41
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:38:35 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 12.163 ms
+2026-01-19 10:39:28 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:16:41
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:39:28 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 79.030 ms
+2026-01-19 10:39:39 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:41
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:39:39 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 32.810 ms
+2026-01-19 10:40:33 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 200.064 ms
+2026-01-19 10:40:44 [error]: TypeError: error.map is not a function
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:34
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:40:44 [info]: ::1 POST /api/v1/history/solved-problems 500 57 - 33.374 ms
+2026-01-19 10:46:20 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:46:21 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 125.321 ms
+2026-01-19 10:46:41 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:46:41 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 99.029 ms
+2026-01-19 10:47:14 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:47:14 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 85.880 ms
+2026-01-19 10:47:47 [error]: TypeError: error.map is not a function
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:16:25
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:47:47 [info]: ::1 POST /api/v1/history/solved-problems 500 57 - 61.742 ms
+2026-01-19 10:48:10 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:48:10 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 78.045 ms
+2026-01-19 10:49:32 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:49:32 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 85.536 ms
+2026-01-19 10:49:48 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:49:48 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 33.804 ms
+2026-01-19 10:49:55 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:49:55 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 16.179 ms
+2026-01-19 10:50:29 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:50:29 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 28.368 ms
+2026-01-19 10:53:22 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:53:22 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 136.345 ms
+2026-01-19 10:54:26 [error]: TypeError: Cannot read properties of undefined (reading 'map')
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:17:37
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:54:26 [info]: ::1 POST /api/v1/history/solved-problems 500 81 - 77.623 ms
+2026-01-19 10:56:13 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:20:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:56:13 [info]: ::1 POST /api/v1/history/solved-problems 400 80 - 83.936 ms
+2026-01-19 10:56:53 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:20:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:56:53 [info]: ::1 POST /api/v1/history/solved-problems 400 80 - 88.003 ms
+2026-01-19 10:57:26 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 168.622 ms
+2026-01-19 10:58:15 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-19 10:58:15 [info]: ::1 POST /api/v1/history/ai-interactions 400 80 - 17.976 ms
+2026-01-19 10:58:21 [info]: ::1 POST /api/v1/history/ai-interactions 200 - - 65.350 ms
+2026-01-19 11:06:09 [info]: ::1 GET /api/v1/aiInteractions/68851471e1df9c1835b037df 500 101 - 150.250 ms
+2026-01-19 11:07:06 [info]: ::1 GET /api/v1/aiInteractions/68851471e1df9c1835b037df 500 101 - 86.513 ms
+2026-01-19 11:08:12 [info]: ::1 GET /api/v1/aiInteractions/68851471e1df9c1835b037df 500 101 - 110.370 ms
+2026-01-19 11:10:35 [info]: ::1 GET /api/v1/aiInteractions/68851471e1df9c1835b037df 200 - - 151.484 ms
+2026-01-19 17:38:05 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 10.523 ms
+2026-01-19 17:38:05 [info]: ::1 POST /api/v1/auth/login 404 61 - 232.851 ms
+2026-01-19 17:39:22 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 4.236 ms
+2026-01-19 17:39:22 [info]: ::1 POST /api/v1/auth/login 404 61 - 13.828 ms
+2026-01-19 17:41:07 [info]: ::1 POST /api/v1/auth/login 403 68 - 4.780 ms
+2026-01-19 17:41:25 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 2.298 ms
+2026-01-19 17:41:25 [info]: ::1 POST /api/v1/auth/login 404 61 - 38.257 ms
+2026-01-19 17:41:49 [info]: ::1 POST /api/v1/auth/login 404 61 - 151.399 ms
+2026-01-19 17:42:57 [info]: ::1 POST /api/v1/auth/login 200 139 - 347.683 ms
+2026-01-19 17:44:17 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 1.261 ms
+2026-01-19 17:44:17 [info]: ::1 POST /api/v1/auth/login 200 139 - 234.381 ms
+2026-01-19 17:46:36 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.344 ms
+2026-01-19 17:46:36 [info]: ::1 POST /api/v1/auth/login 200 139 - 224.955 ms
+2026-01-19 17:58:14 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 5.368 ms
+2026-01-19 17:58:15 [info]: ::1 POST /api/v1/auth/login 200 139 - 334.693 ms
+2026-01-19 17:58:15 [info]: ::1 GET /api/v1/stats/ 200 - - 329.213 ms
+2026-01-19 17:58:21 [info]: ::1 GET /api/v1/problem/ 200 964 - 68.287 ms
+2026-01-19 17:58:21 [info]: ::1 GET /api/v1/problem/ 200 966 - 20.454 ms
+2026-01-19 17:58:36 [info]: ::1 GET /api/v1/problem/ 304 - - 22.534 ms
+2026-01-19 17:58:36 [info]: ::1 GET /api/v1/problem/ 304 - - 13.912 ms
+2026-01-19 17:58:38 [info]: ::1 GET /api/v1/stats/ 304 - - 17.935 ms
+2026-01-19 17:58:41 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.618 ms
+2026-01-19 17:58:41 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 1.484 ms
+2026-01-19 17:58:41 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 56.265 ms
+2026-01-19 17:58:41 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 50.838 ms
+2026-01-19 17:58:45 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 20.710 ms
+2026-01-19 17:58:45 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 16.861 ms
+2026-01-19 18:02:19 [info]: ::1 GET /api/v1/stats/ 304 - - 8.879 ms
+2026-01-19 18:12:04 [info]: ::1 GET /api/v1/stats/ 304 - - 20.787 ms
+2026-01-19 18:21:22 [info]: ::1 GET /api/v1/stats/ 304 - - 93.446 ms
+2026-01-19 18:21:33 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.656 ms
+2026-01-19 18:21:33 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 1.057 ms
+2026-01-19 18:21:33 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 26.486 ms
+2026-01-19 18:21:33 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 42.048 ms
+2026-01-19 18:22:00 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.531 ms
+2026-01-19 18:22:00 [info]: ::1 POST /api/v1/auth/login 200 139 - 238.548 ms
+2026-01-19 18:22:00 [info]: ::1 GET /api/v1/stats/ 304 - - 15.318 ms
+2026-01-19 18:22:24 [info]: ::1 GET /api/v1/problem/ 304 - - 14.275 ms
+2026-01-19 18:22:24 [info]: ::1 GET /api/v1/problem/ 304 - - 6.240 ms
+2026-01-19 18:22:28 [info]: ::1 GET /api/v1/stats/ 304 - - 19.160 ms
+2026-01-19 18:22:31 [info]: ::1 GET /api/v1/stats/ 304 - - 16.364 ms
+2026-01-19 18:22:33 [info]: ::1 GET /api/v1/stats/ 304 - - 10.780 ms
+2026-01-19 18:22:35 [info]: ::1 GET /api/v1/stats/ 304 - - 17.529 ms
+2026-01-19 18:22:38 [info]: ::1 GET /api/v1/stats/ 304 - - 12.252 ms
+2026-01-19 18:25:10 [info]: ::1 OPTIONS /api/v1/problem/user-uploads 204 0 - 0.398 ms
+2026-01-19 18:25:10 [info]: ::1 OPTIONS /api/v1/problem/user-uploads 204 0 - 1.134 ms
+2026-01-19 18:25:10 [info]: ::1 POST /api/v1/problem/user-uploads 200 690 - 67.912 ms
+2026-01-19 18:25:10 [info]: ::1 POST /api/v1/problem/user-uploads 200 690 - 63.157 ms
+2026-01-19 18:25:24 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.654 ms
+2026-01-19 18:25:25 [info]: ::1 POST /api/v1/auth/login 200 139 - 238.532 ms
+2026-01-19 18:25:25 [info]: ::1 GET /api/v1/stats/ 304 - - 13.747 ms
+2026-01-19 18:29:36 [info]: ::1 GET /api/v1/stats/ 304 - - 14.880 ms
+2026-01-19 18:45:08 [info]: ::1 GET /api/v1/stats/ 304 - - 171.144 ms
+2026-01-19 18:51:56 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 10.132 ms
+2026-01-19 18:51:56 [info]: ::1 POST /api/v1/auth/login 200 139 - 341.718 ms
+2026-01-19 18:51:57 [info]: ::1 GET /api/v1/stats/ 304 - - 69.398 ms
+2026-01-19 18:52:00 [info]: ::1 OPTIONS /api/v1/problem/user-uploads 204 0 - 0.362 ms
+2026-01-19 18:52:00 [info]: ::1 OPTIONS /api/v1/problem/user-uploads 204 0 - 0.359 ms
+2026-01-19 18:52:00 [info]: ::1 POST /api/v1/problem/user-uploads 200 690 - 114.591 ms
+2026-01-19 18:52:00 [info]: ::1 POST /api/v1/problem/user-uploads 200 690 - 108.776 ms
+2026-01-19 18:52:04 [info]: ::1 GET /api/v1/stats/ 304 - - 13.384 ms
+2026-01-19 18:52:07 [info]: ::1 GET /api/v1/stats/ 304 - - 17.460 ms
+2026-01-20 09:50:58 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 6.239 ms
+2026-01-20 09:50:58 [info]: ::1 POST /api/v1/auth/login 200 139 - 467.901 ms
+2026-01-20 09:51:02 [info]: ::1 GET /api/v1/stats/ 200 - - 178.572 ms
+2026-01-20 09:51:10 [info]: ::1 OPTIONS /api/v1/problem/user-uploads 204 0 - 0.446 ms
+2026-01-20 09:51:10 [info]: ::1 OPTIONS /api/v1/problem/user-uploads 204 0 - 0.295 ms
+2026-01-20 09:51:10 [info]: ::1 POST /api/v1/problem/user-uploads 200 690 - 46.939 ms
+2026-01-20 09:51:10 [info]: ::1 POST /api/v1/problem/user-uploads 200 690 - 49.392 ms
+2026-01-20 09:51:45 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.358 ms
+2026-01-20 09:51:45 [info]: ::1 POST /api/v1/auth/login 200 139 - 177.183 ms
+2026-01-20 09:51:45 [info]: ::1 GET /api/v1/stats/ 304 - - 12.851 ms
+2026-01-20 09:51:48 [info]: ::1 GET /api/v1/problem/ 200 964 - 25.803 ms
+2026-01-20 09:51:48 [info]: ::1 GET /api/v1/problem/ 200 966 - 11.174 ms
+2026-01-20 09:52:02 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.964 ms
+2026-01-20 09:52:02 [info]: ::1 POST /api/v1/auth/login 200 139 - 210.867 ms
+2026-01-20 09:52:02 [info]: ::1 GET /api/v1/stats/ 304 - - 14.149 ms
+2026-01-20 09:52:17 [info]: ::1 GET /api/v1/stats/ 304 - - 18.201 ms
+2026-01-20 10:09:52 [info]: ::1 GET /api/v1/stats/ 304 - - 122.528 ms
+2026-01-20 10:25:52 [info]: ::1 GET /api/v1/problem/ 401 62 - 85.775 ms
+2026-01-20 10:25:58 [info]: ::1 POST /api/v1/auth/login 200 139 - 179.388 ms
+2026-01-20 10:26:01 [info]: ::1 GET /api/v1/problem/ 200 966 - 38.491 ms
+2026-01-20 10:27:04 [info]: ::1 GET /api/v1/aiInteractions/68851471e1df9c1835b037df 200 - - 88.090 ms
+2026-01-20 10:37:34 [info]: ::1 GET /api/v1/problem/ 304 - - 65.751 ms
+2026-01-20 10:38:56 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 2.808 ms
+2026-01-20 10:38:56 [info]: ::1 POST /api/v1/auth/login 401 58 - 141.395 ms
+2026-01-20 10:39:05 [info]: ::1 GET /api/v1/stats/ 304 - - 90.831 ms
+2026-01-20 10:39:07 [info]: ::1 GET /api/v1/problem/ 304 - - 8.606 ms
+2026-01-20 10:43:49 [info]: ::1 GET /api/v1/problem/ 200 966 - 12.165 ms
+2026-01-20 10:44:14 [info]: ::1 GET /api/v1/problem/ 304 - - 10.766 ms
+2026-01-20 10:44:23 [info]: ::1 GET /api/v1/problem/ 304 - - 12.009 ms
+2026-01-20 10:44:23 [info]: ::1 GET /api/v1/problem/ 304 - - 5.272 ms
+2026-01-20 10:44:45 [info]: ::1 GET /api/v1/problem/ 304 - - 11.353 ms
+2026-01-20 10:45:03 [info]: ::1 GET /api/v1/problem/ 200 966 - 4.236 ms
+2026-01-20 10:45:21 [info]: ::1 GET /api/v1/problem/ 200 966 - 9.033 ms
+2026-01-20 10:50:05 [info]: ::1 GET /api/v1/problem/ 304 - - 9.434 ms
+2026-01-20 11:43:25 [info]: ::1 GET /api/v1/problem/topics 200 106 - 149.686 ms
+2026-01-20 11:43:25 [info]: ::1 GET /api/v1/problem/ 200 964 - 109.295 ms
+2026-01-20 11:44:58 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.635 ms
+2026-01-20 11:44:59 [info]: ::1 POST /api/v1/auth/login 200 139 - 199.505 ms
+2026-01-20 11:44:59 [info]: ::1 GET /api/v1/stats/ 304 - - 64.056 ms
+2026-01-20 11:45:01 [info]: ::1 GET /api/v1/problem/topics 304 - - 13.332 ms
+2026-01-20 11:45:01 [info]: ::1 GET /api/v1/problem/ 200 966 - 13.369 ms
+2026-01-20 11:45:28 [info]: ::1 GET /api/v1/problem/?search=st 500 101 - 31.207 ms
+2026-01-20 11:45:28 [info]: ::1 GET /api/v1/problem/?search=str 500 101 - 13.978 ms
+2026-01-20 11:45:30 [info]: ::1 GET /api/v1/problem/?search=str 500 101 - 7.660 ms
+2026-01-20 11:45:32 [info]: ::1 GET /api/v1/problem/?search=str 500 101 - 10.274 ms
+2026-01-20 11:45:38 [info]: ::1 GET /api/v1/problem/?search=st 500 101 - 10.130 ms
+2026-01-20 11:45:40 [info]: ::1 GET /api/v1/problem/?search=st 500 101 - 13.072 ms
+2026-01-20 11:45:43 [info]: ::1 GET /api/v1/problem/?search=st 500 101 - 12.358 ms
+2026-01-20 11:45:44 [info]: ::1 GET /api/v1/problem/?search=string+ 500 101 - 9.800 ms
+2026-01-20 11:45:45 [info]: ::1 GET /api/v1/problem/?search=string+ 500 101 - 11.496 ms
+2026-01-20 11:45:48 [info]: ::1 GET /api/v1/problem/?search=string+ 500 101 - 13.693 ms
+2026-01-20 11:50:55 [info]: ::1 GET /api/v1/problem/topics 200 106 - 67.877 ms
+2026-01-20 11:50:55 [info]: ::1 GET /api/v1/problem/ 200 966 - 40.170 ms
+2026-01-20 11:51:01 [info]: ::1 GET /api/v1/problem/?search=test 200 620 - 22.006 ms
+2026-01-20 11:51:11 [info]: ::1 GET /api/v1/problem/?search=t 200 - - 17.708 ms
+2026-01-20 11:51:37 [info]: ::1 GET /api/v1/problem/topics 304 - - 14.306 ms
+2026-01-20 11:51:37 [info]: ::1 GET /api/v1/problem/ 304 - - 10.929 ms
+2026-01-20 11:51:48 [info]: ::1 GET /api/v1/problem/?search=string 200 785 - 7.121 ms
+2026-01-20 11:53:24 [info]: ::1 GET /api/v1/problem/?search=string&status=solved 200 365 - 18.231 ms
+2026-01-20 11:53:40 [info]: ::1 GET /api/v1/problem/?status=solved 200 620 - 8.068 ms
+2026-01-20 11:53:43 [info]: ::1 GET /api/v1/problem/ 200 966 - 6.319 ms
+2026-01-20 11:57:47 [info]: ::1 GET /api/v1/problem/topics 200 106 - 142.027 ms
+2026-01-20 11:57:47 [info]: ::1 GET /api/v1/problem/ 200 966 - 98.544 ms
+2026-01-20 12:00:41 [info]: ::1 GET /api/v1/problem/?search=search 200 398 - 19.393 ms
+2026-01-20 12:00:47 [info]: ::1 GET /api/v1/problem/?search=s 200 - - 13.583 ms
+2026-01-20 12:00:47 [info]: ::1 GET /api/v1/problem/ 200 966 - 7.290 ms
+2026-01-20 12:01:44 [info]: ::1 GET /api/v1/problem/topics 200 106 - 16.488 ms
+2026-01-20 12:01:44 [info]: ::1 GET /api/v1/problem/ 200 966 - 14.710 ms
+2026-01-20 12:06:37 [info]: ::1 GET /api/v1/problem/topics 200 106 - 59.629 ms
+2026-01-20 12:06:37 [info]: ::1 GET /api/v1/problem/ 200 326 - 31.792 ms
+2026-01-20 12:10:49 [info]: ::1 GET /api/v1/problem/topics 304 - - 9.367 ms
+2026-01-20 12:10:49 [info]: ::1 GET /api/v1/problem/ 200 328 - 7.629 ms
+2026-01-20 12:29:50 [info]: ::1 GET /api/v1/problem/ 304 - - 29.117 ms
+2026-01-20 12:30:14 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 966 - 10.999 ms
+2026-01-20 12:30:49 [info]: ::1 GET /api/v1/problem/topics 304 - - 30.441 ms
+2026-01-20 12:30:49 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 26.708 ms
+2026-01-20 12:31:21 [info]: ::1 GET /api/v1/problem/topics 304 - - 50.124 ms
+2026-01-20 12:31:21 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 39.280 ms
+2026-01-20 12:31:30 [info]: ::1 GET /api/v1/problem/topics 304 - - 20.275 ms
+2026-01-20 12:31:30 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 21.809 ms
+2026-01-20 12:31:51 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&search=bin 200 398 - 237.005 ms
+2026-01-20 12:32:03 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&search=test 200 664 - 20.480 ms
+2026-01-20 12:32:06 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&search=test&topic=dp 200 390 - 42.843 ms
+2026-01-20 12:32:09 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=dp 200 390 - 17.007 ms
+2026-01-20 12:32:30 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&status=solved 200 664 - 37.372 ms
+2026-01-20 12:32:33 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&status=attempted 200 561 - 30.870 ms
+2026-01-20 12:32:35 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&status=unsolved 200 398 - 21.961 ms
+2026-01-20 12:32:37 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 10.095 ms
+2026-01-20 12:32:50 [info]: ::1 GET /api/v1/stats/ 304 - - 108.946 ms
+2026-01-20 12:32:57 [info]: ::ffff:127.0.0.1 GET /api/v1/problem/topics 304 - - 52.161 ms
+2026-01-20 12:32:57 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 23.814 ms
+2026-01-20 12:33:45 [info]: ::1 GET /api/v1/problem/topics 304 - - 31.701 ms
+2026-01-20 12:33:45 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 28.255 ms
+2026-01-20 12:33:50 [info]: ::1 GET /api/v1/problem/topics 304 - - 23.032 ms
+2026-01-20 12:33:50 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 19.191 ms
+2026-01-20 12:33:58 [info]: ::1 GET /api/v1/problem/68792152c74177f0fae6874a 200 412 - 61.069 ms
+2026-01-20 12:33:58 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a? 200 447 - 86.674 ms
+2026-01-20 12:33:58 [info]: ::1 GET /api/v1/problem/68792152c74177f0fae6874a 304 - - 37.165 ms
+2026-01-20 12:33:58 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a? 200 448 - 10.604 ms
+2026-01-20 12:34:04 [info]: ::1 GET /api/v1/problem/topics 304 - - 34.480 ms
+2026-01-20 12:34:04 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 32.523 ms
+2026-01-20 12:34:05 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 729 - 23.860 ms
+2026-01-20 12:34:06 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 768 - 41.518 ms
+2026-01-20 12:34:06 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 21.735 ms
+2026-01-20 12:34:06 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 768 - 8.269 ms
+2026-01-20 12:34:25 [info]: ::1 GET /api/v1/problem/topics 304 - - 35.386 ms
+2026-01-20 12:34:25 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 34.991 ms
+2026-01-20 12:35:36 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 16.555 ms
+2026-01-20 12:35:46 [info]: ::1 GET /api/v1/problem/topics 304 - - 18.086 ms
+2026-01-20 12:35:46 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 15.496 ms
+2026-01-20 12:36:08 [info]: ::1 GET /api/v1/problem/topics 304 - - 18.345 ms
+2026-01-20 12:36:08 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 15.775 ms
+2026-01-20 12:36:53 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=array 200 379 - 107.497 ms
+2026-01-20 12:37:13 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 14.049 ms
+2026-01-20 13:13:54 [info]: ::1 GET /api/v1/problem/topics 304 - - 62.673 ms
+2026-01-20 13:13:54 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 964 - 68.721 ms
+2026-01-20 14:52:41 [info]: ::1 GET /api/v1/stats/ 401 62 - 18.653 ms
+2026-01-20 14:52:50 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 1.261 ms
+2026-01-20 14:52:51 [info]: ::1 POST /api/v1/auth/login 200 139 - 487.351 ms
+2026-01-20 14:52:51 [info]: ::1 GET /api/v1/stats/ 304 - - 252.726 ms
+2026-01-20 14:52:55 [info]: ::1 GET /api/v1/problem/topics 304 - - 31.713 ms
+2026-01-20 14:52:55 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 40.685 ms
+2026-01-20 14:54:31 [info]: ::1 GET /api/v1/problem/topics 200 155 - 25.121 ms
+2026-01-20 14:54:31 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 966 - 22.779 ms
+2026-01-20 14:55:00 [info]: ::1 GET /api/v1/stats/ 200 - - 20.722 ms
+2026-01-20 14:55:52 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 966 - 10.574 ms
+2026-01-20 14:56:51 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 1.717 ms
+2026-01-20 14:56:51 [info]: ::1 POST /api/v1/auth/login 200 139 - 267.298 ms
+2026-01-20 14:56:51 [info]: ::1 GET /api/v1/stats/ 304 - - 14.665 ms
+2026-01-20 14:56:53 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 13.359 ms
+2026-01-20 14:56:53 [info]: ::1 GET /api/v1/problem/topics 304 - - 27.042 ms
+2026-01-20 14:57:34 [info]: ::1 POST /api/v1/auth/login 200 139 - 201.985 ms
+2026-01-20 14:57:40 [info]: ::1 GET /api/v1/problem/ 200 966 - 8.710 ms
+2026-01-20 14:58:11 [info]: ::1 GET /api/v1/problem/ 200 966 - 10.844 ms
+2026-01-20 14:59:45 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 10.084 ms
+2026-01-20 15:00:52 [info]: ::1 GET /api/v1/problem/ 200 966 - 15.958 ms
+2026-01-20 15:02:06 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 12.468 ms
+2026-01-20 15:08:39 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 168.743 ms
+2026-01-20 15:09:43 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 11.320 ms
+2026-01-20 15:11:34 [info]: ::1 POST /api/v1/problem/upload 201 92 - 255.106 ms
+2026-01-20 15:11:58 [info]: ::1 GET /api/v1/stats/ 200 - - 186.256 ms
+2026-01-20 15:11:59 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 41.259 ms
+2026-01-20 15:12:05 [info]: ::1 GET /api/v1/problem/?page=2&limit=10 200 - - 25.997 ms
+2026-01-20 15:12:07 [info]: ::1 GET /api/v1/problem/?page=3&limit=10 200 - - 16.737 ms
+2026-01-20 15:12:17 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&status=accepted 200 - - 28.378 ms
+2026-01-20 15:12:22 [info]: ::1 GET /api/v1/problem/?page=2&limit=10&status=accepted 200 - - 22.914 ms
+2026-01-20 15:18:07 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 123.322 ms
+2026-01-20 15:18:09 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&status=accepted 200 664 - 51.973 ms
+2026-01-20 15:18:12 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&status=not+replied 200 - - 38.438 ms
+2026-01-20 15:18:15 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&status=replied 200 561 - 20.512 ms
+2026-01-20 15:18:34 [info]: ::1 GET /api/v1/problem/?page=2&limit=10 200 - - 14.731 ms
+2026-01-20 15:18:35 [info]: ::1 GET /api/v1/problem/?page=3&limit=10 200 - - 12.055 ms
+2026-01-20 15:29:21 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 33.906 ms
+2026-01-20 15:29:21 [info]: ::1 GET /api/v1/problem/topics 304 - - 93.883 ms
+2026-01-20 15:29:26 [info]: ::1 GET /api/v1/problem/topics 304 - - 39.137 ms
+2026-01-20 15:29:26 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 37.796 ms
+2026-01-20 15:29:32 [info]: ::1 GET /api/v1/problem/topics 304 - - 20.825 ms
+2026-01-20 15:29:32 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 24.292 ms
+2026-01-20 15:30:48 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 14.963 ms
+2026-01-20 15:48:06 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 43.366 ms
+2026-01-20 15:48:06 [info]: ::1 GET /api/v1/problem/topics 304 - - 85.324 ms
+2026-01-20 16:57:05 [info]: ::1 GET /api/v1/problem/?page=2&limit=10 200 - - 436.835 ms
+2026-01-20 16:57:07 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 18.576 ms
+2026-01-20 16:57:31 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 5.313 ms
+2026-01-20 16:57:31 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 356.708 ms
+2026-01-20 16:58:28 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 15.044 ms
+2026-01-20 16:58:28 [info]: ::1 GET /api/v1/problem/topics 304 - - 32.115 ms
+2026-01-20 16:58:38 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.538 ms
+2026-01-20 16:58:38 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 18.225 ms
+2026-01-21 10:44:45 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 2.780 ms
+2026-01-21 10:44:45 [info]: ::1 POST /api/v1/auth/login 200 139 - 241.041 ms
+2026-01-21 10:44:46 [info]: ::1 GET /api/v1/stats/ 304 - - 111.661 ms
+2026-01-21 10:44:54 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.863 ms
+2026-01-21 10:44:54 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 21.256 ms
+2026-01-21 10:45:34 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.303 ms
+2026-01-21 10:45:34 [info]: ::1 POST /api/v1/auth/login 200 139 - 116.000 ms
+2026-01-21 10:45:34 [info]: ::1 GET /api/v1/stats/ 304 - - 12.379 ms
+2026-01-21 10:45:50 [info]: ::1 GET /api/v1/problem/topics 304 - - 24.420 ms
+2026-01-21 10:45:51 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 41.111 ms
+2026-01-21 10:45:53 [info]: ::1 GET /api/v1/problem/696f49c046ce2cb0528a8fa1 200 514 - 41.001 ms
+2026-01-21 10:45:53 [info]: ::1 GET /api/v1/solution/problem/696f49c046ce2cb0528a8fa1? 200 86 - 40.590 ms
+2026-01-21 12:01:39 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 16.222 ms
+2026-01-21 12:01:39 [info]: ::1 POST /api/v1/auth/login 401 58 - 392.158 ms
+2026-01-21 12:01:52 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 1.396 ms
+2026-01-21 12:01:52 [info]: ::1 POST /api/v1/auth/login 200 139 - 290.768 ms
+2026-01-21 12:01:53 [info]: ::1 GET /api/v1/stats/ 304 - - 285.804 ms
+2026-01-21 12:01:55 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.602 ms
+2026-01-21 12:01:56 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 52.244 ms
+2026-01-21 12:08:19 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 5.191 ms
+2026-01-21 12:08:19 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 46.163 ms
+2026-01-21 12:08:26 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.734 ms
+2026-01-21 12:08:26 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 25.933 ms
+2026-01-21 12:08:35 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.588 ms
+2026-01-21 12:08:35 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 28.360 ms
+2026-01-21 12:08:46 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.403 ms
+2026-01-21 12:08:47 [info]: ::1 POST /api/v1/auth/login 200 139 - 203.377 ms
+2026-01-21 12:08:47 [info]: ::1 GET /api/v1/stats/ 304 - - 20.977 ms
+2026-01-21 12:08:50 [info]: ::1 GET /api/v1/problem/topics 304 - - 30.072 ms
+2026-01-21 12:08:50 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 49.114 ms
+2026-01-21 12:08:54 [info]: ::1 GET /api/v1/problem/?page=2&limit=10 304 - - 31.879 ms
+2026-01-21 12:09:26 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.384 ms
+2026-01-21 12:09:26 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 16.273 ms
+2026-01-21 12:15:13 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 1.373 ms
+2026-01-21 12:15:13 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 42.605 ms
+2026-01-21 13:52:47 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 6.631 ms
+2026-01-21 13:52:47 [info]: ::1 POST /api/v1/auth/login 200 139 - 511.876 ms
+2026-01-21 13:52:48 [info]: ::1 GET /api/v1/stats/ 304 - - 289.719 ms
+2026-01-21 14:05:34 [info]: ::1 GET /api/v1/stats/ 304 - - 47.206 ms
+2026-01-21 14:20:37 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 4.715 ms
+2026-01-21 14:20:38 [info]: ::1 POST /api/v1/auth/login 200 139 - 335.080 ms
+2026-01-21 14:20:38 [info]: ::1 GET /api/v1/stats/ 200 - - 143.460 ms
+2026-01-21 14:20:55 [info]: ::1 POST /api/v1/auth/logout 200 52 - 18.207 ms
+2026-01-21 14:20:55 [info]: ::1 GET /api/v1/stats/ 401 62 - 16.627 ms
+2026-01-21 14:22:52 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.696 ms
+2026-01-21 14:22:53 [info]: ::1 POST /api/v1/auth/login 200 139 - 222.820 ms
+2026-01-21 14:22:57 [info]: ::1 GET /api/v1/stats/ 200 - - 17.275 ms
+2026-01-21 14:23:48 [info]: ::1 POST /api/v1/auth/logout 200 52 - 9.249 ms
+2026-01-21 14:23:49 [info]: ::1 GET /api/v1/stats/ 401 62 - 11.239 ms
+2026-01-21 14:24:48 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.951 ms
+2026-01-21 14:24:48 [info]: ::1 POST /api/v1/auth/login 200 139 - 225.800 ms
+2026-01-21 14:24:52 [info]: ::1 GET /api/v1/stats/ 200 - - 21.546 ms
+2026-01-21 14:25:56 [info]: ::1 POST /api/v1/auth/logout 200 52 - 10.435 ms
+2026-01-21 14:25:57 [info]: ::1 GET /api/v1/stats/ 401 62 - 6.255 ms
+2026-01-21 14:26:45 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.431 ms
+2026-01-21 14:26:45 [info]: ::1 POST /api/v1/auth/login 200 139 - 218.908 ms
+2026-01-21 14:27:03 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.779 ms
+2026-01-21 14:27:03 [info]: ::1 POST /api/v1/auth/login 200 139 - 213.765 ms
+2026-01-21 14:27:27 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 6.200 ms
+2026-01-21 14:27:27 [info]: ::1 POST /api/v1/auth/login 200 139 - 379.749 ms
+2026-01-21 14:27:43 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.597 ms
+2026-01-21 14:27:44 [info]: ::1 POST /api/v1/auth/login 200 139 - 216.872 ms
+2026-01-21 14:28:05 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.491 ms
+2026-01-21 14:28:05 [info]: ::1 POST /api/v1/auth/login 200 139 - 230.258 ms
+2026-01-21 14:28:39 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.372 ms
+2026-01-21 14:28:39 [info]: ::1 POST /api/v1/auth/login 200 139 - 235.382 ms
+2026-01-21 14:34:21 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 1.018 ms
+2026-01-21 14:34:21 [info]: ::1 POST /api/v1/auth/login 200 139 - 244.314 ms
+2026-01-21 14:34:48 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.731 ms
+2026-01-21 14:34:49 [info]: ::1 POST /api/v1/auth/login 200 139 - 233.423 ms
+2026-01-21 14:36:36 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.449 ms
+2026-01-21 14:36:36 [info]: ::1 POST /api/v1/auth/login 200 139 - 264.621 ms
+2026-01-21 14:37:36 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.429 ms
+2026-01-21 14:37:36 [info]: ::1 POST /api/v1/auth/login 200 139 - 239.934 ms
+2026-01-21 14:37:48 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.747 ms
+2026-01-21 14:37:48 [info]: ::1 POST /api/v1/auth/login 200 139 - 242.332 ms
+2026-01-21 14:39:22 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 1.055 ms
+2026-01-21 14:39:22 [info]: ::1 POST /api/v1/auth/login 200 139 - 222.080 ms
+2026-01-21 14:39:38 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.507 ms
+2026-01-21 14:39:38 [info]: ::1 POST /api/v1/auth/login 429 64 - 17.840 ms
+2026-01-21 14:39:53 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 10.157 ms
+2026-01-21 14:39:53 [info]: ::1 POST /api/v1/auth/login 200 139 - 352.286 ms
+2026-01-21 14:40:10 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.852 ms
+2026-01-21 14:40:10 [info]: ::1 POST /api/v1/auth/login 200 139 - 260.143 ms
+2026-01-21 14:40:28 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.815 ms
+2026-01-21 14:40:28 [info]: ::1 POST /api/v1/auth/login 200 139 - 238.953 ms
+2026-01-21 14:40:40 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.434 ms
+2026-01-21 14:40:41 [info]: ::1 POST /api/v1/auth/login 200 139 - 223.183 ms
+2026-01-21 14:41:23 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.437 ms
+2026-01-21 14:41:23 [info]: ::1 POST /api/v1/auth/login 200 139 - 241.599 ms
+2026-01-21 14:41:27 [info]: ::1 GET /api/v1/stats/ 200 - - 58.682 ms
+2026-01-21 14:42:53 [info]: ::1 GET /api/v1/problem/topics 200 155 - 32.852 ms
+2026-01-21 14:42:53 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 32.751 ms
+2026-01-21 14:47:59 [info]: ::1 GET /api/v1/stats/ 200 - - 16.387 ms
+2026-01-21 14:48:06 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 12.661 ms
+2026-01-21 14:49:20 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 33.544 ms
+2026-01-21 14:49:23 [info]: ::1 GET /api/v1/stats/ 200 - - 16.403 ms
+2026-01-21 14:50:15 [info]: ::1 POST /api/v1/auth/logout 200 52 - 12.540 ms
+2026-01-21 14:50:16 [info]: ::1 GET /api/v1/stats/ 401 62 - 6.027 ms
+2026-01-21 14:52:21 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 1.198 ms
+2026-01-21 14:52:21 [info]: ::1 POST /api/v1/auth/login 200 139 - 228.711 ms
+2026-01-21 14:52:25 [info]: ::1 GET /api/v1/stats/ 200 - - 14.092 ms
+2026-01-21 14:52:35 [info]: ::1 GET /api/v1/problem/topics 200 155 - 19.294 ms
+2026-01-21 14:52:35 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 11.581 ms
+2026-01-21 14:54:06 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 11.114 ms
+2026-01-21 14:54:11 [info]: ::1 GET /api/v1/stats/ 200 - - 15.936 ms
+2026-01-21 15:09:48 [info]: ::1 GET /api/v1/stats/ 200 - - 142.758 ms
+2026-01-21 15:11:23 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.809 ms
+2026-01-21 15:11:23 [info]: ::1 POST /api/v1/auth/login 200 139 - 257.658 ms
+2026-01-21 15:11:27 [info]: ::1 GET /api/v1/stats/ 200 - - 19.145 ms
+2026-01-21 15:11:33 [info]: ::1 GET /api/v1/problem/topics 200 155 - 24.053 ms
+2026-01-21 15:11:33 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 23.517 ms
+2026-01-21 15:12:03 [info]: ::1 GET /api/v1/stats/ 304 - - 32.500 ms
+2026-01-21 15:12:37 [info]: ::1 GET /api/v1/problem/topics 200 155 - 20.695 ms
+2026-01-21 15:12:37 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 16.808 ms
+2026-01-21 15:13:45 [info]: ::1 GET /api/v1/stats/ 200 - - 18.767 ms
+2026-01-21 15:13:53 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 14.103 ms
+2026-01-21 15:15:01 [info]: ::1 GET /api/v1/stats/ 200 - - 17.916 ms
+2026-01-21 15:20:05 [info]: ::1 GET /api/v1/stats/ 200 - - 15.027 ms
+2026-01-21 15:20:57 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 3.588 ms
+2026-01-21 15:20:57 [info]: ::1 POST /api/v1/auth/login 200 139 - 212.228 ms
+2026-01-21 15:21:01 [info]: ::1 GET /api/v1/stats/ 200 - - 23.854 ms
+2026-01-21 15:21:08 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 14.517 ms
+2026-01-21 15:21:08 [info]: ::1 GET /api/v1/problem/topics 200 155 - 26.518 ms
+2026-01-21 15:21:39 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.563 ms
+2026-01-21 15:21:39 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 112.578 ms
+2026-01-21 15:22:29 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.667 ms
+2026-01-21 15:22:29 [info]: ::1 POST /api/v1/auth/login 200 139 - 209.001 ms
+2026-01-21 15:22:33 [info]: ::1 GET /api/v1/stats/ 200 - - 14.221 ms
+2026-01-21 15:22:37 [info]: ::1 GET /api/v1/problem/topics 200 155 - 19.277 ms
+2026-01-21 15:22:37 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 14.660 ms
+2026-01-21 15:25:57 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 9.598 ms
+2026-01-21 15:26:06 [info]: ::1 GET /api/v1/stats/ 200 - - 76.960 ms
+2026-01-21 15:27:17 [info]: ::1 GET /api/v1/stats/ 200 - - 11.931 ms
+2026-01-21 15:27:44 [info]: ::1 GET /api/v1/stats/ 304 - - 9.176 ms
+2026-01-21 15:28:02 [info]: ::1 GET /api/v1/problem/topics 200 155 - 21.983 ms
+2026-01-21 15:28:02 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 19.535 ms
+2026-01-21 15:32:59 [info]: ::1 GET /api/v1/stats/ 200 - - 11.074 ms
+2026-01-21 15:33:38 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 10.482 ms
+2026-01-21 15:36:22 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 9.502 ms
+2026-01-21 15:37:05 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 1.263 ms
+2026-01-21 15:37:05 [error]: Error: Description too short
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 15:37:05 [info]: ::1 POST /api/v1/problem/upload 400 51 - 88.126 ms
+2026-01-21 15:37:18 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.416 ms
+2026-01-21 15:37:18 [info]: ::1 POST /api/v1/problem/upload 201 92 - 230.129 ms
+2026-01-21 15:38:42 [info]: ::1 POST /api/v1/history/solved-problems 401 62 - 24.397 ms
+2026-01-21 15:38:49 [info]: ::1 POST /api/v1/auth/login 200 139 - 210.419 ms
+2026-01-21 15:47:10 [error]: Error: Invalid Problem ID format
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 15:47:10 [info]: ::1 GET /api/v1/problem/user-uploads?page=1&limit=10 400 55 - 137.855 ms
+2026-01-21 15:47:11 [error]: Error: Invalid Problem ID format
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 15:47:11 [info]: ::1 GET /api/v1/problem/user-uploads?page=1&limit=10 400 55 - 17.514 ms
+2026-01-21 15:47:43 [info]: ::1 OPTIONS /api/v1/problem/user-uploads 204 0 - 2.015 ms
+2026-01-21 15:47:44 [info]: ::1 POST /api/v1/problem/user-uploads 200 877 - 189.459 ms
+2026-01-21 15:56:20 [info]: ::1 POST /api/v1/problems/user-problem 404 168 - 85.214 ms
+2026-01-21 15:56:58 [info]: ::1 GET /api/v1/problems/user-problem 404 167 - 12.091 ms
+2026-01-21 15:57:06 [info]: ::1 POST /api/v1/problems/user-problem 404 168 - 2.010 ms
+2026-01-21 15:57:15 [info]: ::1 POST /api/v1/problem/user-problem 404 167 - 4.348 ms
+2026-01-21 15:57:30 [info]: ::1 POST /api/v1/problem/user-uploads 401 62 - 58.460 ms
+2026-01-21 15:57:46 [info]: ::1 POST /api/v1/auth/login 200 139 - 340.280 ms
+2026-01-21 15:57:52 [info]: ::1 POST /api/v1/problem/user-uploads 200 877 - 188.301 ms
+2026-01-21 16:00:37 [info]: ::1 OPTIONS /api/v1/problem/user-uploads 204 0 - 5.553 ms
+2026-01-21 16:00:37 [info]: ::1 POST /api/v1/problem/user-uploads 200 877 - 58.447 ms
+2026-01-21 16:01:48 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 3.412 ms
+2026-01-21 16:01:48 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 81.292 ms
+2026-01-21 16:05:11 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 16.810 ms
+2026-01-21 16:05:12 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 227.262 ms
+2026-01-21 16:06:13 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.300 ms
+2026-01-21 16:06:13 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 13.026 ms
+2026-01-21 16:08:52 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 3.409 ms
+2026-01-21 16:08:52 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 175.937 ms
+2026-01-21 16:08:56 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 25.119 ms
+2026-01-21 16:10:35 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 2.452 ms
+2026-01-21 16:10:35 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 304.487 ms
+2026-01-21 16:14:14 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 5.797 ms
+2026-01-21 16:14:14 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 173.222 ms
+2026-01-21 16:15:49 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.467 ms
+2026-01-21 16:15:49 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 22.871 ms
+2026-01-21 16:16:52 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 2.095 ms
+2026-01-21 16:16:52 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 30.807 ms
+2026-01-21 16:17:59 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.570 ms
+2026-01-21 16:17:59 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 15.459 ms
+2026-01-21 16:18:45 [info]: ::1 GET /api/v1/problem/6970a556c5ecc3c74a05370d 200 426 - 121.071 ms
+2026-01-21 16:18:45 [info]: ::1 GET /api/v1/solution/problem/6970a556c5ecc3c74a05370d? 200 86 - 128.341 ms
+2026-01-21 16:19:29 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.867 ms
+2026-01-21 16:19:29 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 33.878 ms
+2026-01-21 16:20:29 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.273 ms
+2026-01-21 16:20:29 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 17.927 ms
+2026-01-21 16:21:34 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.583 ms
+2026-01-21 16:21:34 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 16.065 ms
+2026-01-21 16:22:55 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 1.234 ms
+2026-01-21 16:22:55 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 74.985 ms
+2026-01-21 16:23:00 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 1.594 ms
+2026-01-21 16:23:00 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 12.447 ms
+2026-01-21 16:23:18 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 3.135 ms
+2026-01-21 16:23:18 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 339 - 42.487 ms
+2026-01-21 16:23:21 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 339 - 9.323 ms
+2026-01-21 16:23:26 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 1.174 ms
+2026-01-21 16:23:26 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 12.595 ms
+2026-01-21 16:24:25 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.385 ms
+2026-01-21 16:24:25 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 10.406 ms
+2026-01-21 16:24:31 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.293 ms
+2026-01-21 16:24:31 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 12.081 ms
+2026-01-21 16:24:35 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 12.432 ms
+2026-01-21 16:28:00 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 1.840 ms
+2026-01-21 16:28:00 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 18.418 ms
+2026-01-21 16:28:14 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 1.409 ms
+2026-01-21 16:28:14 [info]: ::1 POST /api/v1/auth/login 200 139 - 172.132 ms
+2026-01-21 16:28:14 [info]: ::1 GET /api/v1/stats/ 200 - - 72.238 ms
+2026-01-21 16:28:16 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.207 ms
+2026-01-21 16:28:16 [info]: ::1 GET /api/v1/problem/topics 304 - - 17.365 ms
+2026-01-21 16:28:16 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 15.143 ms
+2026-01-21 16:28:38 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.297 ms
+2026-01-21 16:28:38 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 14.184 ms
+2026-01-21 16:34:43 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 8.696 ms
+2026-01-21 16:34:43 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 38.486 ms
+2026-01-21 16:35:05 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.289 ms
+2026-01-21 16:35:05 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 16.373 ms
+2026-01-21 16:35:08 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.314 ms
+2026-01-21 16:35:08 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 153 - 60.656 ms
+2026-01-21 16:35:12 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.191 ms
+2026-01-21 16:35:12 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 27.246 ms
+2026-01-21 16:38:13 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 8.447 ms
+2026-01-21 16:38:13 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 116.086 ms
+2026-01-21 16:38:21 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.201 ms
+2026-01-21 16:38:21 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 153 - 40.336 ms
+2026-01-21 16:38:31 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.177 ms
+2026-01-21 16:38:31 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 11.412 ms
+2026-01-21 16:38:34 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 153 - 17.525 ms
+2026-01-21 16:38:42 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.195 ms
+2026-01-21 16:38:42 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 153 - 9.411 ms
+2026-01-21 16:41:50 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.242 ms
+2026-01-21 16:41:50 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 16.786 ms
+2026-01-21 16:44:19 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 2.216 ms
+2026-01-21 16:44:19 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 91.332 ms
+2026-01-21 16:44:37 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.149 ms
+2026-01-21 16:44:37 [info]: ::1 GET /api/v1/problem/topics 304 - - 45.534 ms
+2026-01-21 16:44:37 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 30.877 ms
+2026-01-21 16:44:52 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.190 ms
+2026-01-21 16:44:52 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 153 - 25.663 ms
+2026-01-21 16:44:54 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 21.711 ms
+2026-01-21 16:46:05 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.283 ms
+2026-01-21 16:46:05 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 12.507 ms
+2026-01-21 16:46:43 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.206 ms
+2026-01-21 16:46:43 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 153 - 13.372 ms
+2026-01-21 16:46:45 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 8.480 ms
+2026-01-21 16:46:46 [error]: Error: Invalid Problem ID format
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 16:46:46 [info]: ::1 GET /api/v1/problem/undefined 400 55 - 58.703 ms
+2026-01-21 16:46:46 [error]: Error: Invalid ID format
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 16:46:46 [info]: ::1 GET /api/v1/solution/problem/undefined? 400 47 - 73.664 ms
+2026-01-21 16:46:47 [error]: Error: Invalid Problem ID format
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 16:46:47 [info]: ::1 GET /api/v1/problem/undefined 400 55 - 8.342 ms
+2026-01-21 16:46:47 [error]: Error: Invalid ID format
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-21 16:46:47 [info]: ::1 GET /api/v1/solution/problem/undefined? 400 47 - 9.177 ms
+2026-01-21 16:48:03 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.730 ms
+2026-01-21 16:48:03 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 17.772 ms
+2026-01-21 16:49:23 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 3.751 ms
+2026-01-21 16:49:23 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 37.135 ms
+2026-01-21 16:49:34 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 3.474 ms
+2026-01-21 16:49:34 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 153 - 37.775 ms
+2026-01-21 16:49:36 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 9.040 ms
+2026-01-21 16:49:53 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.197 ms
+2026-01-21 16:49:53 [info]: ::1 GET /api/v1/problem/topics 304 - - 30.314 ms
+2026-01-21 16:49:53 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 22.756 ms
+2026-01-21 16:49:58 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.323 ms
+2026-01-21 16:49:58 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 153 - 10.597 ms
+2026-01-21 16:51:28 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.318 ms
+2026-01-21 16:51:28 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 153 - 11.690 ms
+2026-01-21 16:51:29 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 11.263 ms
+2026-01-21 16:52:54 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 2.843 ms
+2026-01-21 16:52:54 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 136.928 ms
+2026-01-21 16:54:22 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 4.084 ms
+2026-01-21 16:54:22 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 44.045 ms
+2026-01-21 16:54:36 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.225 ms
+2026-01-21 16:54:36 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 40.233 ms
+2026-01-21 16:55:01 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.218 ms
+2026-01-21 16:55:01 [info]: ::1 GET /api/v1/problem/topics 304 - - 26.373 ms
+2026-01-21 16:55:01 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 18.255 ms
+2026-01-21 16:55:21 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.186 ms
+2026-01-21 16:55:21 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 17.506 ms
+2026-01-21 16:55:24 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.181 ms
+2026-01-21 16:55:24 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 153 - 11.186 ms
+2026-01-21 16:55:40 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.307 ms
+2026-01-21 16:55:40 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 58.970 ms
+2026-01-21 16:59:36 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 3.989 ms
+2026-01-21 16:59:37 [info]: ::1 POST /api/v1/auth/login 200 139 - 277.140 ms
+2026-01-21 16:59:37 [info]: ::1 GET /api/v1/stats/ 304 - - 137.518 ms
+2026-01-21 16:59:39 [info]: ::1 GET /api/v1/problem/topics 304 - - 23.175 ms
+2026-01-21 16:59:39 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 41.033 ms
+2026-01-21 16:59:45 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.336 ms
+2026-01-21 16:59:45 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 32.637 ms
+2026-01-21 16:59:50 [info]: ::1 GET /api/v1/stats/ 304 - - 10.333 ms
+2026-01-21 16:59:51 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.732 ms
+2026-01-21 16:59:51 [info]: ::1 GET /api/v1/problem/topics 304 - - 18.842 ms
+2026-01-21 16:59:51 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 25.356 ms
+2026-01-21 16:59:55 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 153 - 15.910 ms
+2026-01-21 16:59:58 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.247 ms
+2026-01-21 16:59:58 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 16.454 ms
+2026-01-21 17:00:02 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.434 ms
+2026-01-21 17:00:02 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 9.930 ms
+2026-01-21 17:00:10 [info]: ::1 GET /api/v1/problem/topics 304 - - 9.438 ms
+2026-01-21 17:00:10 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 19.873 ms
+2026-01-21 17:00:12 [info]: ::1 GET /api/v1/problem/696f4dcef11fab70e5bd7021 200 479 - 23.016 ms
+2026-01-21 17:00:12 [info]: ::1 GET /api/v1/solution/problem/696f4dcef11fab70e5bd7021? 200 86 - 26.354 ms
+2026-01-22 11:06:30 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 6.412 ms
+2026-01-22 11:06:30 [info]: ::1 POST /api/v1/auth/login 200 139 - 458.913 ms
+2026-01-22 11:06:31 [info]: ::1 GET /api/v1/stats/ 304 - - 254.689 ms
+2026-01-22 11:06:34 [info]: ::1 GET /api/v1/problem/topics 304 - - 44.495 ms
+2026-01-22 11:06:34 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 77.558 ms
+2026-01-22 11:06:39 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.531 ms
+2026-01-22 11:06:39 [info]: ::1 GET /api/v1/problem/topics 304 - - 24.445 ms
+2026-01-22 11:06:39 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 61.558 ms
+2026-01-22 11:06:43 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 33.849 ms
+2026-01-22 11:07:28 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.731 ms
+2026-01-22 11:07:28 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 67.034 ms
+2026-01-22 11:08:24 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.509 ms
+2026-01-22 11:08:24 [info]: ::1 POST /api/v1/auth/login 200 139 - 197.616 ms
+2026-01-22 11:08:24 [info]: ::1 GET /api/v1/stats/ 304 - - 10.822 ms
+2026-01-22 11:08:47 [info]: ::1 GET /api/v1/problem/topics 304 - - 14.585 ms
+2026-01-22 11:08:47 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 10.893 ms
+2026-01-22 11:08:51 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.443 ms
+2026-01-22 11:08:51 [info]: ::1 GET /api/v1/problem/topics 304 - - 20.641 ms
+2026-01-22 11:08:51 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 25.405 ms
+2026-01-22 11:10:41 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.563 ms
+2026-01-22 11:10:41 [info]: ::1 GET /api/v1/problem/topics 200 155 - 21.689 ms
+2026-01-22 11:10:41 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 40.081 ms
+2026-01-22 11:11:44 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.594 ms
+2026-01-22 11:11:44 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 37.165 ms
+2026-01-22 11:13:45 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.793 ms
+2026-01-22 11:13:45 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 43.897 ms
+2026-01-22 11:15:30 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.275 ms
+2026-01-22 11:15:30 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 30.646 ms
+2026-01-22 11:16:25 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.922 ms
+2026-01-22 11:16:25 [info]: ::1 GET /api/v1/problem/topics 200 155 - 25.111 ms
+2026-01-22 11:16:25 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 42.328 ms
+2026-01-22 11:17:36 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.594 ms
+2026-01-22 11:17:36 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 26.877 ms
+2026-01-22 11:17:42 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.413 ms
+2026-01-22 11:17:42 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 370 - 58.439 ms
+2026-01-22 11:17:49 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.288 ms
+2026-01-22 11:17:49 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 153 - 72.550 ms
+2026-01-22 11:19:36 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.691 ms
+2026-01-22 11:19:36 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 53.179 ms
+2026-01-22 15:47:52 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 9.029 ms
+2026-01-22 15:47:52 [info]: ::1 POST /api/v1/auth/login 200 139 - 296.691 ms
+2026-01-22 15:47:53 [info]: ::1 GET /api/v1/stats/ 304 - - 101.416 ms
+2026-01-22 15:48:41 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.326 ms
+2026-01-22 15:48:42 [info]: ::1 POST /api/v1/auth/login 200 139 - 130.842 ms
+2026-01-22 15:49:21 [info]: ::1 GET /api/v1/stats/ 200 - - 16.504 ms
+2026-01-22 15:50:24 [info]: ::1 GET /api/v1/problem/topics 200 155 - 9.251 ms
+2026-01-22 15:50:24 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=All&status=all 200 106 - 11.217 ms
+2026-01-22 15:50:28 [info]: ::1 GET /api/v1/stats/ 200 - - 11.730 ms
+2026-01-22 15:51:30 [info]: ::1 GET /api/v1/stats/ 200 - - 11.380 ms
+2026-01-22 15:51:34 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=All&status=all 200 106 - 9.853 ms
+2026-01-22 15:56:09 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=All&status=all 200 106 - 15.274 ms
+2026-01-22 15:56:10 [info]: ::1 GET /api/v1/stats/ 200 - - 7.693 ms
+2026-01-22 15:57:43 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=All&status=all 200 106 - 25.997 ms
+2026-01-22 15:57:50 [info]: ::1 GET /api/v1/stats/ 200 - - 8.630 ms
+2026-01-22 16:00:58 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.318 ms
+2026-01-22 16:00:58 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.528 ms
+2026-01-22 16:00:58 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 37.613 ms
+2026-01-22 16:00:58 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 55.575 ms
+2026-01-22 16:01:05 [info]: ::1 GET /api/v1/stats/ 200 - - 7.879 ms
+2026-01-22 16:17:02 [info]: ::1 GET /api/v1/problem/topics 200 155 - 193.699 ms
+2026-01-22 16:17:02 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=All&status=all 200 106 - 193.453 ms
+2026-01-22 16:33:16 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 3.583 ms
+2026-01-22 16:33:16 [info]: ::1 POST /api/v1/auth/login 200 139 - 170.244 ms
+2026-01-22 16:33:17 [info]: ::1 GET /api/v1/stats/ 304 - - 98.908 ms
+2026-01-22 16:33:26 [info]: ::1 GET /api/v1/problem/topics 304 - - 13.299 ms
+2026-01-22 16:33:26 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=All&status=all 304 - - 14.481 ms
+2026-01-22 16:34:57 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=All&status=all 304 - - 5.863 ms
+2026-01-22 16:36:48 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=All&status=all 304 - - 8.378 ms
+2026-01-22 16:40:28 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=Arrays&status=all 200 - - 23.020 ms
+2026-01-22 16:49:21 [info]: ::1 GET /api/v1/problem/topics 200 155 - 11.568 ms
+2026-01-22 16:49:21 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 17.075 ms
+2026-01-22 16:51:53 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 5.113 ms
+2026-01-22 16:51:53 [info]: ::1 POST /api/v1/auth/login 200 139 - 184.559 ms
+2026-01-22 16:51:53 [info]: ::1 GET /api/v1/stats/ 304 - - 29.934 ms
+2026-01-22 16:51:59 [info]: ::1 GET /api/v1/problem/topics 304 - - 19.025 ms
+2026-01-22 16:51:59 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 20.033 ms
+2026-01-22 17:00:07 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 25.372 ms
+2026-01-22 17:00:18 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=Arrays 200 - - 19.999 ms
+2026-01-22 17:00:22 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=binary+search 200 398 - 13.109 ms
+2026-01-22 17:00:26 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=Dynamic+Programming 200 - - 19.542 ms
+2026-01-22 17:02:36 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=Dynamic+Programming 200 - - 17.902 ms
+2026-01-22 17:02:40 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=Arrays 200 - - 16.442 ms
+2026-01-22 17:02:43 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=two+pointers 200 561 - 18.749 ms
+2026-01-22 17:02:47 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=two+pointers&status=accepted 200 106 - 33.151 ms
+2026-01-22 17:02:50 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=Array&status=accepted 200 106 - 16.010 ms
+2026-01-22 17:02:53 [info]: ::1 GET /api/v1/problem/?page=1&limit=10&topic=Array 200 398 - 17.975 ms
+2026-01-22 17:02:57 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 10.627 ms
+2026-01-22 17:02:59 [info]: ::1 GET /api/v1/problem/?page=2&limit=10 200 - - 14.044 ms
+2026-01-22 17:03:01 [info]: ::1 GET /api/v1/problem/?page=3&limit=10 200 - - 15.958 ms
+2026-01-22 17:03:16 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.852 ms
+2026-01-22 17:03:16 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.806 ms
+2026-01-22 17:03:16 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 28.742 ms
+2026-01-22 17:03:16 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 46.787 ms
+2026-01-22 17:12:14 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 1.400 ms
+2026-01-22 17:12:14 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:12:14 [info]: ::1 POST /api/v1/problem/upload 400 57 - 73.941 ms
+2026-01-22 17:12:32 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.585 ms
+2026-01-22 17:12:32 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:12:32 [info]: ::1 POST /api/v1/problem/upload 400 57 - 37.146 ms
+2026-01-22 17:15:47 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 1.404 ms
+2026-01-22 17:15:47 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:15:47 [info]: ::1 POST /api/v1/problem/upload 400 57 - 47.289 ms
+2026-01-22 17:19:36 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.258 ms
+2026-01-22 17:19:36 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:19:36 [info]: ::1 POST /api/v1/problem/upload 400 57 - 32.717 ms
+2026-01-22 17:19:53 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.200 ms
+2026-01-22 17:19:53 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:19:53 [info]: ::1 POST /api/v1/problem/upload 400 57 - 15.334 ms
+2026-01-22 17:37:08 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 2.867 ms
+2026-01-22 17:37:08 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.472 ms
+2026-01-22 17:37:08 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 136.790 ms
+2026-01-22 17:37:08 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 121.835 ms
+2026-01-22 17:37:12 [info]: ::1 GET /api/v1/problem/topics 304 - - 16.131 ms
+2026-01-22 17:37:12 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 23.432 ms
+2026-01-22 17:37:14 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.224 ms
+2026-01-22 17:37:14 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.182 ms
+2026-01-22 17:37:14 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 14.499 ms
+2026-01-22 17:37:14 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 11.197 ms
+2026-01-22 17:39:22 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.283 ms
+2026-01-22 17:39:22 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.199 ms
+2026-01-22 17:39:22 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 28.794 ms
+2026-01-22 17:39:22 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 56.224 ms
+2026-01-22 17:43:37 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.350 ms
+2026-01-22 17:43:37 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.184 ms
+2026-01-22 17:43:37 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 15.976 ms
+2026-01-22 17:43:37 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 14.307 ms
+2026-01-22 17:50:23 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.233 ms
+2026-01-22 17:50:23 [error]: Error: Description too short, At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:50:23 [info]: ::1 POST /api/v1/problem/upload 400 80 - 29.083 ms
+2026-01-22 17:50:55 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.228 ms
+2026-01-22 17:50:55 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:50:55 [info]: ::1 POST /api/v1/problem/upload 400 57 - 18.418 ms
+2026-01-22 17:51:17 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.188 ms
+2026-01-22 17:51:17 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:51:17 [info]: ::1 POST /api/v1/problem/upload 400 57 - 19.737 ms
+2026-01-22 17:51:38 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.271 ms
+2026-01-22 17:51:38 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:51:38 [info]: ::1 POST /api/v1/problem/upload 400 57 - 24.546 ms
+2026-01-22 17:51:45 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.184 ms
+2026-01-22 17:51:45 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:51:45 [info]: ::1 POST /api/v1/problem/upload 400 57 - 33.343 ms
+2026-01-22 17:52:02 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.188 ms
+2026-01-22 17:52:02 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:52:02 [info]: ::1 POST /api/v1/problem/upload 400 57 - 25.101 ms
+2026-01-22 17:52:41 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.198 ms
+2026-01-22 17:52:41 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:52:41 [info]: ::1 POST /api/v1/problem/upload 400 57 - 18.128 ms
+2026-01-22 17:53:41 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.196 ms
+2026-01-22 17:53:41 [info]: ::1 POST /api/v1/auth/login 200 139 - 141.539 ms
+2026-01-22 17:53:41 [info]: ::1 GET /api/v1/stats/ 304 - - 60.993 ms
+2026-01-22 17:53:43 [info]: ::1 GET /api/v1/problem/topics 304 - - 10.437 ms
+2026-01-22 17:53:43 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 24.664 ms
+2026-01-22 17:53:44 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.226 ms
+2026-01-22 17:53:44 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.185 ms
+2026-01-22 17:53:44 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 13.460 ms
+2026-01-22 17:53:44 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 12.501 ms
+2026-01-22 17:54:23 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.268 ms
+2026-01-22 17:54:23 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:54:23 [info]: ::1 POST /api/v1/problem/upload 400 57 - 18.369 ms
+2026-01-22 17:55:49 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.271 ms
+2026-01-22 17:55:49 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:55:49 [info]: ::1 POST /api/v1/problem/upload 400 57 - 8.361 ms
+2026-01-22 17:57:57 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.205 ms
+2026-01-22 17:57:58 [info]: ::1 POST /api/v1/auth/login 200 139 - 104.611 ms
+2026-01-22 17:57:58 [info]: ::1 GET /api/v1/stats/ 304 - - 9.275 ms
+2026-01-22 17:58:00 [info]: ::1 GET /api/v1/problem/topics 304 - - 14.109 ms
+2026-01-22 17:58:00 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 12.494 ms
+2026-01-22 17:58:00 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.341 ms
+2026-01-22 17:58:00 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.158 ms
+2026-01-22 17:58:00 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 14.641 ms
+2026-01-22 17:58:00 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 13.589 ms
+2026-01-22 17:58:46 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.224 ms
+2026-01-22 17:58:46 [error]: Error: Title must be at least 5 characters, At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:58:46 [info]: ::1 POST /api/v1/problem/upload 400 94 - 35.841 ms
+2026-01-22 17:59:05 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.281 ms
+2026-01-22 17:59:05 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:59:05 [info]: ::1 POST /api/v1/problem/upload 400 57 - 25.822 ms
+2026-01-22 17:59:27 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.190 ms
+2026-01-22 17:59:27 [error]: Error: At least one topic required
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/validate.middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 17:59:27 [info]: ::1 POST /api/v1/problem/upload 400 57 - 27.329 ms
+2026-01-22 18:00:36 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.644 ms
+2026-01-22 18:00:36 [info]: ::1 POST /api/v1/auth/login 200 139 - 212.463 ms
+2026-01-22 18:00:37 [info]: ::1 GET /api/v1/stats/ 304 - - 9.024 ms
+2026-01-22 18:00:44 [info]: ::1 GET /api/v1/problem/topics 200 155 - 13.136 ms
+2026-01-22 18:00:44 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 9.346 ms
+2026-01-22 18:00:49 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.559 ms
+2026-01-22 18:00:49 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.470 ms
+2026-01-22 18:00:49 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 34.429 ms
+2026-01-22 18:00:49 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 877 - 52.741 ms
+2026-01-22 18:03:58 [info]: ::1 OPTIONS /api/v1/problem/upload 204 0 - 0.895 ms
+2026-01-22 18:03:58 [info]: ::1 POST /api/v1/problem/upload 201 92 - 151.441 ms
+2026-01-22 18:11:31 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.390 ms
+2026-01-22 18:11:31 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 - - 46.006 ms
+2026-01-22 18:12:08 [info]: ::1 GET /api/v1/problem/69721936b1b70394d7a1d271 200 464 - 72.993 ms
+2026-01-22 18:12:08 [info]: ::1 GET /api/v1/solution/problem/69721936b1b70394d7a1d271? 200 86 - 80.750 ms
+2026-01-22 18:15:44 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 2.697 ms
+2026-01-22 18:15:44 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 259 - 87.381 ms
+2026-01-22 18:15:49 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.386 ms
+2026-01-22 18:15:49 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 28.120 ms
+2026-01-22 18:16:35 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.224 ms
+2026-01-22 18:16:35 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 1015 - 10.791 ms
+2026-01-22 18:16:45 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.431 ms
+2026-01-22 18:16:45 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 10.423 ms
+2026-01-22 18:19:13 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.604 ms
+2026-01-22 18:19:13 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 33.786 ms
+2026-01-22 18:20:13 [info]: ::1 OPTIONS /api/v1/history/ai-interactions 204 0 - 0.591 ms
+2026-01-22 18:20:14 [info]: ::1 POST /api/v1/history/ai-interactions 200 - - 48.697 ms
+2026-01-22 18:20:22 [info]: ::1 OPTIONS /api/v1/history/ai-interactions 204 0 - 0.489 ms
+2026-01-22 18:20:22 [info]: ::1 POST /api/v1/history/ai-interactions 200 - - 31.376 ms
+2026-01-22 18:20:25 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.556 ms
+2026-01-22 18:20:25 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 26.381 ms
+2026-01-22 18:20:47 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 729 - 48.666 ms
+2026-01-22 18:20:47 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 58.612 ms
+2026-01-22 18:24:15 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.727 ms
+2026-01-22 18:24:15 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 27.640 ms
+2026-01-22 18:25:25 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.301 ms
+2026-01-22 18:25:25 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 10.451 ms
+2026-01-22 18:26:50 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.222 ms
+2026-01-22 18:26:50 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 7.128 ms
+2026-01-22 18:26:54 [info]: ::1 OPTIONS /api/v1/history/ai-interactions 204 0 - 0.289 ms
+2026-01-22 18:26:54 [info]: ::1 POST /api/v1/history/ai-interactions 200 - - 16.436 ms
+2026-01-22 18:27:19 [info]: ::1 OPTIONS /api/v1/history/ai-interactions 204 0 - 0.198 ms
+2026-01-22 18:27:19 [info]: ::1 POST /api/v1/history/ai-interactions 200 - - 10.090 ms
+2026-01-22 18:27:28 [info]: ::1 OPTIONS /api/v1/history/ai-interactions 204 0 - 0.282 ms
+2026-01-22 18:27:28 [info]: ::1 POST /api/v1/history/ai-interactions 200 - - 12.705 ms
+2026-01-22 18:27:32 [info]: ::1 POST /api/v1/history/ai-interactions 200 - - 8.515 ms
+2026-01-22 18:27:37 [info]: ::1 OPTIONS /api/v1/history/ai-interactions 204 0 - 0.190 ms
+2026-01-22 18:27:37 [info]: ::1 POST /api/v1/history/ai-interactions 200 - - 6.937 ms
+2026-01-22 18:27:45 [info]: ::1 OPTIONS /api/v1/history/ai-interactions 204 0 - 0.214 ms
+2026-01-22 18:27:45 [info]: ::1 POST /api/v1/history/ai-interactions 200 - - 8.165 ms
+2026-01-22 18:29:29 [info]: ::1 OPTIONS /api/v1/history/ai-interactions 204 0 - 0.220 ms
+2026-01-22 18:29:29 [info]: ::1 POST /api/v1/history/ai-interactions 200 - - 14.774 ms
+2026-01-22 18:33:29 [info]: ::1 OPTIONS /api/v1/history/ai-interactions 204 0 - 3.424 ms
+2026-01-22 18:33:29 [info]: ::1 POST /api/v1/history/ai-interactions 200 - - 15.016 ms
+2026-01-22 18:33:47 [info]: ::1 GET /api/v1/history/ai-interactions?page=2&limit=10&featureType=ExplainCode 404 169 - 44.555 ms
+2026-01-22 18:33:49 [info]: ::1 GET /api/v1/history/ai-interactions?page=2&limit=10&featureType=ExplainCode 404 169 - 1.591 ms
+2026-01-22 18:33:55 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10&featureType=ConvertCode 404 169 - 0.650 ms
+2026-01-22 18:33:56 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10&featureType=ConvertCode 404 169 - 0.956 ms
+2026-01-22 18:35:19 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.281 ms
+2026-01-22 18:35:19 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 28.471 ms
+2026-01-22 18:36:21 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.141 ms
+2026-01-22 18:36:21 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 20.073 ms
+2026-01-22 18:37:27 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.208 ms
+2026-01-22 18:37:27 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 25.804 ms
+2026-01-22 18:47:14 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.294 ms
+2026-01-22 18:47:14 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 12.821 ms
+2026-01-22 18:47:16 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 404 169 - 2.959 ms
+2026-01-22 18:47:17 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 404 169 - 4.536 ms
+2026-01-22 18:47:40 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 1.596 ms
+2026-01-22 18:47:40 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 27.836 ms
+2026-01-22 18:47:53 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.554 ms
+2026-01-22 18:47:53 [info]: ::1 POST /api/v1/auth/login 200 139 - 309.797 ms
+2026-01-22 18:47:54 [info]: ::1 GET /api/v1/stats/ 200 - - 113.266 ms
+2026-01-22 18:47:57 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.483 ms
+2026-01-22 18:47:57 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 11.681 ms
+2026-01-22 18:47:58 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 404 169 - 0.859 ms
+2026-01-22 18:47:59 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 404 169 - 1.290 ms
+2026-01-22 18:48:01 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10&featureType=GenerateCode 404 169 - 1.329 ms
+2026-01-22 18:48:02 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10&featureType=GenerateCode 404 169 - 1.108 ms
+2026-01-22 18:48:05 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 404 169 - 1.191 ms
+2026-01-22 18:48:06 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 404 169 - 1.304 ms
+2026-01-22 18:50:04 [info]: ::1 GET /api/v1/stats/ 200 - - 71.139 ms
+2026-01-22 18:50:06 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 1.053 ms
+2026-01-22 18:50:06 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 86.974 ms
+2026-01-22 18:50:09 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:50:09 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 400 80 - 19.433 ms
+2026-01-22 18:50:11 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:50:11 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 400 80 - 15.728 ms
+2026-01-22 18:50:29 [info]: ::1 POST /api/v1/auth/login 200 139 - 209.901 ms
+2026-01-22 18:50:36 [info]: ::1 POST /api/v1/history/ai-interactions 404 170 - 3.203 ms
+2026-01-22 18:50:42 [info]: ::1 GET /api/v1/history/ai-interactions 200 - - 35.120 ms
+2026-01-22 18:51:42 [info]: ::1 GET /api/v1/history/ai-interactions 200 - - 169.188 ms
+2026-01-22 18:52:21 [info]: ::1 GET /api/v1/history/ai-interactions 200 - - 143.448 ms
+2026-01-22 18:53:21 [info]: ::1 GET /api/v1/history/ai-interactions 200 - - 134.233 ms
+2026-01-22 18:53:45 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 1.272 ms
+2026-01-22 18:53:45 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 46.484 ms
+2026-01-22 18:53:45 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:53:45 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 400 80 - 23.239 ms
+2026-01-22 18:53:47 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:53:47 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 400 80 - 12.674 ms
+2026-01-22 18:56:49 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:56:49 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 400 80 - 84.808 ms
+2026-01-22 18:56:53 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:56:53 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 400 80 - 15.466 ms
+2026-01-22 18:56:56 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 1.009 ms
+2026-01-22 18:56:56 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 71.101 ms
+2026-01-22 18:56:57 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:56:57 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 400 80 - 13.010 ms
+2026-01-22 18:56:59 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:56:59 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 400 80 - 13.011 ms
+2026-01-22 18:57:29 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:57:29 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10&featureType=ConvertCode 400 80 - 10.166 ms
+2026-01-22 18:57:30 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:57:30 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10&featureType=ConvertCode 400 80 - 11.907 ms
+2026-01-22 18:58:07 [info]: ::1 GET /api/v1/history/ai-interactions 200 - - 37.236 ms
+2026-01-22 18:58:32 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:58:32 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10&featureType=ConvertCode 400 80 - 8.206 ms
+2026-01-22 18:58:35 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:58:35 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10&featureType=ConvertCode 400 80 - 16.108 ms
+2026-01-22 18:58:37 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.350 ms
+2026-01-22 18:58:37 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 42.714 ms
+2026-01-22 18:58:39 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:58:39 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 400 80 - 11.067 ms
+2026-01-22 18:58:40 [error]: Error: Invalid input: expected object, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-22 18:58:40 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 400 80 - 13.318 ms
+2026-01-22 19:02:48 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 6.838 ms
+2026-01-22 19:02:49 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 157.488 ms
+2026-01-22 19:02:50 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 200 - - 28.764 ms
+2026-01-22 19:03:58 [info]: ::1 GET /api/v1/aiInteractions/68851471e1df9c1835b037df 200 - - 32.317 ms
+2026-01-23 11:05:10 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 3.484 ms
+2026-01-23 11:05:11 [info]: ::1 POST /api/v1/auth/login 200 139 - 479.301 ms
+2026-01-23 11:05:11 [info]: ::1 GET /api/v1/stats/ 304 - - 195.402 ms
+2026-01-23 11:12:05 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 3.591 ms
+2026-01-23 11:12:05 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 78.204 ms
+2026-01-23 11:12:08 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 304 - - 31.945 ms
+2026-01-23 11:12:10 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10&featureType=ConvertCode 200 152 - 24.461 ms
+2026-01-23 11:12:13 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10&featureType=GenerateCode 200 152 - 16.052 ms
+2026-01-23 11:12:17 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10&featureType=DebugCode 200 152 - 18.346 ms
+2026-01-23 11:12:39 [info]: ::1 GET /api/v1/ai-interactions/6925b550f9989505438fe249 404 186 - 10.166 ms
+2026-01-23 11:12:40 [info]: ::1 GET /api/v1/ai-interactions/6925b550f9989505438fe249 404 186 - 3.827 ms
+2026-01-23 11:15:45 [info]: ::1 GET /api/v1/aiInteractions/68851471e1df9c1835b037df 401 62 - 26.136 ms
+2026-01-23 11:15:52 [info]: ::1 POST /api/v1/auth/login 200 139 - 383.690 ms
+2026-01-23 11:15:56 [info]: ::1 GET /api/v1/aiInteractions/68851471e1df9c1835b037df 200 - - 46.507 ms
+2026-01-23 11:16:33 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 304 - - 19.941 ms
+2026-01-23 11:16:37 [info]: ::1 GET /api/v1/aiinteractions/6925b550f9989505438fe249 200 - - 11.951 ms
+2026-01-23 11:17:34 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 304 - - 15.559 ms
+2026-01-23 11:18:22 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 1.016 ms
+2026-01-23 11:18:22 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 79.002 ms
+2026-01-23 11:18:24 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 304 - - 26.709 ms
+2026-01-23 11:18:27 [info]: ::1 GET /api/v1/aiInteractions/6925b550f9989505438fe249 200 - - 35.742 ms
+2026-01-23 11:19:25 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.428 ms
+2026-01-23 11:19:25 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 22.648 ms
+2026-01-23 11:19:51 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 200 - - 13.591 ms
+2026-01-23 11:20:22 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.817 ms
+2026-01-23 11:20:22 [info]: ::1 POST /api/v1/auth/login 200 139 - 229.830 ms
+2026-01-23 11:20:23 [info]: ::1 GET /api/v1/stats/ 304 - - 140.210 ms
+2026-01-23 11:20:56 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.635 ms
+2026-01-23 11:20:56 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 1015 - 31.573 ms
+2026-01-23 11:20:57 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.595 ms
+2026-01-23 11:20:57 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 16.524 ms
+2026-01-23 11:20:58 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 304 - - 15.795 ms
+2026-01-23 11:22:46 [info]: ::1 GET /api/v1/aiInteractions/6925b550f9989505438fe249 200 - - 16.407 ms
+2026-01-23 11:26:02 [info]: ::1 GET /api/v1/aiInteractions/692556241838ef4a2f3fbd64 200 - - 15.366 ms
+2026-01-23 11:26:14 [info]: ::1 GET /api/v1/aiInteractions/68864b7554188bb07299812b 200 - - 10.920 ms
+2026-01-23 11:26:27 [info]: ::1 GET /api/v1/aiInteractions/688649ce54188bb07299811b 200 - - 18.134 ms
+2026-01-23 11:27:23 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.569 ms
+2026-01-23 11:27:23 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 15.406 ms
+2026-01-23 11:27:25 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 304 - - 12.411 ms
+2026-01-23 11:27:31 [info]: ::1 OPTIONS /api/v1/aiInteractions/692556241838ef4a2f3fbd64 204 0 - 1.239 ms
+2026-01-23 11:27:31 [info]: ::1 DELETE /api/v1/aiInteractions/692556241838ef4a2f3fbd64 200 61 - 41.636 ms
+2026-01-23 11:27:31 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 200 - - 17.959 ms
+2026-01-23 11:27:58 [info]: ::1 OPTIONS /api/v1/aiInteractions/6925b550f9989505438fe249 204 0 - 0.655 ms
+2026-01-23 11:27:58 [info]: ::1 DELETE /api/v1/aiInteractions/6925b550f9989505438fe249 200 61 - 24.117 ms
+2026-01-23 11:27:58 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 200 - - 20.436 ms
+2026-01-23 11:28:38 [info]: ::1 GET /api/v1/problem/topics 200 169 - 19.853 ms
+2026-01-23 11:28:38 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 35.608 ms
+2026-01-23 11:28:41 [info]: ::1 GET /api/v1/problem/69721936b1b70394d7a1d271 304 - - 85.018 ms
+2026-01-23 11:28:41 [info]: ::1 GET /api/v1/solution/problem/69721936b1b70394d7a1d271? 304 - - 88.778 ms
+2026-01-23 11:31:15 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 17.480 ms
+2026-01-23 11:32:05 [info]: ::1 OPTIONS /api/v1/compile/ 204 0 - 0.548 ms
+2026-01-23 11:32:05 [error]: ReferenceError: sourceCode is not defined
+    at CompileCode (file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/controllers/Compiler.Controller.js:18:26)
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:10:5
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-23 11:32:05 [info]: ::1 POST /api/v1/compile/ 500 55 - 32.264 ms
+2026-01-23 11:43:17 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 6.683 ms
+2026-01-23 11:43:17 [info]: ::1 POST /api/v1/auth/login 200 139 - 499.677 ms
+2026-01-23 11:43:18 [info]: ::1 GET /api/v1/stats/ 304 - - 152.371 ms
+2026-01-23 11:43:41 [info]: ::1 OPTIONS /api/v1/compile 204 0 - 0.936 ms
+2026-01-23 11:43:44 [info]: ::1 POST /api/v1/compile 200 72 - 2853.514 ms
+2026-01-23 11:45:50 [info]: ::1 GET /api/v1/compiler 404 154 - 5.993 ms
+2026-01-23 11:46:01 [info]: ::1 POST /api/v1/compiler 404 155 - 2.401 ms
+2026-01-23 11:46:13 [error]: Error: Invalid option: expected one of "c-gcc-14"|"cpp-gcc-14"|"csharp"|"java-17"|"go-1.23"|"javascript-22"|"php-8"|"python-3.13"|"ruby"|"rust-1.85"|"sql"|"swift"|"typescript-5.6"
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-23 11:46:13 [info]: ::1 POST /api/v1/compile 400 228 - 15.406 ms
+2026-01-23 11:48:16 [info]: ::1 POST /api/v1/compile 200 71 - 2368.244 ms
+2026-01-23 11:55:52 [info]: ::1 OPTIONS /api/v1/compile 204 0 - 8.680 ms
+2026-01-23 11:55:55 [info]: ::1 POST /api/v1/compile 200 69 - 2501.094 ms
+2026-01-23 11:56:53 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 0.897 ms
+2026-01-23 11:57:07 [info]: ::1 POST /api/v1/ai 201 - - 13363.081 ms
+2026-01-23 12:01:49 [error]: SyntaxError: Unexpected token ''', ..."serInput":'#iclde<io"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\body-parser\lib\types\json.js:77:19)
+    at C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\body-parser\lib\read.js:123:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
+    at invokeCallback (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-01-23 12:01:49 [info]: ::1 POST /api/v1/ai 400 101 - 77.456 ms
+2026-01-23 12:02:41 [info]: ::1 POST /api/v1/ai 201 - - 7724.187 ms
+2026-01-23 12:08:57 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 7.003 ms
+2026-01-23 12:09:08 [info]: ::1 POST /api/v1/ai 201 - - 10879.729 ms
+2026-01-23 12:10:17 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 0.473 ms
+2026-01-23 12:10:30 [info]: ::1 POST /api/v1/ai 201 - - 12769.240 ms
+2026-01-23 12:10:50 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 0.847 ms
+2026-01-23 12:11:00 [info]: ::1 POST /api/v1/ai 201 - - 9404.979 ms
+2026-01-23 12:12:13 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 0.673 ms
+2026-01-23 12:12:21 [info]: ::1 POST /api/v1/ai 201 - - 8358.911 ms
+2026-01-23 12:13:47 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.585 ms
+2026-01-23 12:13:48 [info]: ::1 POST /api/v1/auth/login 200 139 - 282.638 ms
+2026-01-23 12:13:48 [info]: ::1 GET /api/v1/stats/ 304 - - 154.776 ms
+2026-01-23 12:16:19 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 1.373 ms
+2026-01-23 12:16:27 [info]: ::1 POST /api/v1/ai 201 - - 8178.047 ms
+2026-01-23 12:18:48 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 0.872 ms
+2026-01-23 12:18:48 [error]: Error: Invalid input: expected string, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-23 12:18:48 [info]: ::1 POST /api/v1/ai 400 80 - 94.721 ms
+2026-01-23 12:18:59 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 0.942 ms
+2026-01-23 12:18:59 [error]: Error: Invalid input: expected string, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-23 12:18:59 [info]: ::1 POST /api/v1/ai 400 80 - 44.632 ms
+2026-01-23 12:19:39 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 0.807 ms
+2026-01-23 12:19:39 [error]: Error: Invalid input: expected string, received undefined
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Validate.Middleware.js:19:13
+    at Layer.handleRequest (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\VIGHNESH\OneDrive\Desktop\CodeCrakrAI\server\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/middlewares/Auth.Middleware.js:23:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/VIGHNESH/OneDrive/Desktop/CodeCrakrAI/server/utils/asyncHandler.js:5:17
+2026-01-23 12:19:39 [info]: ::1 POST /api/v1/ai 400 80 - 25.612 ms
+2026-01-23 12:24:36 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 2.816 ms
+2026-01-23 12:24:46 [info]: ::1 POST /api/v1/ai 201 - - 9747.150 ms
+2026-01-23 12:28:41 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.574 ms
+2026-01-23 12:28:41 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 122.904 ms
+2026-01-23 12:28:43 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 200 - - 53.912 ms
+2026-01-23 12:28:49 [info]: ::1 GET /api/v1/aiInteractions/69731b369aa7ad58d2c5f108 200 - - 39.024 ms
+2026-01-23 12:30:09 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 200 - - 19.602 ms
+2026-01-23 12:31:29 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 200 - - 12.031 ms
+2026-01-23 12:38:01 [info]: ::1 GET /api/v1/aiInteractions/69731b369aa7ad58d2c5f108 200 - - 19.287 ms
+2026-01-23 12:40:50 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.362 ms
+2026-01-23 12:40:50 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 42.517 ms
+2026-01-23 12:40:52 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 200 - - 15.147 ms
+2026-01-23 12:41:14 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.414 ms
+2026-01-23 12:41:14 [info]: ::1 POST /api/v1/auth/login 200 139 - 243.002 ms
+2026-01-23 12:41:14 [info]: ::1 GET /api/v1/stats/ 304 - - 127.738 ms
+2026-01-23 12:41:16 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.486 ms
+2026-01-23 12:41:16 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 15.408 ms
+2026-01-23 12:41:17 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 304 - - 14.411 ms
+2026-01-23 12:41:22 [info]: ::1 GET /api/v1/aiInteractions/69731b369aa7ad58d2c5f108 304 - - 7.787 ms
+2026-01-23 12:42:38 [info]: ::1 GET /api/v1/aiInteractions/697319439aa7ad58d2c5f102 200 - - 11.804 ms
+2026-01-23 12:43:33 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.273 ms
+2026-01-23 12:43:33 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 34.723 ms
+2026-01-23 12:45:29 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 200 - - 16.501 ms
+2026-01-23 12:46:28 [info]: ::1 GET /api/v1/aiInteractions/69731b369aa7ad58d2c5f108 200 - - 13.623 ms
+2026-01-23 12:47:11 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.453 ms
+2026-01-23 12:47:11 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 31.492 ms
+2026-01-23 12:47:14 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 200 - - 38.227 ms
+2026-01-23 12:48:52 [info]: ::1 GET /api/v1/aiInteractions/68864e9c54188bb072998132 200 - - 12.311 ms
+2026-01-23 12:48:59 [info]: ::1 GET /api/v1/aiInteractions/688605c6ac74e14ebbac00ba 200 - - 11.368 ms
+2026-01-24 20:20:19 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 5.822 ms
+2026-01-24 20:20:19 [info]: ::1 POST /api/v1/auth/login 200 139 - 448.025 ms
+2026-01-24 20:20:20 [info]: ::1 GET /api/v1/stats/ 304 - - 188.533 ms
+2026-01-24 20:20:29 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.545 ms
+2026-01-24 20:20:29 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 30.156 ms
+2026-01-24 20:20:30 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 200 - - 23.140 ms
+2026-01-24 20:20:34 [info]: ::1 GET /api/v1/aiInteractions/69731b369aa7ad58d2c5f108 200 - - 16.170 ms
+2026-01-24 20:20:58 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 0.568 ms
+2026-01-24 20:20:58 [info]: ::1 POST /api/v1/ai 400 63 - 20.246 ms
+2026-01-24 20:27:50 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 7.153 ms
+2026-01-24 20:27:50 [info]: ::1 POST /api/v1/ai 400 63 - 194.664 ms
+2026-01-24 20:28:00 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 0.446 ms
+2026-01-24 20:28:00 [info]: ::1 POST /api/v1/ai 400 63 - 30.910 ms
+2026-01-24 20:28:41 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 11.468 ms
+2026-01-24 20:28:41 [info]: ::1 POST /api/v1/ai 400 63 - 162.314 ms
+2026-01-24 20:30:16 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 6.764 ms
+2026-01-24 20:30:16 [info]: ::1 POST /api/v1/auth/login 200 139 - 403.259 ms
+2026-01-24 20:30:17 [info]: ::1 GET /api/v1/stats/ 304 - - 96.745 ms
+2026-01-24 20:30:23 [info]: ::1 OPTIONS /api/v1/ai 204 0 - 0.500 ms
+2026-01-24 20:30:35 [info]: ::1 POST /api/v1/ai 201 - - 12815.086 ms
+2026-01-24 20:33:48 [info]: ::1 GET /api/v1/problem/topics 304 - - 40.473 ms
+2026-01-24 20:33:49 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 99.825 ms
+2026-01-24 20:33:51 [info]: ::1 GET /api/v1/problem/69721936b1b70394d7a1d271 304 - - 57.369 ms
+2026-01-24 20:33:51 [info]: ::1 GET /api/v1/solution/problem/69721936b1b70394d7a1d271? 304 - - 73.921 ms
+2026-01-24 20:37:25 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 12.060 ms
+2026-01-24 20:37:29 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 0.846 ms
+2026-01-24 20:37:29 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 33.499 ms
+2026-01-24 20:37:30 [info]: ::1 GET /api/v1/history/ai-interactions?page=1&limit=10 200 - - 22.101 ms
+2026-01-24 20:37:33 [info]: ::1 GET /api/v1/aiInteractions/6974de933ccbdfe38288df32 200 - - 21.082 ms
+2026-01-24 20:41:59 [info]: ::1 OPTIONS /api/v1/history/solved-problems 204 0 - 5.447 ms
+2026-01-24 20:41:59 [info]: ::1 POST /api/v1/history/solved-problems 200 481 - 144.138 ms
+2026-01-24 20:42:01 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 729 - 65.630 ms
+2026-01-24 20:42:01 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 89.659 ms
+2026-01-24 20:46:25 [info]: ::1 POST /api/v1/auth/login 200 139 - 152.195 ms
+2026-01-24 20:46:29 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 729 - 12.241 ms
+2026-01-24 20:49:13 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 29.891 ms
+2026-01-24 20:49:13 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 35.923 ms
+2026-01-24 20:49:41 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/report 204 0 - 0.226 ms
+2026-01-24 20:49:41 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 86 - 86.665 ms
+2026-01-24 20:49:41 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 45.760 ms
+2026-01-24 20:49:47 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/report 204 0 - 0.293 ms
+2026-01-24 20:49:47 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 88 - 19.753 ms
+2026-01-24 20:49:47 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 9.780 ms
+2026-01-24 20:49:56 [info]: ::1 OPTIONS /api/v1/problem/687f91cc32932539f35d72c6 204 0 - 0.226 ms
+2026-01-24 20:49:56 [info]: ::1 PATCH /api/v1/problem/687f91cc32932539f35d72c6 200 87 - 28.683 ms
+2026-01-24 20:49:56 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 730 - 12.065 ms
+2026-01-24 20:50:27 [info]: ::1 OPTIONS /api/v1/problem/687f91cc32932539f35d72c6 204 0 - 0.447 ms
+2026-01-24 20:50:27 [info]: ::1 PATCH /api/v1/problem/687f91cc32932539f35d72c6 200 102 - 14.003 ms
+2026-01-24 20:50:27 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 729 - 12.057 ms
+2026-01-24 20:55:33 [info]: ::1 OPTIONS /api/v1/problem/687f91cc32932539f35d72c6 204 0 - 0.296 ms
+2026-01-24 20:55:33 [info]: ::1 PATCH /api/v1/problem/687f91cc32932539f35d72c6 200 87 - 15.903 ms
+2026-01-24 20:55:33 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 730 - 7.380 ms
+2026-01-24 20:56:14 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 30.753 ms
+2026-01-24 20:57:01 [info]: ::1 OPTIONS /api/v1/problem/687f91cc32932539f35d72c6 204 0 - 0.648 ms
+2026-01-24 20:57:01 [info]: ::1 PATCH /api/v1/problem/687f91cc32932539f35d72c6 200 102 - 50.134 ms
+2026-01-24 20:57:01 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 729 - 11.973 ms
+2026-01-24 20:57:13 [info]: ::1 OPTIONS /api/v1/problem/687f91cc32932539f35d72c6 204 0 - 0.528 ms
+2026-01-24 20:57:13 [info]: ::1 PATCH /api/v1/problem/687f91cc32932539f35d72c6 200 87 - 24.140 ms
+2026-01-24 20:57:13 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 730 - 13.548 ms
+2026-01-24 20:58:44 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 17.725 ms
+2026-01-24 20:58:44 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 25.474 ms
+2026-01-24 21:01:18 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 2.726 ms
+2026-01-24 21:01:19 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.366 ms
+2026-01-24 21:03:21 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/report 204 0 - 0.478 ms
+2026-01-24 21:03:21 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 86 - 24.457 ms
+2026-01-24 21:03:21 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 26.470 ms
+2026-01-24 21:03:34 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.213 ms
+2026-01-24 21:03:34 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 80 - 14.112 ms
+2026-01-24 21:03:34 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 13.234 ms
+2026-01-24 21:03:38 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 81 - 17.243 ms
+2026-01-24 21:03:38 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 10.559 ms
+2026-01-24 21:03:53 [info]: ::1 PATCH /api/v1/solution/688abc1234567890abcdef12/like 200 81 - 14.792 ms
+2026-01-24 21:04:56 [info]: ::1 GET /api/v1/solution/problem/68792152c74177f0fae6874a 200 718 - 9.617 ms
+2026-01-24 21:05:40 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 770 - 8.897 ms
+2026-01-24 21:05:40 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 14.498 ms
+2026-01-24 21:06:20 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/report 204 0 - 0.244 ms
+2026-01-24 21:06:20 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 88 - 15.647 ms
+2026-01-24 21:06:20 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 25.027 ms
+2026-01-24 21:07:54 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.499 ms
+2026-01-24 21:07:54 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 80 - 10.780 ms
+2026-01-24 21:07:55 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 21.241 ms
+2026-01-24 21:08:01 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/report 204 0 - 0.303 ms
+2026-01-24 21:08:02 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 86 - 13.099 ms
+2026-01-24 21:08:02 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 15.746 ms
+2026-01-24 21:08:05 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.370 ms
+2026-01-24 21:08:05 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 81 - 17.175 ms
+2026-01-24 21:08:05 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 15.907 ms
+2026-01-24 21:08:08 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.251 ms
+2026-01-24 21:08:08 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 80 - 10.567 ms
+2026-01-24 21:08:09 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 19.426 ms
+2026-01-24 21:11:55 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.397 ms
+2026-01-24 21:11:55 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 81 - 11.450 ms
+2026-01-24 21:11:56 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 16.322 ms
+2026-01-24 21:14:20 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.545 ms
+2026-01-24 21:14:20 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 80 - 17.282 ms
+2026-01-24 21:14:21 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 13.160 ms
+2026-01-24 21:14:43 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.314 ms
+2026-01-24 21:14:43 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 81 - 13.278 ms
+2026-01-24 21:14:44 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 10.116 ms
+2026-01-24 21:14:46 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.548 ms
+2026-01-24 21:14:46 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 80 - 9.074 ms
+2026-01-24 21:14:46 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 14.398 ms
+2026-01-24 21:15:06 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.261 ms
+2026-01-24 21:15:06 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 81 - 9.498 ms
+2026-01-24 21:15:06 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 16.762 ms
+2026-01-24 21:20:22 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 2.701 ms
+2026-01-24 21:20:22 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 80 - 93.685 ms
+2026-01-24 21:20:23 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 25.896 ms
+2026-01-24 22:04:59 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 6.389 ms
+2026-01-24 22:05:00 [info]: ::1 POST /api/v1/auth/login 200 139 - 454.181 ms
+2026-01-24 22:05:00 [info]: ::1 GET /api/v1/stats/ 304 - - 172.992 ms
+2026-01-24 22:05:05 [info]: ::1 GET /api/v1/problem/topics 304 - - 26.407 ms
+2026-01-24 22:05:05 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 47.734 ms
+2026-01-24 22:05:07 [info]: ::1 GET /api/v1/problem/696f4dcef11fab70e5bd7021 200 479 - 95.519 ms
+2026-01-24 22:05:07 [info]: ::1 GET /api/v1/solution/problem/696f4dcef11fab70e5bd7021? 200 86 - 102.924 ms
+2026-01-24 22:05:13 [info]: ::1 OPTIONS /api/v1/problem/user-uploads?page=1&limit=10 204 0 - 0.678 ms
+2026-01-24 22:05:13 [info]: ::1 POST /api/v1/problem/user-uploads?page=1&limit=10 200 1015 - 34.008 ms
+2026-01-24 22:05:17 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 32.079 ms
+2026-01-24 22:05:17 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 35.194 ms
+2026-01-24 22:06:37 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 20.520 ms
+2026-01-24 22:06:37 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 771 - 17.512 ms
+2026-01-24 22:07:28 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 35.677 ms
+2026-01-24 22:07:28 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 30.047 ms
+2026-01-24 22:10:40 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 11.596 ms
+2026-01-24 22:10:40 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 10.303 ms
+2026-01-24 22:12:11 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.365 ms
+2026-01-24 22:12:11 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 81 - 43.990 ms
+2026-01-24 22:12:11 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 768 - 12.282 ms
+2026-01-24 22:12:20 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.363 ms
+2026-01-24 22:12:20 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 80 - 14.141 ms
+2026-01-24 22:12:20 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 12.091 ms
+2026-01-24 22:12:30 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/report 204 0 - 0.290 ms
+2026-01-24 22:12:30 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 88 - 16.580 ms
+2026-01-24 22:12:30 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 768 - 11.929 ms
+2026-01-24 22:12:51 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/report 204 0 - 0.166 ms
+2026-01-24 22:12:51 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 86 - 10.144 ms
+2026-01-24 22:12:51 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 13.536 ms
+2026-01-24 22:12:54 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 771 - 18.312 ms
+2026-01-24 22:12:54 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 28.672 ms
+2026-01-24 22:12:57 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/report 204 0 - 0.294 ms
+2026-01-24 22:12:57 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 88 - 13.240 ms
+2026-01-24 22:12:57 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 768 - 20.615 ms
+2026-01-24 22:15:16 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 770 - 27.850 ms
+2026-01-24 22:15:16 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 49.725 ms
+2026-01-24 22:17:08 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 7.152 ms
+2026-01-24 22:17:08 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 12.554 ms
+2026-01-24 22:21:25 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 65.198 ms
+2026-01-24 22:21:25 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 139.866 ms
+2026-01-24 22:22:37 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 6.463 ms
+2026-01-24 22:22:37 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 81 - 159.288 ms
+2026-01-24 22:22:37 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 767 - 49.773 ms
+2026-01-24 22:22:39 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 80 - 31.275 ms
+2026-01-24 22:22:39 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 768 - 29.584 ms
+2026-01-24 22:22:40 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/report 204 0 - 0.370 ms
+2026-01-24 22:22:40 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 86 - 36.311 ms
+2026-01-24 22:22:40 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 769 - 39.974 ms
+2026-01-24 22:22:42 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 88 - 32.646 ms
+2026-01-24 22:22:42 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 768 - 60.879 ms
+2026-01-24 22:35:36 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 134.105 ms
+2026-01-24 22:35:36 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 71.280 ms
+2026-01-24 22:35:39 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 5.888 ms
+2026-01-24 22:35:40 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 3.521 ms
+2026-01-24 22:35:40 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/report 204 0 - 1.130 ms
+2026-01-24 22:35:40 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 86 - 135.150 ms
+2026-01-24 22:35:40 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 43.813 ms
+2026-01-24 22:35:43 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.634 ms
+2026-01-24 22:35:43 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 81 - 39.025 ms
+2026-01-24 22:35:43 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 32.908 ms
+2026-01-24 22:35:46 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 80 - 25.759 ms
+2026-01-24 22:35:46 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 22.542 ms
+2026-01-24 22:35:47 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 81 - 41.074 ms
+2026-01-24 22:35:47 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 44.649 ms
+2026-01-24 22:35:48 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/report 204 0 - 0.621 ms
+2026-01-24 22:35:48 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 88 - 27.609 ms
+2026-01-24 22:35:48 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 26.415 ms
+2026-01-24 22:36:02 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.899 ms
+2026-01-24 22:36:02 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 80 - 44.831 ms
+2026-01-24 22:36:02 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 30.873 ms
+2026-01-24 22:36:13 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/report 204 0 - 0.435 ms
+2026-01-24 22:36:13 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 86 - 24.530 ms
+2026-01-24 22:36:13 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 42.776 ms
+2026-01-24 22:36:14 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/report 200 88 - 19.184 ms
+2026-01-24 22:36:15 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 24.156 ms
+2026-01-24 22:36:21 [info]: ::1 OPTIONS /api/v1/solution/688a045fa47ef851ad49e1e0/like 204 0 - 0.558 ms
+2026-01-24 22:36:21 [info]: ::1 PATCH /api/v1/solution/688a045fa47ef851ad49e1e0/like 200 81 - 30.949 ms
+2026-01-24 22:36:21 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 25.227 ms
+2026-01-24 22:36:24 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6?accepted=true 200 86 - 28.211 ms
+2026-01-24 22:38:05 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.170 ms
+2026-01-24 22:38:15 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.503 ms
+2026-01-24 22:38:25 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.594 ms
+2026-01-24 22:38:26 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.518 ms
+2026-01-24 22:38:34 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.774 ms
+2026-01-24 22:38:35 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.850 ms
+2026-01-24 22:39:38 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.791 ms
+2026-01-24 22:39:39 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.968 ms
+2026-01-24 22:40:31 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 8.399 ms
+2026-01-24 22:42:31 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.557 ms
+2026-01-24 22:43:47 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 12.396 ms
+2026-01-24 22:43:47 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 20.626 ms
+2026-01-24 22:43:50 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 2.455 ms
+2026-01-24 22:43:57 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.385 ms
+2026-01-24 22:43:58 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.493 ms
+2026-01-24 22:45:25 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 13.721 ms
+2026-01-24 22:47:09 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.602 ms
+2026-01-24 22:47:09 [info]: ::1 POST /api/v1/auth/login 200 139 - 304.148 ms
+2026-01-24 22:47:10 [info]: ::1 GET /api/v1/stats/ 304 - - 67.544 ms
+2026-01-24 22:47:17 [info]: ::1 GET /api/v1/problem/topics 304 - - 15.975 ms
+2026-01-24 22:47:17 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 14.774 ms
+2026-01-24 22:47:24 [info]: ::1 GET /api/v1/problem/?page=2&limit=10 200 - - 26.435 ms
+2026-01-24 22:47:25 [info]: ::1 GET /api/v1/problem/?page=3&limit=10 200 - - 18.130 ms
+2026-01-24 22:47:25 [info]: ::1 GET /api/v1/problem/?page=4&limit=10 200 299 - 14.026 ms
+2026-01-24 22:47:31 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 16.253 ms
+2026-01-24 22:47:31 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 29.942 ms
+2026-01-24 22:49:37 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 8.807 ms
+2026-01-24 22:49:46 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 11.610 ms
+2026-01-24 22:49:47 [info]: ::1 GET /api/v1/stats/ 304 - - 13.327 ms
+2026-01-24 22:49:50 [info]: ::1 POST /api/v1/auth/logout 200 52 - 10.257 ms
+2026-01-24 22:49:50 [info]: ::1 GET /api/v1/stats/ 401 62 - 10.728 ms
+2026-01-24 22:50:02 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.524 ms
+2026-01-24 22:50:02 [info]: ::1 POST /api/v1/auth/login 200 139 - 298.101 ms
+2026-01-24 22:50:03 [info]: ::1 GET /api/v1/stats/ 304 - - 9.958 ms
+2026-01-24 22:50:05 [info]: ::1 GET /api/v1/problem/topics 304 - - 15.153 ms
+2026-01-24 22:50:05 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 11.460 ms
+2026-01-24 22:50:06 [info]: ::1 GET /api/v1/problem/69721936b1b70394d7a1d271 304 - - 26.078 ms
+2026-01-24 22:50:06 [info]: ::1 GET /api/v1/solution/problem/69721936b1b70394d7a1d271? 304 - - 36.903 ms
+2026-01-24 22:50:12 [info]: ::1 GET /api/v1/problem/?page=2&limit=10 200 - - 11.757 ms
+2026-01-24 22:50:12 [info]: ::1 GET /api/v1/problem/?page=3&limit=10 200 - - 11.235 ms
+2026-01-24 22:50:13 [info]: ::1 GET /api/v1/problem/?page=4&limit=10 200 301 - 7.153 ms
+2026-01-24 22:50:17 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 16.600 ms
+2026-01-24 22:50:17 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 32.072 ms
+2026-01-24 22:50:20 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.136 ms
+2026-01-24 22:50:21 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.794 ms
+2026-01-24 22:50:40 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 19.859 ms
+2026-01-24 22:50:40 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 32.501 ms
+2026-01-24 22:50:42 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.256 ms
+2026-01-24 22:50:43 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.800 ms
+2026-01-24 22:53:24 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 5.475 ms
+2026-01-24 22:54:14 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.622 ms
+2026-01-24 22:54:15 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.466 ms
+2026-01-24 22:55:18 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 13.892 ms
+2026-01-24 22:55:25 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.564 ms
+2026-01-24 22:55:28 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.894 ms
+2026-01-24 22:55:38 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.715 ms
+2026-01-24 22:55:44 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.516 ms
+2026-01-24 22:55:44 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 3.079 ms
+2026-01-24 22:55:45 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.647 ms
+2026-01-24 22:56:14 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 730 - 15.336 ms
+2026-01-24 22:59:22 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.958 ms
+2026-01-24 22:59:22 [info]: ::1 POST /api/v1/auth/login 200 139 - 226.109 ms
+2026-01-24 22:59:22 [info]: ::1 GET /api/v1/stats/ 304 - - 14.262 ms
+2026-01-24 22:59:25 [info]: ::1 GET /api/v1/problem/topics 304 - - 14.748 ms
+2026-01-24 22:59:25 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 16.273 ms
+2026-01-24 22:59:27 [info]: ::1 GET /api/v1/problem/?page=2&limit=10 304 - - 10.408 ms
+2026-01-24 22:59:28 [info]: ::1 GET /api/v1/problem/?page=3&limit=10 304 - - 10.407 ms
+2026-01-24 22:59:31 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 32.352 ms
+2026-01-24 22:59:31 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 30.093 ms
+2026-01-24 22:59:54 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.826 ms
+2026-01-24 22:59:56 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.267 ms
+2026-01-24 23:00:08 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.949 ms
+2026-01-24 23:00:38 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.797 ms
+2026-01-24 23:00:40 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.240 ms
+2026-01-24 23:07:45 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 10.245 ms
+2026-01-24 23:07:45 [info]: ::1 GET /api/v1/solution/688a045fa47ef851ad49e1e0 200 - - 385.135 ms
+2026-01-24 23:07:50 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 3.816 ms
+2026-01-24 23:09:03 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.841 ms
+2026-01-24 23:09:03 [info]: ::1 POST /api/v1/auth/login 200 139 - 303.984 ms
+2026-01-24 23:09:04 [info]: ::1 GET /api/v1/stats/ 304 - - 157.546 ms
+2026-01-24 23:09:05 [info]: ::1 GET /api/v1/problem/topics 304 - - 21.793 ms
+2026-01-24 23:09:05 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 28.709 ms
+2026-01-24 23:09:07 [info]: ::1 GET /api/v1/problem/?page=2&limit=10 304 - - 8.329 ms
+2026-01-24 23:09:08 [info]: ::1 GET /api/v1/problem/?page=3&limit=10 304 - - 12.148 ms
+2026-01-24 23:09:11 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 43.660 ms
+2026-01-24 23:09:11 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 53.563 ms
+2026-01-24 23:09:13 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.344 ms
+2026-01-24 23:09:13 [info]: ::1 GET /api/v1/solution/688a045fa47ef851ad49e1e0 304 - - 19.276 ms
+2026-01-24 23:09:14 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.300 ms
+2026-01-24 23:11:43 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.829 ms
+2026-01-24 23:12:22 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 6.991 ms
+2026-01-24 23:14:50 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.553 ms
+2026-01-24 23:14:50 [info]: ::1 POST /api/v1/auth/login 200 139 - 239.537 ms
+2026-01-24 23:14:50 [info]: ::1 GET /api/v1/stats/ 304 - - 16.768 ms
+2026-01-24 23:14:52 [info]: ::1 GET /api/v1/problem/topics 304 - - 14.535 ms
+2026-01-24 23:14:52 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 200 - - 10.157 ms
+2026-01-24 23:14:54 [info]: ::1 GET /api/v1/problem/?page=2&limit=10 304 - - 12.328 ms
+2026-01-24 23:14:54 [info]: ::1 GET /api/v1/problem/?page=3&limit=10 304 - - 9.609 ms
+2026-01-24 23:14:55 [info]: ::1 GET /api/v1/problem/?page=4&limit=10 304 - - 8.970 ms
+2026-01-24 23:14:58 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 23.944 ms
+2026-01-24 23:14:58 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 36.456 ms
+2026-01-24 23:15:00 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 3.283 ms
+2026-01-24 23:15:00 [info]: ::1 GET /api/v1/solution/688a045fa47ef851ad49e1e0 304 - - 19.984 ms
+2026-01-24 23:16:14 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 106.875 ms
+2026-01-24 23:16:17 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.133 ms
+2026-01-24 23:16:18 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.902 ms
+2026-01-24 23:16:45 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.095 ms
+2026-01-24 23:16:52 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 2.912 ms
+2026-01-24 23:17:46 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 730 - 42.350 ms
+2026-01-24 23:17:46 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 30.667 ms
+2026-01-24 23:17:48 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.947 ms
+2026-01-24 23:17:48 [info]: ::1 GET /api/v1/solution/688a045fa47ef851ad49e1e0 200 - - 32.047 ms
+2026-01-24 23:17:50 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.472 ms
+2026-01-24 23:18:24 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.352 ms
+2026-01-24 23:18:55 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.177 ms
+2026-01-24 23:19:40 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.377 ms
+2026-01-24 23:19:53 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 2.024 ms
+2026-01-24 23:19:54 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.524 ms
+2026-01-24 23:19:56 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.404 ms
+2026-01-24 23:20:21 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 6.267 ms
+2026-01-24 23:22:01 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 730 - 107.400 ms
+2026-01-24 23:22:01 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 89.488 ms
+2026-01-24 23:22:31 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.935 ms
+2026-01-24 23:22:31 [info]: ::1 POST /api/v1/auth/login 200 139 - 199.241 ms
+2026-01-24 23:22:31 [info]: ::1 GET /api/v1/stats/ 304 - - 17.907 ms
+2026-01-24 23:22:33 [info]: ::1 GET /api/v1/problem/?page=1&limit=10 304 - - 17.660 ms
+2026-01-24 23:22:33 [info]: ::1 GET /api/v1/problem/topics 304 - - 16.558 ms
+2026-01-24 23:22:36 [info]: ::1 GET /api/v1/problem/?page=2&limit=10 304 - - 8.421 ms
+2026-01-24 23:22:37 [info]: ::1 GET /api/v1/problem/?page=3&limit=10 304 - - 8.990 ms
+2026-01-24 23:22:39 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 8.609 ms
+2026-01-24 23:22:39 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 15.751 ms
+2026-01-24 23:23:16 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 3.707 ms
+2026-01-24 23:23:16 [info]: ::1 GET /api/v1/solution/688a045fa47ef851ad49e1e0 200 - - 16.969 ms
+2026-01-24 23:23:17 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.934 ms
+2026-01-24 23:23:24 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.532 ms
+2026-01-24 23:23:32 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.673 ms
+2026-01-24 23:23:33 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.733 ms
+2026-01-24 23:23:35 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.575 ms
+2026-01-24 23:25:09 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 12.301 ms
+2026-01-24 23:26:25 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 8.076 ms
+2026-01-24 23:26:45 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.569 ms
+2026-01-24 23:26:46 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.319 ms
+2026-01-24 23:27:04 [info]: ::1 OPTIONS /api/v1/solution/accept/688a045fa47ef851ad49e1e0 204 0 - 0.546 ms
+2026-01-24 23:27:04 [info]: ::1 PATCH /api/v1/solution/accept/688a045fa47ef851ad49e1e0 200 74 - 74.716 ms
+2026-01-24 23:27:04 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.002 ms
+2026-01-24 23:27:04 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 40.342 ms
+2026-01-24 23:27:04 [info]: ::1 GET /api/v1/solution/688a045fa47ef851ad49e1e0 200 - - 26.276 ms
+2026-01-24 23:27:04 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 26.021 ms
+2026-01-24 23:27:04 [info]: ::1 GET /api/v1/solution/688a045fa47ef851ad49e1e0 304 - - 19.551 ms
+2026-01-24 23:27:04 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 63.134 ms
+2026-01-24 23:27:04 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 7.676 ms
+2026-01-24 23:27:05 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 2.573 ms
+2026-01-24 23:27:27 [info]: ::1 OPTIONS /api/v1/solution/accept/688a045fa47ef851ad49e1e0 204 0 - 0.184 ms
+2026-01-24 23:27:27 [info]: ::1 PATCH /api/v1/solution/accept/688a045fa47ef851ad49e1e0 200 74 - 33.402 ms
+2026-01-24 23:27:27 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.809 ms
+2026-01-24 23:27:27 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 27.891 ms
+2026-01-24 23:27:27 [info]: ::1 GET /api/v1/solution/688a045fa47ef851ad49e1e0 200 - - 15.953 ms
+2026-01-24 23:27:27 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 304 - - 21.172 ms
+2026-01-24 23:27:27 [info]: ::1 GET /api/v1/solution/688a045fa47ef851ad49e1e0 304 - - 16.904 ms
+2026-01-24 23:27:27 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 44.616 ms
+2026-01-24 23:27:27 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 7.294 ms
+2026-01-24 23:27:28 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.531 ms
+2026-01-24 23:29:01 [info]: ::1 OPTIONS /api/v1/reply/problem/688a045fa47ef851ad49e1e0 204 0 - 0.353 ms
+2026-01-24 23:29:01 [info]: ::1 POST /api/v1/reply/problem/688a045fa47ef851ad49e1e0 404 185 - 1.519 ms
+2026-01-24 23:30:45 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.003 ms
+2026-01-24 23:30:46 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.527 ms
+2026-01-24 23:30:47 [info]: ::1 OPTIONS /api/v1/reply/solution/688a045fa47ef851ad49e1e0 204 0 - 0.637 ms
+2026-01-24 23:30:47 [info]: ::1 POST /api/v1/reply/solution/688a045fa47ef851ad49e1e0 201 394 - 79.497 ms
+2026-01-24 23:30:48 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.782 ms
+2026-01-24 23:30:48 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 730 - 61.042 ms
+2026-01-24 23:30:48 [info]: ::1 GET /api/v1/solution/688a045fa47ef851ad49e1e0 200 - - 38.830 ms
+2026-01-24 23:30:48 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 49.276 ms
+2026-01-24 23:30:48 [info]: ::1 GET /api/v1/problem/687f91cc32932539f35d72c6 200 730 - 34.487 ms
+2026-01-24 23:30:48 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 28.678 ms
+2026-01-24 23:30:48 [info]: ::1 GET /api/v1/solution/688a045fa47ef851ad49e1e0 200 - - 6.464 ms
+2026-01-24 23:30:49 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 1.193 ms
+2026-01-24 23:32:37 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.651 ms
+2026-01-24 23:33:15 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 200 - - 5.827 ms
+2026-01-24 23:33:31 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.521 ms
+2026-01-24 23:33:33 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.786 ms
+2026-01-24 23:34:08 [info]: ::1 GET /api/v1/reply/688a045fa47ef851ad49e1e0 404 176 - 0.649 ms
+2026-01-24 23:34:10 [info]: ::1 GET /api/v1/reply/solution/688a045fa47ef851ad49e1e0 200 701 - 18.538 ms
+2026-01-24 23:35:36 [info]: ::1 GET /api/v1/solution/problem/687f91cc32932539f35d72c6? 304 - - 6.115 ms
+2026-01-24 23:35:56 [info]: ::1 GET /api/v1/solution/688a045fa47ef851ad49e1e0 304 - - 7.914 ms
+2026-01-24 23:35:56 [info]: ::1 GET /api/v1/reply/solution/688a045fa47ef851ad49e1e0 304 - - 8.694 ms
+2026-01-24 23:49:42 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 4.362 ms
+2026-01-24 23:49:42 [info]: ::1 POST /api/v1/auth/login 200 139 - 179.847 ms
+2026-01-24 23:50:16 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.469 ms
+2026-01-24 23:50:16 [info]: ::1 POST /api/v1/auth/login 200 139 - 120.785 ms
+2026-01-24 23:50:57 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.380 ms
+2026-01-24 23:50:57 [info]: ::1 POST /api/v1/auth/login 200 139 - 116.501 ms
+2026-01-24 23:51:41 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.217 ms
+2026-01-24 23:51:41 [info]: ::1 POST /api/v1/auth/login 200 139 - 170.296 ms
+2026-01-24 23:52:00 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 1.675 ms
+2026-01-24 23:52:00 [info]: ::1 POST /api/v1/auth/login 200 139 - 163.690 ms
+2026-01-24 23:52:27 [info]: ::1 OPTIONS /api/v1/auth/login 204 0 - 0.429 ms
+2026-01-24 23:52:27 [info]: ::1 POST /api/v1/auth/login 200 139 - 135.572 ms
+2026-01-24 23:52:28 [info]: ::1 GET /api/v1/stats/ 304 - - 43.566 ms
+2026-01-24 23:54:07 [info]: ::1 GET /api/v1/stats/ 200 - - 43.561 ms

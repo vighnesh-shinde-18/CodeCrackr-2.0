@@ -31,27 +31,28 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { Link } from "react-router"
 
 
 
-function AppSidebar() {
+const mainNav = [
+    { title: "Dashboard", url: "/dashboard", icon: IconDashboard },
+    { title: "Problems", url: "/problems", icon: IconListCheck },
+    { title: "Problem Manager", url: "/problem-manager", icon: IconUpload },
+    { title: "History", url: "/history", icon: IconHistory },
+    { title: "Code Playground", url: "/code-playground", icon: IconFileCode },
+]
 
-    const mainNav = [
-        { title: "Dashboard", url: "/dashboard", icon: IconDashboard },
-        { title: "Problems", url: "/problems", icon: IconListCheck },
-        { title: "Problem Manager", url: "/problem-manager", icon: IconUpload },
-        { title: "History", url: "/history", icon: IconHistory },
-        { title: "Code Playground", url: "/code-playground", icon: IconFileCode },
-    ]
+const aiToolsNav = [
+    { title: "Debug Code", url: "/ai/debug", icon: IconBug },
+    { title: "Generate Code", url: "/ai/generate", icon: IconFileCode },
+    { title: "Review & Refactor Code", url: "/ai/review", icon: IconSettingsAutomation },
+    { title: "Explain Code", url: "/ai/explain", icon: IconBulb },
+    { title: "Convert Code", url: "/ai/convert", icon: IconRepeat },
+    { title: "Test Cases", url: "/ai/testcases", icon: IconFileText },
+]
+function AppSidebarComponent() {
 
-    const aiToolsNav = [
-        { title: "Debug Code", url: "/ai/debug", icon: IconBug },
-        { title: "Generate Code", url: "/ai/generate", icon: IconFileCode },
-        { title: "Review & Refactor Code", url: "/ai/review", icon: IconSettingsAutomation },
-        { title: "Explain Code", url: "/ai/explain", icon: IconBulb },
-        { title: "Convert Code", url: "/ai/convert", icon: IconRepeat },
-        { title: "Test Cases", url: "/ai/testcases", icon: IconFileText },
-    ]
 
     return (
         <Sidebar collapsible="offcanvas" >
@@ -59,10 +60,10 @@ function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:!p-1.5">
-                            <a href="/dashboard">
+                            <Link href="/dashboard">
                                 <IconInnerShadowTop className="size-5" />
                                 <span className="text-base font-semibold">CodeCracker</span>
-                            </a>
+                            </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
@@ -79,5 +80,5 @@ function AppSidebar() {
         </Sidebar>
     )
 }
-
+const AppSidebar = React.memo(AppSidebarComponent)
 export default AppSidebar;

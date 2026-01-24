@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { useState, useMemo } from "react";
 import {
   Table, TableHeader, TableBody, TableRow, TableHead, TableCell,
 } from "@/components/ui/table";
@@ -11,224 +11,217 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { MoreHorizontal, Loader2 } from "lucide-react";
-import {
-  Dialog, DialogContent, DialogHeader, DialogTitle,
-} from "@/components/ui/dialog";
+import { MoreHorizontal, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
 import {
   DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 
-// Import the service
-import historyService from "../../api/HistoryServices.jsx"; 
-import AiResponseViewer from "../AiResponse/AiResponseViewer.jsx";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import historyService from "../../api/HistoryServices.js";
+import aiInteractionService from "../../api/AiInteractionsServices.js";
+
+// 🟢 Import the new Child Component
+import { AiHistoryDialog } from "./AiHistoryDialog.jsx"; 
 
 export function HistoryAiFeatures() {
-  const [history, setHistory] = useState([]);
   const [filter, setFilter] = useState("All");
+  
+  // Dialog State
   const [viewDialog, setViewDialog] = useState(false);
-  const [selectedInteraction, setSelectedInteraction] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [selectedId, setSelectedId] = useState(null); // Just store ID now
+  
+  // Pagination State
+  const [page, setPage] = useState(1);
+  const limit = 10;
 
-  // 1. Mapping Backend "FeatureType" strings to UI Display names
-  const featureMap = useMemo(() => ({
-    DebugCode: "Debug",
-    ReviewCode: "Review",
-    GenerateCode: "Generate", 
-    ExplainCode: "Explain",
-    ConvertCode: "Convert",
-    GenerateTestCases: "Testcases",
-  }), []);
+  const queryClient = useQueryClient();
 
-  const getDisplayName = useCallback((backendKey) => featureMap[backendKey] || backendKey, [featureMap]);
-
-  // Simplified Fetch
-  const fetchInteractions = useCallback(async () => {
-    setLoading(true);
-    try {
-      const result = await historyService.UserAiInteraction(filter);
-
-      if (!result || !result.data) return;
-
-      const formatted = result.data.map((item, idx) => ({
-        _id: item._id,
-        id: idx + 1,
-        title: item.AiOutput?.title || "Untitled", 
-        featureDisplay: getDisplayName(item.FeatureType), 
-        featureType: item.FeatureType,
-        prompt: item.UserInput, 
-        response: item.AiOutput, 
-        date: new Date(item.createdAt).toLocaleDateString(),
-        fullDate: item.createdAt 
-      }));
-
-      if (filter !== "all" && filter !== "All") {
-         setHistory(formatted.filter(item => item.featureType === filter));
-      } else {
-         setHistory(formatted);
-      }
-
-    } catch (err) {
-      console.error(err);
-      toast.error("Failed to load AI history");
-    } finally {
-      setLoading(false);
-    }
-  }, [getDisplayName, filter]);
-
-  // Fetch on mount or when filter changes
-  useEffect(() => {
-    fetchInteractions();
-  }, [fetchInteractions]);
-
-  // View single interaction
-  const handleView = (item) => {
-    setSelectedInteraction(item);
-    setViewDialog(true);
+  // Helper: Feature Names
+  const getDisplayName = (key) => {
+    const map = {
+      DebugCode: "Debug", ReviewCode: "Review", GenerateCode: "Generate",
+      ExplainCode: "Explain", ConvertCode: "Convert", GenerateTestCases: "Testcases",
+    };
+    return map[key] || key;
   };
 
+  // 🟢 1. QUERY: Fetch List (Summaries Only)
+  const { data: apiResponse, isLoading } = useQuery({
+    queryKey: ["ai-history", filter, page],
+    queryFn: async () => {
+      // Passes filter/page/limit to your GET service
+      const result = await historyService.UserAiInteraction({ filter, page, limit });
+      return result || { data: [], pagination: {} };
+    },
+    placeholderData: (prev) => prev,
+    staleTime: 60 * 1000,
+  });
+
+  const history = apiResponse?.data || [];
+  const pagination = apiResponse?.pagination || { totalPages: 1, hasNextPage: false };
+
+  // 🟢 2. MUTATION: Delete Single
+  const deleteMutation = useMutation({
+    mutationFn: (id) => aiInteractionService.deleteInteractionById(id),
+    onSuccess: (_, id) => {
+      toast.success("Deleted successfully");
+      queryClient.invalidateQueries(["ai-history"]);
+      // Close dialog if user deletes the open item
+      if (selectedId === id) setViewDialog(false);
+    },
+    onError: (err) => toast.error(err.message || "Failed to delete"),
+  });
+
+  // 🟢 3. MUTATION: Delete All
+  const deleteAllMutation = useMutation({
+    mutationFn: () => aiInteractionService.deleteAllInteractions(),
+    onSuccess: () => {
+      toast.success("All history cleared");
+      queryClient.invalidateQueries(["ai-history"]);
+      setViewDialog(false);
+    },
+    onError: (err) => toast.error(err.message || "Failed to clear history"),
+  });
+
+  // Handlers
   const handleDelete = (id) => {
-    setHistory((prev) => prev.filter((item) => item._id !== id));
-    toast.success("Interaction deleted successfully");
+    if (confirm("Delete this interaction?")) deleteMutation.mutate(id);
   };
 
   const handleDeleteAll = () => {
-    if(!confirm("Are you sure you want to delete all history?")) return;
-    setHistory([]);
-    toast.success("All history cleared");
+    if (confirm("Are you sure? This will delete ALL history.")) deleteAllMutation.mutate();
   };
 
-  const availableFeatures = useMemo(() => {
-     return ["GeneratCode", "ConvertCode", "ExplainCode", "DebugCode", "ReviewCode","GenerateTestCases"];
-  }, []);
+  const handleView = (id) => {
+    setSelectedId(id);
+    setViewDialog(true);
+  };
+
+  const availableFeatures = useMemo(() => 
+    ["GenerateCode", "ConvertCode", "ExplainCode", "DebugCode", "ReviewCode", "GenerateTestCases"], 
+  []);
 
   return (
     <div className="space-y-4 p-4 border rounded-lg">
+      
+      {/* --- HEADER --- */}
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
         <h3 className="text-lg font-medium">AI Feature Usage</h3>
         <div className="flex gap-2">
-          
-          <Select value={filter} onValueChange={setFilter}>
-            <SelectTrigger className="w-40">
-              <SelectValue placeholder="Filter Feature" />
-            </SelectTrigger>
+          <Select value={filter} onValueChange={(val) => { setFilter(val); setPage(1); }}>
+            <SelectTrigger className="w-40"><SelectValue placeholder="Filter Feature" /></SelectTrigger>
             <SelectContent>
               <SelectItem value="All">All</SelectItem>
               {availableFeatures.map((fKey) => (
-                <SelectItem key={fKey} value={fKey}>
-                   {getDisplayName(fKey)}
-                </SelectItem>
+                <SelectItem key={fKey} value={fKey}>{getDisplayName(fKey)}</SelectItem>
               ))}
             </SelectContent>
           </Select>
 
-          <Button variant="destructive" onClick={handleDeleteAll}>Delete All</Button>
+          <Button 
+            variant="destructive" 
+            onClick={handleDeleteAll}
+            disabled={deleteAllMutation.isPending || history.length === 0}
+          >
+            {deleteAllMutation.isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : "Delete All"}
+          </Button>
         </div>
       </div>
 
       <Separator />
 
+      {/* --- TABLE --- */}
       <div className="border rounded-md">
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Sr.No.</TableHead>
-            <TableHead>Feature</TableHead>
-            <TableHead>Title</TableHead>
-            <TableHead>Prompt</TableHead>
-            <TableHead>Date</TableHead>
-            <TableHead className="text-right">Actions</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {loading ? (
+        <Table>
+          <TableHeader>
             <TableRow>
-              <TableCell colSpan={6} className="text-center py-8">
-                <div className="flex justify-center items-center gap-2">
-                    <Loader2 className="animate-spin size-5"/> Loading...
-                </div>
-              </TableCell>
+              <TableHead>Sr.No.</TableHead>
+              <TableHead>Feature</TableHead>
+              <TableHead>Title</TableHead>
+              <TableHead>Prompt Preview</TableHead>
+              <TableHead>Date</TableHead>
+              <TableHead className="text-right">Actions</TableHead>
             </TableRow>
-          ) : history.length > 0 ? (
-            history.map((f) => (
-              <TableRow key={f._id}>
-                <TableCell>{f.id}</TableCell>
-                <TableCell><Badge variant="outline">{f.featureDisplay}</Badge></TableCell>
-                <TableCell className="max-w-[180px] truncate font-medium">{f.title}</TableCell>
-                <TableCell className="max-w-[250px] text-sm text-muted-foreground truncate">
-                  {f.prompt && f.prompt.length > 80 ? f.prompt.slice(0, 80) + "..." : f.prompt}
-                </TableCell>
-                <TableCell className="text-muted-foreground text-sm">{f.date}</TableCell>
-                <TableCell className="text-right">
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button size="icon" variant="ghost">
-                        <MoreHorizontal className="w-4 h-4" />
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuItem onClick={() => handleView(f)}>View Details</DropdownMenuItem>
-                      <DropdownMenuItem onClick={() => handleDelete(f._id)} className="text-red-600 focus:text-red-600">
-                        Delete
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+          </TableHeader>
+          <TableBody>
+            {isLoading ? (
+              <TableRow>
+                <TableCell colSpan={6} className="text-center py-8">
+                  <Loader2 className="animate-spin size-5 mx-auto"/>
                 </TableCell>
               </TableRow>
-            ))
-          ) : (
-            <TableRow>
-              <TableCell colSpan={6} className="text-center py-8 text-muted-foreground">
-                No AI feature usage found.
-              </TableCell>
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
+            ) : history.length > 0 ? (
+              history.map((f, i) => (
+                <TableRow key={f._id || i}>
+                  <TableCell>{(page - 1) * limit + i + 1}</TableCell>
+                  <TableCell><Badge variant="outline">{getDisplayName(f.FeatureType)}</Badge></TableCell>
+                  {/* Title might be directly on object OR inside AiOutput depending on your schema version */}
+                  <TableCell className="max-w-[150px] truncate font-medium">
+                    {f.Title || "Untitled Interaction"}
+                  </TableCell>
+                  <TableCell className="max-w-[200px] text-sm text-muted-foreground truncate">
+                    {f.UserInput}
+                  </TableCell>
+                  <TableCell className="text-muted-foreground text-sm">
+                    {new Date(f.createdAt).toLocaleDateString()}
+                  </TableCell>
+                  <TableCell className="text-right">
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button size="icon" variant="ghost">
+                          <MoreHorizontal className="w-4 h-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuItem onClick={() => handleView(f._id)}>View Details</DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => handleDelete(f._id)} className="text-red-600">Delete</DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </TableCell>
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell colSpan={6} className="text-center py-8 text-muted-foreground">
+                  No usage history found.
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
       </div>
 
-      {/* View Dialog */}
-      <Dialog open={viewDialog} onOpenChange={setViewDialog}>
-        <DialogContent className="min-w-[800px] max-h-[85vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="text-xl flex items-center gap-2">
-              {selectedInteraction?.title}
-              {selectedInteraction && <Badge>{selectedInteraction.featureDisplay}</Badge>}
-            </DialogTitle>
-          </DialogHeader>
+      {/* --- PAGINATION --- */}
+      {history.length > 0 && (
+        <div className="flex justify-end gap-2 items-center">
+            <span className="text-sm text-muted-foreground mr-2">
+                Page {page} of {pagination.totalPages}
+            </span>
+            <Button 
+                variant="outline" size="sm" 
+                onClick={() => setPage(old => Math.max(old - 1, 1))}
+                disabled={page === 1}
+            >
+                <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <Button 
+                variant="outline" size="sm" 
+                onClick={() => setPage(old => old + 1)}
+                disabled={!pagination.hasNextPage}
+            >
+                <ChevronRight className="h-4 w-4" />
+            </Button>
+        </div>
+      )}
 
-          <div className="space-y-6 mt-4 text-sm">
-            <div className="text-xs text-muted-foreground">
-                Created on: {selectedInteraction && new Date(selectedInteraction.fullDate).toLocaleString()}
-            </div>
-            
-            <div className="space-y-2">
-              <strong className="block text-base">Your Prompt:</strong>
-              <div className="bg-muted/50 p-4 rounded-md border text-sm font-mono whitespace-pre-wrap break-words max-h-[200px] overflow-y-auto">
-                {selectedInteraction?.prompt}
-              </div>
-            </div>
+      {/* 🟢 NEW DIALOG COMPONENT */}
+      <AiHistoryDialog 
+        open={viewDialog} 
+        onOpenChange={setViewDialog} 
+        interactionId={selectedId} 
+      />
 
-            <Separator />
-            
-            <div className="space-y-2">
-                <strong className="block text-base">AI Response:</strong>
-                {/* Correction here:
-                   1. response: passed selectedInteraction.response (the actual data), not selectedInteraction (the wrapper)
-                   2. featureType: mapped the Display name (e.g. "Debug") to lowercase ("debug") to match AiResponseViewer
-                */}
-                <div className="border rounded-md p-4 bg-slate-50 dark:bg-slate-900">
-                    <AiResponseViewer 
-                        isHistory={true} 
-                        response={selectedInteraction?.response} 
-                        featureType={selectedInteraction?.featureDisplay?.toLowerCase()}
-                    />
-                </div>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }

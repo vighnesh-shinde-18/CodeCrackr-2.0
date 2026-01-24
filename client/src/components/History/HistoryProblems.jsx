@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-// UI Components
 import {
   Table, TableHeader, TableBody, TableRow, TableHead, TableCell
 } from "@/components/ui/table";
@@ -12,97 +10,85 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, XCircle, Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { CheckCircle2, XCircle, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
 
-// API Service
-import historyService from "../../api/HistoryServices.jsx"; // Adjust path as needed
+// 🟢 TanStack Import
+import { useQuery } from "@tanstack/react-query";
+import historyService from "../../api/HistoryServices.js";
 
 export function HistoryProblems() {
-  const [problems, setProblems] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  // Filter States
-  const [topicFilter, setTopicFilter] = useState("All");
-  const [acceptedFilter, setAcceptedFilter] = useState("All");
-
-  // Store all unique topics found (to populate dropdown even when filtering)
-  const [availableTopics, setAvailableTopics] = useState([]);
-
   const navigate = useNavigate();
 
-  // 1. Fetch Logic
-  const fetchProblems = useCallback(async () => {
-    setLoading(true);
-    try {
-      // Prepare payload matches Backend expectation
-      // Backend expects: topic (string), accepted (boolean or undefined/"All")
+  // Filters & State
+  const [topicFilter, setTopicFilter] = useState("All");
+  const [acceptedFilter, setAcceptedFilter] = useState("All");
+  const [availableTopics, setAvailableTopics] = useState([]);
+  
+  // Pagination State
+  const [page, setPage] = useState(1);
+  const limit = 10;
 
+  // 🟢 QUERY: Fetch Solved Problems
+  const { data: apiResponse, isLoading } = useQuery({
+    queryKey: ["history-problems", topicFilter, acceptedFilter, page], 
+    
+    queryFn: async () => {
+      // Convert UI filter strings to Booleans for Backend
       let acceptedPayload;
       if (acceptedFilter === "Accepted") acceptedPayload = true;
       else if (acceptedFilter === "Not Accepted") acceptedPayload = false;
-      else acceptedPayload = undefined; // or "All" depending on your backend logic
 
       const data = await historyService.UserSolvedProblems({
         topic: topicFilter,
-        accepted: acceptedPayload
+        accepted: acceptedPayload,
+        page: page,
+        limit: limit
       });
+      return data || { data: [], pagination: {} };
+    },
 
-      setProblems(data);
+    // UX: Keep previous page data visible while loading next page
+    placeholderData: (prev) => prev, 
+    staleTime: 60 * 1000, 
+  });
 
-      // If we are viewing "All", update the available topics list
-      // This prevents the dropdown from shrinking when we select a specific topic
-      if (topicFilter === "All") {
-        const uniqueTopics = Array.from(new Set(data.flatMap(p => p.topics))).sort();
-        setAvailableTopics(uniqueTopics);
-      }
+  const problems = apiResponse?.data || [];
+  const pagination = apiResponse?.pagination || { totalPages: 1, hasNextPage: false };
 
-    } catch (err) {
-      console.error("Failed to load solved problems:", err);
-      // Optional: Add toast notification here
-    } finally {
-      setLoading(false);
-    }
-  }, [topicFilter, acceptedFilter]);
-
-  // 2. Trigger Fetch on Filter Change
+  // 🟢 EFFECT: Extract Topics dynamically (Client-side optimization)
   useEffect(() => {
-    fetchProblems();
-  }, [fetchProblems]);
+    if (problems.length > 0 && topicFilter === "All") {
+      const uniqueTopics = Array.from(new Set(problems.flatMap(p => p.topics || []))).sort();
+      // Only update if we actually found topics to prevent loops
+      if (uniqueTopics.length > 0) setAvailableTopics(uniqueTopics);
+    }
+  }, [problems, topicFilter]);
 
-  // 3. Navigation Handler
   const handleNavigate = (original, problemId) => {
-    const titleUrl = original.title.replaceAll(" ", "-")
+    const titleUrl = original.title.replaceAll(" ", "-");
     navigate(`/solve-problem/${titleUrl}/${problemId}`);
-
   };
 
   return (
     <div className="space-y-4 p-4 border rounded-lg">
+      {/* HEADER & FILTERS */}
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
         <h3 className="text-lg font-medium">Replied Problems</h3>
 
         <div className="flex flex-col sm:flex-row gap-4">
-
-          {/* Topic Filter */}
-          <Select value={topicFilter} onValueChange={setTopicFilter}>
-            <SelectTrigger className="w-full sm:w-48">
-              <SelectValue placeholder="Filter by Topic" />
-            </SelectTrigger>
+          <Select value={topicFilter} onValueChange={(val) => { setTopicFilter(val); setPage(1); }}>
+            <SelectTrigger className="w-full sm:w-48"><SelectValue placeholder="Filter by Topic" /></SelectTrigger>
             <SelectContent>
               <SelectItem value="All">All Topics</SelectItem>
               {availableTopics.map((topic) => (
-                <SelectItem key={topic} value={topic}>
-                  {topic}
-                </SelectItem>
+                <SelectItem key={topic} value={topic}>{topic}</SelectItem>
               ))}
             </SelectContent>
           </Select>
 
-          {/* Status Filter */}
-          <Select value={acceptedFilter} onValueChange={setAcceptedFilter}>
-            <SelectTrigger className="w-full sm:w-48">
-              <SelectValue placeholder="Filter by Status" />
-            </SelectTrigger>
+          <Select value={acceptedFilter} onValueChange={(val) => { setAcceptedFilter(val); setPage(1); }}>
+            <SelectTrigger className="w-full sm:w-48"><SelectValue placeholder="Filter by Status" /></SelectTrigger>
             <SelectContent>
               <SelectItem value="All">All Status</SelectItem>
               <SelectItem value="Accepted">Accepted</SelectItem>
@@ -114,6 +100,7 @@ export function HistoryProblems() {
 
       <Separator />
 
+      {/* TABLE */}
       <div className="border rounded-md">
         <Table>
           <TableHeader>
@@ -125,7 +112,7 @@ export function HistoryProblems() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {loading ? (
+            {isLoading ? (
               <TableRow>
                 <TableCell colSpan={4} className="h-24 text-center">
                   <div className="flex justify-center items-center gap-2 text-muted-foreground">
@@ -136,18 +123,16 @@ export function HistoryProblems() {
             ) : problems.length > 0 ? (
               problems.map((p, index) => (
                 <TableRow
-                  key={p.id}
-                  onClick={() => handleNavigate(p,p.id)}
+                  key={p.id || index}
+                  onClick={() => handleNavigate(p, p.id)}
                   className="cursor-pointer hover:bg-muted/50 transition-colors"
                 >
-                  <TableCell className="font-medium">{index + 1}</TableCell>
+                  <TableCell className="font-medium">{(page - 1) * limit + index + 1}</TableCell>
                   <TableCell>{p.title}</TableCell>
                   <TableCell>
                     <div className="flex flex-wrap gap-1">
                       {p.topics?.map((t, i) => (
-                        <Badge key={i} variant="secondary" className="text-xs font-normal">
-                          {t}
-                        </Badge>
+                        <Badge key={i} variant="secondary" className="text-xs font-normal">{t}</Badge>
                       ))}
                     </div>
                   </TableCell>
@@ -174,6 +159,29 @@ export function HistoryProblems() {
           </TableBody>
         </Table>
       </div>
+
+      {/* PAGINATION CONTROLS */}
+      {problems.length > 0 && (
+        <div className="flex justify-end gap-2 items-center">
+            <span className="text-sm text-muted-foreground mr-2">
+                Page {page} of {pagination.totalPages}
+            </span>
+            <Button 
+                variant="outline" size="sm" 
+                onClick={() => setPage(old => Math.max(old - 1, 1))}
+                disabled={page === 1}
+            >
+                <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <Button 
+                variant="outline" size="sm" 
+                onClick={() => setPage(old => old + 1)}
+                disabled={!pagination.hasNextPage}
+            >
+                <ChevronRight className="h-4 w-4" />
+            </Button>
+        </div>
+      )}
     </div>
   );
 }

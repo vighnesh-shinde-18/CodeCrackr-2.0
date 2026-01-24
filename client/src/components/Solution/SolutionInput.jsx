@@ -1,28 +1,28 @@
 "use client";
 
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, X, MessageCircle, Trash2 } from "lucide-react";
+import { CheckCircle2, X, MessageCircle, Trash2, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import Editor from "@monaco-editor/react";
-import solutionService from "../../api/SolutionServices.jsx";
-import replyService from "../../api/ReplyServices.jsx"; // 👈 Import Reply Service
+import solutionService from "../../api/SolutionServices.js";
+import replyService from "../../api/ReplyServices.js";
+
+// 🟢 1. Import React Query
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
 function useMonacoTheme() {
   const [theme, setTheme] = useState("vs");
-
   useEffect(() => {
     const updateTheme = () => {
       const isDark = document.documentElement.classList.contains("dark");
       setTheme(isDark ? "vs-dark" : "vs");
     };
-
     updateTheme();
     const observer = new MutationObserver(updateTheme);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
     return () => observer.disconnect();
   }, []);
-
   return theme;
 }
 
@@ -30,32 +30,19 @@ export default function SolutionInput({
   showEditor,
   selectedSolution,
   isUploader,
-  fetchSolutions,
   problemId,
 }) {
   const theme = useMonacoTheme();
-
-  // LocalStorage Check
-  const [currentUserEmail, setCurrentUserEmail] = useState(() => {
-    return typeof window !== "undefined" ? localStorage.getItem("email") || "" : "";
-  });
+  const queryClient = useQueryClient();
 
   // Form State
   const [code, setCode] = useState("// Write your solution...");
   const [explanation, setExplanation] = useState("");
   const [language, setLanguage] = useState("javascript");
-
-  // Reply State
   const [replyText, setReplyText] = useState("");
-  const [replies, setReplies] = useState([]);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmittingReply, setIsSubmittingReply] = useState(false); // Added separate loading state for reply
 
   const languageOptions = useMemo(
-    () => [
-      "cpp", "python", "java", "c", "go", "javascript", "kotlin",
-      "php", "r", "rust", "scala", "sql", "swift", "typescript", "csharp"
-    ],
+    () => ["cpp", "python", "java", "c", "go", "javascript", "typescript", "csharp", "php", "rust"],
     []
   );
 
@@ -68,156 +55,146 @@ export default function SolutionInput({
     }
   }, [showEditor]);
 
-  // 🔹 FETCH REPLIES when a solution is selected
-  useEffect(() => {
-    const loadReplies = async () => {
-      // If we have a selected solution, fetch its replies
-      if (selectedSolution && (selectedSolution.id || selectedSolution._id)) {
-        try {
-          const solutionId = selectedSolution.id || selectedSolution._id;
-          const response = await replyService.fetchAllReplies(solutionId);
+  // Handle ID consistency (MongoDB _id vs id)
+  const solutionId = selectedSolution?.id || selectedSolution?._id;
 
-          // Assuming backend returns { data: [...] }
-          if (response && response.data) {
-            setReplies(response.data);
-          } else {
-            setReplies([]);
-          }
-        } catch (error) {
-          console.error("Failed to load replies:", error);
-          setReplies([]);
-        }
-      } else {
-        setReplies([]);
-      }
-    };
+  // 🟢 2. QUERY: Fetch Specific Solution Details (NEW)
+  // This fetches the full details (code, full explanation) when viewing a solution
+  const { data: solutionDetails, isLoading: isSolutionLoading } = useQuery({
+    queryKey: ["solution-details", solutionId],
+    queryFn: () => solutionService.fetchSolutionDetails(solutionId),
+    enabled: !!solutionId && !showEditor, // Only fetch if we have an ID and we are NOT in editor mode
+    staleTime: 1000 * 60 * 5, // 5 Minutes
+  });
 
-    loadReplies();
-  }, [selectedSolution]);
+  // Determine which data to show: The fetched detailed data OR the initial prop data
+ 
 
+  // 🟢 3. QUERY: Fetch Replies
+  const { data: replies = [] } = useQuery({
+    queryKey: ["replies", solutionId],
+    queryFn: async () => {
+        if (!solutionId) return [];
+        const res = await replyService.fetchAllReplies(solutionId);
+        return res?.data || [];
+    },
+    enabled: !!solutionId && !showEditor,
+    staleTime: 1000 * 30,
+  });
 
-  const handleAcceptSolution = async (solutionIndex) => {
-    try {
+  console.log("replies ",replies)
+  // 🟢 4. MUTATION: Submit Solution
+  const submitSolutionMutation = useMutation({
+    mutationFn: (payload) => solutionService.SubmitSolution(problemId, payload),
+    onSuccess: () => {
+      toast.success("Solution submitted successfully!");
+      queryClient.invalidateQueries(["solutions", problemId]);
+      setCode("// Write your solution...");
+      setExplanation("");
+    },
+    onError: () => toast.error("Failed to submit solution")
+  });
 
-      await solutionService.toggleSolutionAccept(solutionIndex);
-      fetchSolutions()
-    } catch (err) {
-      console.error("Error fetching solutions:", err);
-      toast.error("Failed to load solutions");
-    } finally {
-      setLoadingSolutions(false);
-    }
-    const updatedSolutions = [...allSolutions];
-    setAllSolutions(updatedSolutions);
-  };
+  // 🟢 5. MUTATION: Post Reply
+  const replyMutation = useMutation({
+    mutationFn: (payload) => replyService.SubmitReply(solutionId, payload),
+    onSuccess: () => {
+      toast.success("Reply posted.");
+      setReplyText("");
+      queryClient.invalidateQueries(["replies", solutionId]);
+      queryClient.invalidateQueries(["solutions", problemId]); 
+    },
+    onError: () => toast.error("Failed to post reply")
+  });
 
-  // 🔹 SUBMIT NEW SOLUTION
-  const handleSubmit = useCallback(async () => {
+  // 🟢 6. MUTATION: Accept/Unaccept
+  const toggleAcceptMutation = useMutation({
+    mutationFn: (id) => solutionService.toggleSolutionAccept(id),
+    onSuccess: (data) => {
+        const isAccepted = data?.accepted; 
+        toast.success(isAccepted ? "Marked as Accepted" : "Unaccepted");
+        // Invalidate both the list and the specific detail view
+        queryClient.invalidateQueries(["solutions", problemId]);
+        queryClient.invalidateQueries(["solution-details", solutionId]);
+    },
+    onError: () => toast.error("Failed to update status")
+  });
+
+  // 🟢 7. MUTATION: Delete Solution
+  const deleteSolutionMutation = useMutation({
+    mutationFn: (id) => solutionService.deleteSolution(id),
+    onSuccess: () => {
+        toast.success("Solution deleted.");
+        queryClient.invalidateQueries(["solutions", problemId]);
+        // Parent component should ideally handle switching back to editor mode here
+        // forcing a reload for now, but better to use a callback prop like `onDeleteSuccess`
+        window.location.reload(); 
+    },
+    onError: () => toast.error("Failed to delete solution")
+  });
+
+  const handleSubmit = () => {
     if (!code.trim() || !explanation.trim()) {
       toast.warning("Please enter both code and explanation.");
       return;
     }
+    submitSolutionMutation.mutate({ code, explanation, language });
+  };
 
-    setIsSubmitting(true);
-    try {
-      await solutionService.SubmitSolution(problemId, { code, explanation, language });
+  const handlePostReply = () => {
+    if (!replyText.trim()) return toast.warning("Please enter your reply.");
+    replyMutation.mutate({ reply: replyText });
+  };
 
-      toast.success("Solution submitted successfully!");
-      fetchSolutions();
+  const handleToggleAccept = () => {
+    toggleAcceptMutation.mutate(solutionId);
+  };
 
-      // Reset fields
-      setCode("// Write your solution...");
-      setExplanation("");
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setIsSubmitting(false);
+  const handleDeleteSolution = () => {
+    if (confirm("Delete this solution?")) {
+        deleteSolutionMutation.mutate(solutionId);
     }
-  }, [code, explanation, language, problemId, fetchSolutions]);
-
-  // 🔹 POST REPLY (Real API Integration)
-  const handlePostReply = useCallback(async () => {
-    if (!replyText.trim()) {
-      toast.warning("Please enter your reply.");
-      return;
-    }
-
-    setIsSubmittingReply(true);
-    try {
-      const solutionId = selectedSolution.id || selectedSolution._id;
-
-      // Call Service
-      const newReply = await replyService.SubmitReply(solutionId, { reply: replyText });
-
-      // Update UI: Append new reply to list
-      // Note: We check if newReply has 'replier' populated. 
-      // If the backend returns just ID, we might need to manually add username for optimistic UI.
-
-      setReplies(prev => [newReply, ...prev]); // Add to top
-      setReplyText("");
-      toast.success("Reply posted.");
-
-    } catch (err) {
-      console.error(err);
-      toast.error("Failed to post reply.");
-    } finally {
-      setIsSubmittingReply(false);
-    }
-  }, [replyText, selectedSolution]);
-
-
-  // 🔹 ACCEPT / UNACCEPT SOLUTION
-  const handleToggleAccept = useCallback(async () => {
-    try {
-      await solutionService.toggleSolutionAccept(selectedSolution.id || selectedSolution._id);
-      toast.success("Solution status updated.");
-      handleAcceptSolution();
-    } catch (err) {
-      console.error(err);
-    }
-  }, [selectedSolution, handleAcceptSolution]);
-
-  // 🔹 DELETE SOLUTION 
-  const handleDeleteSolution = useCallback(async () => {
-    if (!window.confirm("Delete this solution?")) return;
-    try {
-      await solutionService.deleteSolution(selectedSolution.id || selectedSolution._id);
-      toast.success("Solution deleted.");
-      fetchSolutions();
-    } catch (err) {
-      console.error(err);
-    }
-  }, [selectedSolution, fetchSolutions]);
-
-
+  };
+ 
   // 🔹 RENDER: VIEW SOLUTION MODE
   if (selectedSolution && !showEditor) {
+    
+    // Show a small loader if fetching full details
+    if (isSolutionLoading) {
+        return <div className="p-10 flex justify-center"><Loader2 className="animate-spin" /></div>;
+    }
+
     return (
       <div className="space-y-4 border p-4 rounded-md bg-white dark:bg-gray-900 shadow-sm">
         <div className="flex justify-between items-center">
           <h3 className="text-lg font-semibold">
-            {selectedSolution.username || selectedSolution.uploaderName || "User"}'s Solution
+            {/* Use activeSolution to display data */}
+            {solutionDetails.data.uploader || solutionDetails.uploader || "User"}'s Solution
           </h3>
-          {selectedSolution.accepted && (
+          {solutionDetails.data.accepted && (
             <span className="text-green-600 flex items-center gap-1 font-medium bg-green-100 dark:bg-green-900 px-2 py-1 rounded text-sm">
               <CheckCircle2 className="size-4" /> Accepted
             </span>
           )}
         </div>
-{console.log(selectedSolution)}
+
         <div className="border rounded-lg overflow-hidden h-[300px]">
           <Editor
             height="100%"
-            language={selectedSolution.language || "javascript"}
+            // Use activeSolution data
+            language={solutionDetails.data.language || "javascript"}
             theme={theme}
-            value={selectedSolution.code}
+            value={solutionDetails.data.code}
             options={{ readOnly: true, minimap: { enabled: false } }}
           />
         </div>
 
         <div className="p-4 rounded-md border bg-gray-50 dark:bg-zinc-800 text-sm">
           <strong>Explanation:</strong>
-          <p className="mt-2 whitespace-pre-wrap">{selectedSolution.explanation || selectedSolution.description}</p>
+          {/* Handle both 'explanation' and 'description' keys depending on API consistency */}
+          <p className="mt-2 whitespace-pre-wrap">
+            {solutionDetails.data.explanation || solutionDetails.description || "No explanation provided."}
+          </p>
         </div>
 
         {/* ACTIONS */}
@@ -225,57 +202,61 @@ export default function SolutionInput({
           {isUploader && (
             <Button
               onClick={handleToggleAccept}
-              className={`gap-2 font-semibold text-white ${selectedSolution.accepted ? "bg-red-500 hover:bg-red-600" : "bg-green-600 hover:bg-green-700"
-                }`}
+              disabled={toggleAcceptMutation.isPending}
+              className={`gap-2 font-semibold text-white ${solutionDetails.accepted ? "bg-red-500 hover:bg-red-600" : "bg-green-600 hover:bg-green-700"}`}
             >
-              {selectedSolution.accepted ? (
-                <><X className="w-4 h-4" /> Unaccept</>
-              ) : (
-                <><CheckCircle2 className="w-4 h-4" /> Mark as Accepted</>
-              )}
+               {solutionDetails.data.accepted ? (
+                 <><X className="w-4 h-4" /> Unaccept</>
+               ) : (
+                 <><CheckCircle2 className="w-4 h-4" /> Mark as Accepted</>
+               )}
             </Button>
           )}
 
-          <Button onClick={handleDeleteSolution} variant="destructive" className="flex items-center gap-2">
-            <Trash2 className="w-4 h-4" /> Delete
-          </Button>
+          {/* Optional: Allow user to delete their own solution */}
+          {( isUploader) && (
+             <Button 
+                onClick={handleDeleteSolution} 
+                disabled={deleteSolutionMutation.isPending}
+                variant="destructive" 
+                className="flex items-center gap-2"
+            >
+                {deleteSolutionMutation.isPending ? <Loader2 className="animate-spin w-4 h-4"/> : <Trash2 className="w-4 h-4" />} Delete
+            </Button>
+          )}
         </div>
 
         {/* REPLIES SECTION */}
         <div className="mt-6 border-t pt-4">
-          <div className="flex justify-between items-center mb-3">
-            <h4 className="text-sm text-muted-foreground font-medium flex items-center gap-2">
-              <MessageCircle className="w-4 h-4" /> Discussion ({replies.length})
-            </h4>
-          </div>
+          <h4 className="text-sm text-muted-foreground font-medium flex items-center gap-2 mb-3">
+            <MessageCircle className="w-4 h-4" /> Discussion ({replies.length})
+          </h4>
 
           {/* Reply Input */}
           <div className="flex flex-col gap-2 mb-4">
             <textarea
               rows="2"
               className="w-full p-2 border rounded-md text-sm bg-background"
-              placeholder="Ask a question or provide feedback..."
+              placeholder="Ask a question..."
               value={replyText}
               onChange={(e) => setReplyText(e.target.value)}
             />
             <Button
               size="sm"
               onClick={handlePostReply}
-              disabled={isSubmittingReply}
+              disabled={replyMutation.isPending}
               className="self-end"
             >
-              {isSubmittingReply ? "Posting..." : "Post Reply"}
+              {replyMutation.isPending ? "Posting..." : "Post Reply"}
             </Button>
           </div>
 
           {/* Replies List */}
           <div className="space-y-3 max-h-60 overflow-y-auto">
-            {replies.length === 0 && <p className="text-xs text-gray-400">No replies yet. Be the first!</p>}
-
+            {replies.length === 0 && <p className="text-xs text-gray-400">No replies yet.</p>}
             {replies.map((r, i) => (
               <div key={r.id || r._id || i} className="border p-3 rounded bg-gray-50 dark:bg-zinc-800 text-sm">
                 <div className="flex justify-between mb-1">
-                  {/* Check if replier is populated object or just ID/string */}
                   <span className="font-bold text-blue-600">
                     {r.replier?.username || r.username || "User"}
                   </span>
@@ -324,13 +305,13 @@ export default function SolutionInput({
       <textarea
         rows="4"
         className="w-full p-2 border rounded-md dark:bg-zinc-800 dark:text-white"
-        placeholder="Explain your approach (Time/Space Complexity)..."
+        placeholder="Explain your approach..."
         value={explanation}
         onChange={(e) => setExplanation(e.target.value)}
       />
 
-      <Button onClick={handleSubmit} disabled={isSubmitting} className="w-full">
-        {isSubmitting ? "Submitting..." : "Submit Solution"}
+      <Button onClick={handleSubmit} disabled={submitSolutionMutation.isPending} className="w-full">
+        {submitSolutionMutation.isPending ? "Submitting..." : "Submit Solution"}
       </Button>
     </div>
   );

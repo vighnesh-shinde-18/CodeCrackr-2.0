@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom"
  
 
 function Hero() {
-  const gitHubUrl = "https://github.com/vighnesh-shinde-18/CodeCrackr";
+  const gitHubUrl = "https://github.com/vighnesh-shinde-18/CodeCrakr-2.0";
 
   const navigate = useNavigate()
 
