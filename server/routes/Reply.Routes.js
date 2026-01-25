@@ -12,4 +12,3 @@ router.post("/solution/:id", apiLimiter, verifyJwt, validate(solutionIdSchema, "
     validate(submitReplySchema, "body"), submitReply)
 
 export default router;
-  
