@@ -2,7 +2,7 @@ import express from 'express'
 import { getAllTopics, fetchAllProblems, uploadProblem, fetchUserProblem, fecthProblemById, toggleReportProblem, deleteProblem } from '../controllers/Problem.Controller.js'
 import { verifyJwt, verifyAdmin } from '../middlewares/Auth.Middleware.js'
 import { createProblemSchema, fetchUserProblemSchema, problemIdSchema } from '../validation/Problem.Validation.js';
-import { validate } from '../middlewares/validate.middleware.js';
+import { validate } from '../middlewares/Validate.Middleware.js';
 import { apiLimiter } from '../middlewares/RateLimit.Middleware.js';
 
 const router = express.Router()

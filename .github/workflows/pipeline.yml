@@ -1,0 +1,40 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install Dependencies
+      # Installs deps to ensure package.json is valid
+      run: npm ci
+
+    - name: Test Docker Build
+      # Tries to build the image. If this fails, the pipeline stops (protecting production).
+      run: docker build . --file Dockerfile --tag my-backend-image
+
+  # OPTIONAL: Trigger Render Deploy only if the build passes
+  deploy:
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Render
+        # You need to configure a Deploy Hook URL in Render for this to work
+        # curl -X POST "YOUR_RENDER_DEPLOY_HOOK_URL"
+        run: echo "Build successful! Render will auto-deploy if connected."

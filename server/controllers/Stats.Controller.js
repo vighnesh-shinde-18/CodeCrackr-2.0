@@ -2,7 +2,7 @@ import User from '../models/User.Model.js';
 import Problem from '../models/Problem.Model.js';
 import Solution from '../models/Solution.Model.js';
 import mongoose from 'mongoose';
-import redis from "../utils/Redis.js"; // Import Redis
+import redis from '../utils/Redis.js';
 import asyncHandler from '../utils/asyncHandler.js';
 
 const getDashboardStats = asyncHandler(async (req, res) => {
