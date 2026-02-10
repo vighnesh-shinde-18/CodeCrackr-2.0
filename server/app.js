@@ -120,6 +120,7 @@ app.post(
   processAIRequest
 );
 
+app.get("/",(req,res)=>{res.send("Welcome to code crackr backend")});
 
 app.use(errorHandler);
 export default app;
