@@ -42,7 +42,7 @@ export default function SolutionInput({
   const [replyText, setReplyText] = useState("");
 
   const languageOptions = useMemo(
-    () => ["cpp", "python", "java", "c", "go", "javascript", "typescript", "csharp", "php", "rust"],
+    () => ["cpp", "python", "java", "c", "go", "javascript", "typescript", "c#", "php", "rust"],
     []
   );
 
