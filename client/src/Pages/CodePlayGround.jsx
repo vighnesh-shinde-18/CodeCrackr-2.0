@@ -1,6 +1,6 @@
 "use client";
 
-import { LANGUAGES } from "../config/config.js";
+import { LANGUAGES } from "../constants/languages.js";
 import { useState } from "react";
 import compilerService from "../api/CompilerServices.js";
 import { toast } from "sonner";
