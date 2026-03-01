@@ -14,9 +14,7 @@ A production-grade AI-powered coding discussion platform featuring scalable back
 ---
 
 ## 📸 Screenshots
-*(Add 2-3 screenshots of your app here. e.g., The Code Editor, The Discussion Page, and The Admin Panel. Visuals are crucial for recruiters!)*
 
-![App Screenshot](https://via.placeholder.com/800x400?text=App+Screenshot+Placeholder)
 
 ---
 
