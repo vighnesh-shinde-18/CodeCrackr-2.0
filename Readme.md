@@ -15,6 +15,10 @@ A production-grade AI-powered coding discussion platform featuring scalable back
 
 ## 📸 Screenshots
 
+<img width="1918" height="972" alt="CodeCrackr Dashboard" src="https://github.com/user-attachments/assets/2a113f1d-456a-4294-8758-778a44b802f8" />
+ <img width="1918" height="965" alt="Codecrackr Problems" src="https://github.com/user-attachments/assets/5b855c9a-2b13-488a-8eea-36de35b9d660" />
+ <img width="1916" height="960" alt="codecrackr code-playgound" src="https://github.com/user-attachments/assets/27d26415-9a98-4c47-b1c4-4a670d57e4f2" />
+ <img width="1893" height="907" alt="Codecrackr problem-solving" src="https://github.com/user-attachments/assets/8d06c6ff-e866-4ef1-833e-bbe83e164de9" />
 
 ---
 
@@ -172,11 +176,6 @@ docker compose up --build
 - Frontend: http://localhost:5173
 - Backend: http://localhost:5000
 
-#### Screenshots 
-<img width="1918" height="972" alt="CodeCrackr Dashboard" src="https://github.com/user-attachments/assets/2a113f1d-456a-4294-8758-778a44b802f8" />
- <img width="1918" height="965" alt="Codecrackr Problems" src="https://github.com/user-attachments/assets/5b855c9a-2b13-488a-8eea-36de35b9d660" />
- <img width="1916" height="960" alt="codecrackr code-playgound" src="https://github.com/user-attachments/assets/27d26415-9a98-4c47-b1c4-4a670d57e4f2" />
- <img width="1893" height="907" alt="Codecrackr problem-solving" src="https://github.com/user-attachments/assets/8d06c6ff-e866-4ef1-833e-bbe83e164de9" />
 
 
 
