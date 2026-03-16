@@ -37,7 +37,7 @@ import {
   ChevronRight,
 } from "lucide-react";
  
-import { useAiHistory,useDeleteInteraction } from "../../hooks/History/useDeleteAiHistory.js";
+import { useDeleteInteraction,useDeleteAllInteractions } from "../../hooks/History/useDeleteAiHistory.js";
 
 import { AiHistoryDialog } from "./AiHistoryDialog.jsx";
 
