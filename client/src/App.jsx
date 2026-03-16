@@ -24,12 +24,16 @@ const History = lazy(() => import('./Pages/History.jsx'));
 const CodePlayGround = lazy(() => import('./Pages/CodePlayGround.jsx'));
 const AIFeature = lazy(() => import('./Pages/AiInteraction.jsx'));
 const ProblemSolving = lazy(() => import('./Pages/ProblemSolving.jsx'));
- 
+
 const PageLoader = () => (
-  <div className="flex h-[80vh] w-full items-center justify-center animate-in fade-in duration-300 delay-200 fill-mode-backwards">
-    <div className="flex flex-col items-center gap-2">
-      <Spinner />
-      <p className="text-sm text-muted-foreground animate-pulse">Loading content...</p>
+  // Added flex-1 and min-h-[80vh] to ensure it stretches to fill the parent and centers properly
+  <div className="flex flex-1 min-h-[80vh] w-full items-center justify-center animate-in fade-in duration-300 delay-200 fill-mode-backwards">
+    <div className="flex flex-col items-center gap-4">
+      {/* Increased the size using h-12 w-12, and added a scale wrapper to guarantee it gets larger */}
+      <div className="scale-125">
+        <Spinner className="h-10 w-10" />
+      </div>
+      <p className="text-base text-muted-foreground animate-pulse mt-1">Loading content...</p>
     </div>
   </div>
 );
@@ -45,7 +49,7 @@ function App() {
         <Route path='/reset-password' element={<ResetPassword />} />
  
         <Route element={<ProtectedRoute />}>
-             
+              
             <Route element={<Layout />}>
                 <Route path='/dashboard' element={
                     <Suspense fallback={<PageLoader />}><Dashboard /></Suspense>
