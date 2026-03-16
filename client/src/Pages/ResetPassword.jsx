@@ -2,37 +2,16 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
-import authService from "../api/AuthServices.js";
-import { useMutation } from "@tanstack/react-query"; // 🟢 Import
+import {useResetPassword} from '../hooks/Security/useResetPassword.js'
 
 const ResetPasswordPage = () => {
     const [email, setEmail] = useState("");
     const [otp, setOtp] = useState("");
     const [newPassword, setNewPassword] = useState("");
-    const navigate = useNavigate();
+
 
     // 🟢 MUTATION: Reset Password
-    const resetMutation = useMutation({
-        mutationFn: (payload) => authService.resetPassword(payload),
-        
-        onMutate: () => {
-            toast.loading("Resetting password...");
-        },
-
-        onSuccess: () => {
-            toast.dismiss();
-            toast.success("Password reset successful. Login now.");
-            navigate("/login");
-        },
-
-        onError: (err) => {
-            toast.dismiss();
-            const message = err?.response?.data?.message || "Invalid OTP or email. Please try again.";
-            toast.error(message);
-        }
-    });
+    const resetMutation = useResetPassword()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -92,4 +71,4 @@ const ResetPasswordPage = () => {
     );
 };
 
-export default React.memo(ResetPasswordPage);
+export default (ResetPasswordPage);

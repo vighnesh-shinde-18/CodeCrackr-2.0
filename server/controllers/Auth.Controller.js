@@ -2,6 +2,7 @@ import ApiError from "../utils/ApiError.js";
 import asyncHandler from "../utils/asyncHandler.js"
 import User from "../models/User.Model.js";
 import sendOtp from "../utils/sendOtp.js";
+import { success } from "zod";
 
 const registerUser = asyncHandler(async (req, res) => {
 
@@ -71,6 +72,13 @@ const loginUser = asyncHandler(async (req, res) => {
 
 })
 
+const getCurrentUser = asyncHandler(async (req,res)=>{
+    const {email,username} = req.user;
+
+    return res.json({success:true,data:{email,username}});
+
+})
+
 const generateAndSendOtp = asyncHandler(async (req, res) => {
     const { email } = req.body;
 
@@ -122,4 +130,4 @@ const logoutUser = asyncHandler(async (req,res)=>{
 })
 
 
-export { registerUser, loginUser, generateAndSendOtp, validateAndResetPassword, logoutUser }
+export { registerUser, loginUser, getCurrentUser, generateAndSendOtp, validateAndResetPassword, logoutUser }

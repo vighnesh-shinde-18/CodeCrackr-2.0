@@ -1,5 +1,5 @@
 import express from 'express'
-import { registerUser, loginUser, generateAndSendOtp, validateAndResetPassword, logoutUser } from '../controllers/Auth.Controller.js'
+import { registerUser, loginUser,getCurrentUser, generateAndSendOtp, validateAndResetPassword, logoutUser } from '../controllers/Auth.Controller.js'
 import { verifyJwt } from '../middlewares/Auth.Middleware.js'
 import { validate } from "../middlewares/Validate.Middleware.js";
 import {
@@ -13,6 +13,7 @@ const router = express.Router()
 
 router.post('/register', validate(registerSchema, "body"), registerUser)
 router.post('/login', validate(loginSchema, "body"), loginUser)
+router.get('/current-user',verifyJwt,getCurrentUser)
 router.post('/send-otp', validate(sendOtpSchema, "body"), generateAndSendOtp)
 router.post('/reset-password', validate(resetPasswordSchema, "body"), validateAndResetPassword)
 router.post('/logout', verifyJwt, logoutUser)

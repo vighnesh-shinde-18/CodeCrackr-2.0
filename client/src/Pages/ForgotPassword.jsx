@@ -2,42 +2,19 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
-import authService from "../api/AuthServices.js";
-import { useMutation } from "@tanstack/react-query"; // 🟢 Import
+import { useForgotPassword } from "../hooks/Security/useForgotPassword";
+
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
-  const navigate = useNavigate();
 
   // 🟢 MUTATION: Send OTP
-  const forgotPasswordMutation = useMutation({
-    mutationFn: (payload) => authService.sendOtp(payload),
-    
-    onMutate: () => {
-        toast.loading("Sending OTP...");
-    },
-
-    onSuccess: () => {
-      toast.dismiss();
-      toast.success("Password reset link sent to your email!");
-      setEmail("");
-      navigate("/reset-password");
-    },
-    
-    onError: (err) => {
-      toast.dismiss();
-      console.error("Forgot password error:", err);
-      toast.error(
-        err?.response?.data?.error || "Email not registered or failed to send."
-      );
-    }
-  });
+  const forgotPasswordMutation = useForgotPassword()
 
   const handleSubmit = (e) => {
     e.preventDefault();
     forgotPasswordMutation.mutate({ email });
+    setEmail("");
   };
 
   return (
@@ -65,10 +42,10 @@ export default function ForgotPasswordPage() {
           />
         </div>
 
-        <Button 
-            type="submit" 
-            className="cursor-pointer w-full" 
-            disabled={forgotPasswordMutation.isPending}
+        <Button
+          type="submit"
+          className="cursor-pointer w-full"
+          disabled={forgotPasswordMutation.isPending}
         >
           {forgotPasswordMutation.isPending ? "Sending..." : "Send Reset Link"}
         </Button>

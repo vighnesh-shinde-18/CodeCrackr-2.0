@@ -20,6 +20,11 @@ export class AuthService {
         return response.data;
     }
 
+    async getCurrentUser(){
+const response = await api.get('/auth/current-user');
+        return response.data.data;
+    }
+
     async sendOtp({ email }) {
         const response = await api.post('/auth/send-otp', {
             email
