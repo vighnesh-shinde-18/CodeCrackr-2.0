@@ -1,0 +1,89 @@
+import './App.css'
+import { Suspense, lazy } from "react";
+import { Routes, Route } from 'react-router-dom'
+import { Toaster } from 'sonner'
+
+// --- EAGER IMPORTS ---
+import Hero from './Pages/Hero.jsx'
+import LogIn from './Pages/LogIn.jsx'
+import Register from './Pages/Register.jsx'
+import ForgotPassword from './Pages/ForgotPassword.jsx'
+import ResetPassword from './Pages/ResetPassword.jsx'
+import Layout from './Pages/Layout.jsx'
+import ThemeToggleButton from './components/ThemeButton/ThemeToggleButton.jsx'
+import { Spinner } from './components/ui/spinner.jsx';
+
+// 🟢 Import the new ProtectedRoute
+import ProtectedRoute from './components/ProtectedRoutes/ProtectedRoute.jsx'; // Adjust path as needed
+
+// --- LAZY IMPORTS ---
+const Dashboard = lazy(() => import('./Pages/Dashboard.jsx'));
+const ProblemList = lazy(() => import('./Pages/ProblemsList.jsx'));
+const ProblemManager = lazy(() => import('./Pages/ProblemManager.jsx'));
+const History = lazy(() => import('./Pages/History.jsx'));
+const CodePlayGround = lazy(() => import('./Pages/CodePlayGround.jsx'));
+const AIFeature = lazy(() => import('./Pages/AiInteraction.jsx'));
+const ProblemSolving = lazy(() => import('./Pages/ProblemSolving.jsx'));
+
+const PageLoader = () => (
+  // Added flex-1 and min-h-[80vh] to ensure it stretches to fill the parent and centers properly
+  <div className="flex flex-1 min-h-[80vh] w-full items-center justify-center animate-in fade-in duration-300 delay-200 fill-mode-backwards">
+    <div className="flex flex-col items-center gap-4">
+      {/* Increased the size using h-12 w-12, and added a scale wrapper to guarantee it gets larger */}
+      <div className="scale-125">
+        <Spinner className="h-10 w-10" />
+      </div>
+      <p className="text-base text-muted-foreground animate-pulse mt-1">Loading content...</p>
+    </div>
+  </div>
+);
+
+function App() {
+  return (
+    <>
+      <Routes> 
+        <Route path='/' element={<Hero />} />
+        <Route path='/login' element={<LogIn />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/forgot-password' element={<ForgotPassword />} />
+        <Route path='/reset-password' element={<ResetPassword />} />
+ 
+        <Route element={<ProtectedRoute />}>
+              
+            <Route element={<Layout />}>
+                <Route path='/dashboard' element={
+                    <Suspense fallback={<PageLoader />}><Dashboard /></Suspense>
+                } />
+                <Route path='/problems' element={
+                    <Suspense fallback={<PageLoader />}><ProblemList /></Suspense>
+                } />
+                <Route path='/problem-manager' element={
+                    <Suspense fallback={<PageLoader />}><ProblemManager /></Suspense>
+                } />
+                <Route path='/history' element={
+                    <Suspense fallback={<PageLoader />}><History /></Suspense>
+                } />
+                <Route path='/code-playground' element={
+                    <Suspense fallback={<PageLoader />}><CodePlayGround /></Suspense>
+                } />
+                <Route path='/ai/:feature' element={
+                    <Suspense fallback={<PageLoader />}><AIFeature /></Suspense>
+                } />
+            </Route>
+
+            <Route path="/solve-problem/:slug/:id" element={
+                <Layout sidebarVisible={false}>
+                    <Suspense fallback={<PageLoader />}><ProblemSolving /></Suspense>
+                </Layout>
+            } />
+
+        </Route>
+      </Routes>
+
+      <Toaster richColors position='top-right' />
+      <ThemeToggleButton />
+    </>
+  )
+}
+
+export default App
